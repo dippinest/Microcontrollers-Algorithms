@@ -11,7 +11,7 @@ char       data[DATA_SIZE] = "This is my a supersecret data";
 const char key[KEY_SIZE]   = "Supersecret key!";
 
 
-void print_data(void* data, uint16_t data_size)
+void print_data(void *data, uint16_t data_size)
 {
 	for (uint16_t i = 0; i < data_size; ++i)
 	{
@@ -36,5 +36,6 @@ int main(void)
 	{
 	}
 }
+
 
 
