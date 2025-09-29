@@ -39,7 +39,9 @@
 #include <stdint.h>
 
 
+#ifndef ROTL
 #define ROTL(val, pos, val_type) (val << pos) | (val >> (sizeof(val_type) * 8 - pos))
+#endif
 
 
 uint32_t GOST2814789_Encrypt_ECB(void *data, const uint32_t data_size, const void *key_256bit);
@@ -64,6 +66,7 @@ uint32_t GOST2814789_Decrypt_OFB(const void *init_vector_64bit, void *data, cons
 
 
 #endif
+
 
 
 
