@@ -4,17 +4,19 @@
 #include "gost2814789.h"
 
 
-#define DATA_SIZE 64
-#define KEY_SIZE  32
-
 // длина буфера данных должна быть кратна 8 байтам (64 битам)!
 // -------------------------------------------------------------------------------
 // data buffer length must be a multiple of 8 bytes (64 bits)!
+#define DATA_SIZE 64
+
 char       data[DATA_SIZE] = "This is my a supersecret data";
+
 
 // длина ключа должна быть равна 32 байтам (256 битам)!
 // -------------------------------------------------------------------------------
 // key length must be 32 bytes (256 bits)!
+#define KEY_SIZE  32
+
 const char key[KEY_SIZE]   = "Supersecret key!";
 
 
@@ -43,6 +45,7 @@ int main(void)
 	{
 	}
 }
+
 
 
 
