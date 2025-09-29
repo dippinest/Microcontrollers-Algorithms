@@ -65,10 +65,8 @@ uint32_t GOST2814789_Encrypt_OFB(const void *init_vector_64bit, void *data, cons
 uint32_t GOST2814789_Decrypt_OFB(const void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
 
-
-
-
 #endif
+
 
 
 
