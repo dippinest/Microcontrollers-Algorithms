@@ -2,6 +2,13 @@
 #include "gost2814789.h"
 
 
+// S-блок 4-х битной замены. Поскольку он не стандартизирован, вы можете
+// изменить его значения на свои. Данные значения я взял из примера в статье
+// в Википедии про данный алгоритм
+// -------------------------------------------------------------------------------
+// S-block is a 4-bit replacement block. Since it is not standardized,
+// you can change its values to your own. I took these values from an
+// example in a Wikipedia article about this algorithm.
 static uint8_t STable[8][16] =
 {
 	{0xF, 0xC, 0x2, 0xA, 0x6, 0x4, 0x5, 0x0, 0x7, 0x9, 0xE, 0xD, 0x1, 0xB, 0x8, 0x3},
@@ -361,6 +368,7 @@ uint32_t GOST2814789_Decrypt_OFB(const void *init_vector_64bit, void *data, cons
 {
 	return GOST2814789_Encrypt_OFB(init_vector_64bit, data, data_size, key_256bit);
 }
+
 
 
 
