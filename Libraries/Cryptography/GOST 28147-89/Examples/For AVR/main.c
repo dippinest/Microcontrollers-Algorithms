@@ -9,7 +9,7 @@
 // data buffer length must be a multiple of 8 bytes (64 bits)!
 #define DATA_SIZE 64
 
-char       data[DATA_SIZE] = "This is my a supersecret data";
+char data[DATA_SIZE] = "This is my a supersecret data";
 
 
 // длина ключа должна быть равна 32 байтам (256 битам)!
@@ -45,6 +45,7 @@ int main(void)
 	{
 	}
 }
+
 
 
 
