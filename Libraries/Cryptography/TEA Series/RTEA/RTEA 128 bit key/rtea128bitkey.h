@@ -14,8 +14,8 @@
 // ===============================================================================
 
 
-#ifndef RTEA128BitKey_H_
-#define RTEA128BitKey_H_
+#ifndef RTEA128BITKEY_H_
+#define RTEA128BITKEY_H_
 
 #include <stdint.h>
 
@@ -42,6 +42,7 @@ uint32_t RTEA128BitKey_Decrypt_OFB(const void *init_vector_64bit, void *data, co
 
 
 #endif
+
 
 
 
