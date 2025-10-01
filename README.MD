@@ -54,6 +54,8 @@ ___
 
 - Криптографические алгоритмы:
 
+   - [Алгоритм стандарта СССР ГОСТ 28147-89](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Cryptography/GOST%2028147-89) 
+
    - [Алгоритмы семейства TEA (TEA, XTEA, XTEA1, XTEA2, XTEA3, Raiden)](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Cryptography/TEA%20Series)
 
    - [Стандартный и модифицированный алгоритм Виженера](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Cryptography/Vigenere)
@@ -120,6 +122,8 @@ ___
 
 - Cryptographic algorithms:
 
+   - [Algorithm of the USSR GOST 28147-89 standard](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Cryptography/GOST%2028147-89)
+
    - [TEA family algorithms (TEA, XTEA, XTEA1, XTEA2, XTEA3, Raiden)](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Cryptography/TEA%20Series )
 
    - [Standard and modified Vigener algorithm](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Cryptography/Vigenere )
@@ -143,6 +147,7 @@ ___
 ___
 
 ##### The implementation of test programs for AVR family microcontrollers (avr-gcc compiler) is given as examples of algorithms.
+
 
 
 
