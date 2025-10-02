@@ -37,7 +37,7 @@ int main(void)
 	// -------------------------------------------------------------------------------
 	// Initialization of the PRNG. The address of the initial working cell is 0x0000.
 	// The range of working addresses is from 0x0000 to 0x0020 (32 dec)
-	MAPRNG_t maprng = MAPRNG_Create_Object(0x0000, MAPRNG_MUTABLE_ARRAY_SIZE, read_byte, write_byte);
+	MAPRNG_t maprng = MAPRNG_Create_Object(0x0001, 0x0000, MAPRNG_MUTABLE_ARRAY_SIZE, read_byte, write_byte);
 
 	// генерирация 10.000 чисел в диапазоне от 0 до 256
 	// -------------------------------------------------------------------------------
@@ -47,5 +47,6 @@ int main(void)
 		std::cout << MAPRNG_Get_UInt16_Value(&maprng, 0, 256) << ", ";
 	}
 }
+
 
 
