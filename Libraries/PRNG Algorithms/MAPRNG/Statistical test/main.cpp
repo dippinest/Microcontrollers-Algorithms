@@ -1,8 +1,6 @@
 
 #include <iostream>
 
-#include "maprng.h"
-
 
 // Инициализация участка памяти внутренней RAM (массива) для MAPRNG
 // размером 16 байта
@@ -28,7 +26,7 @@ uint8_t read_byte(uint16_t addr)
 }
 
 
-const size_t NUM_OF_VALUES = 20000;
+const size_t NUM_OF_VALUES = 100000;
 
 int main(void)
 {
@@ -47,6 +45,7 @@ int main(void)
 		std::cout << MAPRNG_Get_UInt16_Value(&maprng, 0, 256) << ", ";
 	}
 }
+
 
 
 
