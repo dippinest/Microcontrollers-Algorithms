@@ -70,6 +70,9 @@ ___
 - Алгоритмы CRT коррекции цвета, излучаемый светодиодными источниками ([ссылка](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/LED%20Gamma%20Correction))
 
 
+- Алгоритмы вычисления хеш-функций ([ссылка](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Hash%20Function))
+
+
 - Алгоритмы вычисления контрольной суммы (CRC) ([ссылка](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/CRC%20Calculation))
 
 
@@ -138,6 +141,9 @@ ___
 - CRT algorithms for correcting the color emitted by LED sources ([link](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/LED%20Gamma%20Correction ))
 
 
+- Algorithms for calculating hash functions ([link](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Hash%20Function))
+
+
 - Checksum Calculation Algorithms (CRC) ([link](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/CRC%20Calculation ))
 
 
@@ -147,6 +153,7 @@ ___
 ___
 
 ##### The implementation of test programs for AVR family microcontrollers (avr-gcc compiler) is given as examples of algorithms.
+
 
 
 
