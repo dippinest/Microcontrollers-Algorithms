@@ -40,6 +40,7 @@ uint8_t PearsonHash_Get_8Bit_Hash_Value(const void* data, const uint16_t data_si
 		0xC2, 0x8B, 0x70, 0x2B, 0x47, 0x6D, 0xB8, 0xD1
 	};
 
+	
 	uint8_t hash = 0;
 
 	for (uint16_t i = 0; i < data_size; ++i)
@@ -52,8 +53,6 @@ uint8_t PearsonHash_Get_8Bit_Hash_Value(const void* data, const uint16_t data_si
 
 void *PearsonHash_Get_Arbitrary_Size_Hash(const void* data, const uint32_t data_size, uint8_t* hash, const uint32_t hash_size)
 {
-	uint8_t tmp;
-
 	static const uint8_t _PearsonHash_Arbitrary_Size_PT[] =
 	{
 		0x62, 0x06, 0x55, 0x96, 0x24, 0x17, 0x70, 0xA4,
@@ -90,6 +89,9 @@ void *PearsonHash_Get_Arbitrary_Size_Hash(const void* data, const uint32_t data_
 		0x68, 0x30, 0xF7, 0x67, 0x0F, 0x0B, 0x8A, 0xEF
 	};
 
+	
+	uint8_t tmp;
+
 	for (uint32_t j = 0; j < hash_size; ++j)
 	{
 		tmp = _PearsonHash_Arbitrary_Size_PT[(uint8_t)(((uint8_t*)data)[0] + j)];
@@ -104,6 +106,7 @@ void *PearsonHash_Get_Arbitrary_Size_Hash(const void* data, const uint32_t data_
 
 	return hash;
 }
+
 
 
 
