@@ -41,7 +41,7 @@ uint8_t PearsonHash_Get_8Bit_Hash_Value(const void* data, const uint16_t data_si
 	};
 
 	
-	uint8_t hash = 0;
+	uint8_t hash = (uint8_t)data_size;
 
 	for (uint16_t i = 0; i < data_size; ++i)
 	{
@@ -106,6 +106,7 @@ void *PearsonHash_Get_Arbitrary_Size_Hash(const void* data, const uint32_t data_
 
 	return hash;
 }
+
 
 
 
