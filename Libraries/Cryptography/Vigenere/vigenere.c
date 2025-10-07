@@ -2,7 +2,7 @@
 #include "vigenere.h"
 
 
-static int16_t _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(void* alphabet, uint8_t alphabet_size, char b)
+static int16_t _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(const void* alphabet, const uint8_t alphabet_size, char b)
 {
 	for (int16_t i = 0; i < alphabet_size; ++i)
 	{
@@ -121,6 +121,7 @@ uint16_t Vigenere_XOR_Bytes_Decrypt(void* data, uint16_t data_size, void* key, u
 {
 	return Vigenere_XOR_Bytes_Encrypt(data, data_size, key, key_size);
 }
+
 
 
 
