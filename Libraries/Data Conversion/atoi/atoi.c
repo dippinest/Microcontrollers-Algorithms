@@ -10,7 +10,7 @@ int8_t ATOI_String_To_Int8(char* string, uint8_t max_string_len)
 	if (string == NULL || max_string_len == 0)
 	{
 		return 0;
-	)
+	}
 	
 	int8_t  n = 0;
 	uint8_t i = 0;
@@ -370,6 +370,7 @@ uint64_t ATOI_String_To_UInt64(char* string, uint8_t max_string_len)
 
 
 #endif
+
 
 
 
