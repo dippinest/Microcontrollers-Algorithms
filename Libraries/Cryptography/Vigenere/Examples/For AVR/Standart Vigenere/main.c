@@ -42,7 +42,10 @@ int main(void)
 	const uint16_t key_size = strlen(key);
 	
 	
+
 	UART_StringFmt_Transmit("Open data:    %s\r\n\r\n", data);
+
+
 
 
 
@@ -52,10 +55,12 @@ int main(void)
 
 
 
+
 	Vigenere_Standart_Decrypt(alphabet, alphabet_size, data, data_size, key, key_size);
 
 	UART_StringFmt_Transmit("Decrypt data: %s\r\n\r\n", data);
 	
+
 	while (1)
 	{
 	}
