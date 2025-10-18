@@ -19,7 +19,8 @@
 //
 // Library with the implementation of the cryptographic block algorithm
 // of the GOST 28147-89 standard, developed in the USSR by the 8th directorate
-// of the KGB - Committee for State Security USSR (Wikipedia link: https://en.wikipedia.org/wiki/GOST_(block_cipher) ).
+// of the KGB - Committee for State Security USSR
+// (Wikipedia link: https://en.wikipedia.org/wiki/GOST_(block_cipher) ).
 //
 // This algorithm uses a Feistel network and is designed to work with
 // a 64-bit block and a 256-bit encryption key.
@@ -66,6 +67,7 @@ uint32_t GOST2814789_Decrypt_OFB(const void *init_vector_64bit, void *data, cons
 
 
 #endif
+
 
 
 
