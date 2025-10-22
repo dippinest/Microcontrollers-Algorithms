@@ -34,7 +34,7 @@
 
 typedef struct
 {
-	uint16_t key_pos_counter;
+	uint16_t key_char_counter;
 	
 	void *key;
 	uint16_t key_size;
@@ -90,7 +90,6 @@ uint16_t Vigenere_XOR_Bytes_Stream_Decrypt(void* data, uint16_t data_size, Vigen
 
 
 #endif
-
 
 
 
