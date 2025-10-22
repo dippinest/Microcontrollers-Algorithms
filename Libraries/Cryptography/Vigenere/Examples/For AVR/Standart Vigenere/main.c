@@ -13,6 +13,7 @@
 // знаков препинания и прочих печатных символов. Кроме того, порядок следования
 // символов может быть произвольным. Чем разнообразнее и запутаннее алфавит,
 // тем сложнее получится шифр.
+//
 // -------------------------------------------------------------------------------
 // this alphabet used for the Vizhiner cipher.
 // The characters of the input data test, if they are missing from
@@ -21,9 +22,15 @@
 // In the alphabet, in addition to alphabetic characters, you can identify
 // the symbols of numbers, punctuation marks, and other printed characters.
 // In addition, the order of the characters can be arbitrary. The more diverse
-// and confusing the alphabet, the more complex the cipher will be.
+// and confusing the alphabet, the more complex the cipher will be//
 char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ";
 
+
+// ключ шифрования
+//
+// -------------------------------------------------------------------------------
+// encryption key
+//
 char key[] = "Supersecret key!";
 
 
@@ -65,6 +72,7 @@ int main(void)
 	{
 	}
 }
+
 
 
 
