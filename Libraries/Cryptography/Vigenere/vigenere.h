@@ -42,33 +42,33 @@ typedef struct
 } Vigenere_Stream_Data_t;
 
 
-Vigenere_Stream_Data_t Vigenere_Stream_Data_Get_Object(void *key, uint16_t key_size);
+Vigenere_Stream_Data_t Vigenere_Stream_Data_Create_Object(void *key, uint16_t key_size);
 
 
 // ===============================================================================
 
 
-uint16_t Vigenere_Standart_Encrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, void* key, uint16_t key_size);
+uint16_t Vigenere_Standart_Encrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, void *key, uint16_t key_size);
 
-uint16_t Vigenere_Standart_Decrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, void* key, uint16_t key_size);
+uint16_t Vigenere_Standart_Decrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, void *key, uint16_t key_size);
 
 
-uint16_t Vigenere_Standart_Stream_Encrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+uint16_t Vigenere_Standart_Stream_Encrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
 
-uint16_t Vigenere_Standart_Stream_Decrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+uint16_t Vigenere_Standart_Stream_Decrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
 
 
 // ===============================================================================
 
 
-uint16_t Vigenere_Bytes_Encrypt(void* data, uint16_t data_size, void* key, uint16_t key_size);
+uint16_t Vigenere_Bytes_Encrypt(void *data, uint16_t data_size, void *key, uint16_t key_size);
 
-uint16_t Vigenere_Bytes_Decrypt(void* data, uint16_t data_size, void* key, uint16_t key_size);
+uint16_t Vigenere_Bytes_Decrypt(void *data, uint16_t data_size, void *key, uint16_t key_size);
 
 
-uint16_t Vigenere_Bytes_Stream_Encrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+uint16_t Vigenere_Bytes_Stream_Encrypt(void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
 
-uint16_t Vigenere_Bytes_Stream_Decrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+uint16_t Vigenere_Bytes_Stream_Decrypt(void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
 
 
 // ===============================================================================
@@ -79,14 +79,14 @@ uint16_t Vigenere_Bytes_Stream_Decrypt(void* data, uint16_t data_size, Vigenere_
 // -------------------------------------------------------------------------------
 // if, in the case of using this function, the key length is equal to or greater
 // than the length of the encrypted message, then encryption will be performed using the Vernam method
-uint16_t Vigenere_XOR_Bytes_Encrypt(void* data, uint16_t data_size, void* key, uint16_t key_size);
+uint16_t Vigenere_XOR_Bytes_Encrypt(void *data, uint16_t data_size, void *key, uint16_t key_size);
 
-uint16_t Vigenere_XOR_Bytes_Decrypt(void* data, uint16_t data_size, void* key, uint16_t key_size);
+uint16_t Vigenere_XOR_Bytes_Decrypt(void *data, uint16_t data_size, void *key, uint16_t key_size);
 
 
-uint16_t Vigenere_XOR_Bytes_Stream_Encrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+uint16_t Vigenere_XOR_Bytes_Stream_Encrypt(void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
 
-uint16_t Vigenere_XOR_Bytes_Stream_Decrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+uint16_t Vigenere_XOR_Bytes_Stream_Decrypt(void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
 
 
 #endif
