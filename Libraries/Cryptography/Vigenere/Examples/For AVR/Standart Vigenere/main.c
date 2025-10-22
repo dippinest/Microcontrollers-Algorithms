@@ -24,10 +24,10 @@
 // and confusing the alphabet, the more complex the cipher will be.
 char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ1234567890 ";
 
+char key[] = "Supersecret key!";
+
 
 char data[] = "This is my a supersecret data";
-
-char key[] = "Supersecret key!";
 
 
 int main(void)
@@ -65,6 +65,7 @@ int main(void)
 	{
 	}
 }
+
 
 
 
