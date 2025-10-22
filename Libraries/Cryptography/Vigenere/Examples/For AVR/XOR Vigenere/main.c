@@ -14,9 +14,19 @@ static void print_hex_data(char *data, uint16_t data_size)
 }
 
 
-
+// ключ шифрования
+//
+// -------------------------------------------------------------------------------
+// encryption key
+//
 char key[] = "Supersecret key!";
 
+
+// данные для шифрования
+//
+// -------------------------------------------------------------------------------
+// data for encryption
+//
 char data[] = "This is my a supersecret data";
 
 
@@ -25,8 +35,10 @@ int main(void)
 	UART_Initialize(9600, true, false);
 	
 	// получение значения длины строк, с которыми работаем, включая нуль-терминатор
+	//
 	// -------------------------------------------------------------------------------
 	// getting the length of the strings we are working with, including the null terminator
+	//
 	const uint16_t data_size = strlen(data) + 1;
 	const uint16_t key_size = strlen(key) + 1;
 	
@@ -36,9 +48,11 @@ int main(void)
 	
 	// если в случае использования данной функции длина ключа будет равна или больше длине
 	// шифруемого сообщения, то шифрование будет происходить по методу Вернама
+	//
 	// -------------------------------------------------------------------------------
 	// if, in the case of using this function, the key length is equal to or greater
 	// than the length of the encrypted message, then encryption will be performed using the Vernam method
+	//
 	Vigenere_XOR_Bytes_Encrypt(data, data_size, key, key_size);
 
 
@@ -52,6 +66,7 @@ int main(void)
 	{
 	}
 }
+
 
 
 
