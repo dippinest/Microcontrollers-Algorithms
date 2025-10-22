@@ -46,8 +46,10 @@ int main(void)
 	UART_Initialize(9600, true, false);
 	
 	// получение значения длины строк, с которыми работаем
+	//
 	// -------------------------------------------------------------------------------
 	// getting the length of the strings
+	//
 	const uint16_t alphabet_size = strlen(alphabet);
 	const uint16_t data_size = strlen(data);
 	const uint16_t key_size = strlen(key);
@@ -76,6 +78,7 @@ int main(void)
 	{
 	}
 }
+
 
 
 
