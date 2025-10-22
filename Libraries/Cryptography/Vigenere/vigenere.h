@@ -7,7 +7,9 @@
 // В стандартном варианте использует алфавит, содержащий символы ASCII
 // (алфавит задаётся индивидуально и может содержать произвольный набор символов).
 // В модифицированном варианте алгоритма работа производится с отдельными байтами,
-// используя процедуры сложения или фунции XOR
+// используя процедуры сложения или фунции XOR.
+//
+// Кроме того, данные типы шифра Виженера можно использовать в потоковом режиме
 //
 // -------------------------------------------------------------------------------
 //
@@ -17,6 +19,8 @@
 // (the alphabet is set individually and can contain any set of characters).
 // In a modified version of the algorithm, work is performed with individual bytes
 // using the addition or XOR function procedures.
+//
+// In addition, these types of Vigener cipher can be used in streaming mode
 //
 // ===============================================================================
 
@@ -28,13 +32,46 @@
 #include <stdint.h>
 
 
+typedef struct
+{
+	uint16_t key_pos_counter;
+	
+	void *key;
+	uint16_t key_size;
+	
+} Vigenere_Stream_Data_t;
+
+
+Vigenere_Stream_Data_t Vigenere_Stream_Data_Get_Object(void *key, uint16_t key_size);
+
+
+// ===============================================================================
+
+
 uint16_t Vigenere_Standart_Encrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, void* key, uint16_t key_size);
 
 uint16_t Vigenere_Standart_Decrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, void* key, uint16_t key_size);
 
+
+uint16_t Vigenere_Standart_Stream_Encrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+
+uint16_t Vigenere_Standart_Stream_Decrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+
+
+// ===============================================================================
+
+
 uint16_t Vigenere_Bytes_Encrypt(void* data, uint16_t data_size, void* key, uint16_t key_size);
 
 uint16_t Vigenere_Bytes_Decrypt(void* data, uint16_t data_size, void* key, uint16_t key_size);
+
+
+uint16_t Vigenere_Bytes_Stream_Encrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+
+uint16_t Vigenere_Bytes_Stream_Decrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+
+
+// ===============================================================================
 
 
 // если в случае использования данной функции длина ключа будет равна или больше длины
@@ -45,6 +82,11 @@ uint16_t Vigenere_Bytes_Decrypt(void* data, uint16_t data_size, void* key, uint1
 uint16_t Vigenere_XOR_Bytes_Encrypt(void* data, uint16_t data_size, void* key, uint16_t key_size);
 
 uint16_t Vigenere_XOR_Bytes_Decrypt(void* data, uint16_t data_size, void* key, uint16_t key_size);
+
+
+uint16_t Vigenere_XOR_Bytes_Stream_Encrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
+
+uint16_t Vigenere_XOR_Bytes_Stream_Decrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream);
 
 
 #endif
