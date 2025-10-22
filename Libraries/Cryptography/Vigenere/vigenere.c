@@ -2,7 +2,7 @@
 #include "vigenere.h"
 
 
-Vigenere_Stream_Data_t Vigenere_Stream_Data_Get_Object(void *key, uint16_t key_size)
+Vigenere_Stream_Data_t Vigenere_Stream_Data_Create_Object(void *key, uint16_t key_size)
 {
 	Vigenere_Stream_Data_t v_stream;
 	
@@ -18,7 +18,7 @@ Vigenere_Stream_Data_t Vigenere_Stream_Data_Get_Object(void *key, uint16_t key_s
 // ===============================================================================
 
 
-static int16_t _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(void* alphabet, uint8_t alphabet_size, char b)
+static int16_t _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(void *alphabet, uint8_t alphabet_size, char b)
 {
 	for (int16_t i = 0; i < alphabet_size; ++i)
 	{
@@ -35,7 +35,7 @@ static int16_t _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(void* alphabet
 // ===============================================================================
 
 
-uint16_t Vigenere_Standart_Encrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, void* key, uint16_t key_size)
+uint16_t Vigenere_Standart_Encrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, void *key, uint16_t key_size)
 {
 	uint16_t i = 0;
 
@@ -69,7 +69,7 @@ uint16_t Vigenere_Standart_Encrypt(void* alphabet, uint8_t alphabet_size, void* 
 }
 
 
-uint16_t Vigenere_Standart_Decrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, void* key, uint16_t key_size)
+uint16_t Vigenere_Standart_Decrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, void *key, uint16_t key_size)
 {
 	uint16_t i = 0;
 
@@ -104,7 +104,7 @@ uint16_t Vigenere_Standart_Decrypt(void* alphabet, uint8_t alphabet_size, void* 
 
 
 
-uint16_t Vigenere_Standart_Stream_Encrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
+uint16_t Vigenere_Standart_Stream_Encrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
 {
 	uint16_t i = 0;
 	
@@ -145,7 +145,7 @@ uint16_t Vigenere_Standart_Stream_Encrypt(void* alphabet, uint8_t alphabet_size,
 }
 
 
-uint16_t Vigenere_Standart_Stream_Decrypt(void* alphabet, uint8_t alphabet_size, void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
+uint16_t Vigenere_Standart_Stream_Decrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
 {
 	uint16_t i = 0;
 	
@@ -190,7 +190,7 @@ uint16_t Vigenere_Standart_Stream_Decrypt(void* alphabet, uint8_t alphabet_size,
 // ===============================================================================
 
 
-uint16_t Vigenere_Bytes_Encrypt(void* data, uint16_t data_size, void* key, uint16_t key_size)
+uint16_t Vigenere_Bytes_Encrypt(void *data, uint16_t data_size, void *key, uint16_t key_size)
 {
 	uint16_t i = 0;
 
@@ -203,7 +203,7 @@ uint16_t Vigenere_Bytes_Encrypt(void* data, uint16_t data_size, void* key, uint1
 }
 
 
-uint16_t Vigenere_Bytes_Decrypt(void* data, uint16_t data_size, void* key, uint16_t key_size)
+uint16_t Vigenere_Bytes_Decrypt(void *data, uint16_t data_size, void *key, uint16_t key_size)
 {
 	uint16_t i = 0;
 
@@ -217,7 +217,7 @@ uint16_t Vigenere_Bytes_Decrypt(void* data, uint16_t data_size, void* key, uint1
 
 
 
-uint16_t Vigenere_Bytes_Stream_Encrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
+uint16_t Vigenere_Bytes_Stream_Encrypt(void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
 {
 	uint16_t i = 0;
 	
@@ -238,7 +238,7 @@ uint16_t Vigenere_Bytes_Stream_Encrypt(void* data, uint16_t data_size, Vigenere_
 }
 
 
-uint16_t Vigenere_Bytes_Stream_Decrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
+uint16_t Vigenere_Bytes_Stream_Decrypt(void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
 {
 	uint16_t i = 0;
 	
@@ -262,7 +262,7 @@ uint16_t Vigenere_Bytes_Stream_Decrypt(void* data, uint16_t data_size, Vigenere_
 // ===============================================================================
 
 
-uint16_t Vigenere_XOR_Bytes_Encrypt(void* data, uint16_t data_size, void* key, uint16_t key_size)
+uint16_t Vigenere_XOR_Bytes_Encrypt(void *data, uint16_t data_size, void *key, uint16_t key_size)
 {
 	uint16_t i = 0;
 
@@ -275,14 +275,14 @@ uint16_t Vigenere_XOR_Bytes_Encrypt(void* data, uint16_t data_size, void* key, u
 }
 
 
-uint16_t Vigenere_XOR_Bytes_Decrypt(void* data, uint16_t data_size, void* key, uint16_t key_size)
+uint16_t Vigenere_XOR_Bytes_Decrypt(void *data, uint16_t data_size, void *key, uint16_t key_size)
 {
 	return Vigenere_XOR_Bytes_Encrypt(data, data_size, key, key_size);
 }
 
 
 
-uint16_t Vigenere_XOR_Bytes_Stream_Encrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
+uint16_t Vigenere_XOR_Bytes_Stream_Encrypt(void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
 {
 	uint16_t i = 0;
 	
@@ -303,7 +303,7 @@ uint16_t Vigenere_XOR_Bytes_Stream_Encrypt(void* data, uint16_t data_size, Vigen
 }
 
 
-uint16_t Vigenere_XOR_Bytes_Stream_Decrypt(void* data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
+uint16_t Vigenere_XOR_Bytes_Stream_Decrypt(void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
 {
 	return Vigenere_XOR_Bytes_Stream_Encrypt(data, data_size, v_stream);
 }
