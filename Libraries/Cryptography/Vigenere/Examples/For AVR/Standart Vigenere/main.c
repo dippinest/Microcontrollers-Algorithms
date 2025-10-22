@@ -33,7 +33,11 @@ char alphabet[] = "abcdefghijklmnopqrstuvwxyzABCDEFGHIJKLMNOPQRSTUVWXYZ123456789
 //
 char key[] = "Supersecret key!";
 
-
+// данные для шифрования
+//
+// -------------------------------------------------------------------------------
+// data for encryption
+//
 char data[] = "This is my a supersecret data";
 
 
@@ -72,6 +76,7 @@ int main(void)
 	{
 	}
 }
+
 
 
 
