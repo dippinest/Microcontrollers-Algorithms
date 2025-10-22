@@ -14,9 +14,11 @@ static void print_hex_data(char *data, uint16_t data_size)
 }
 
 
-char data[] = "This is my a supersecret data";
-
 char key[] = "Supersecret key!";
+
+
+
+char data[] = "This is my a supersecret data";
 
 
 int main(void)
@@ -51,5 +53,6 @@ int main(void)
 	{
 	}
 }
+
 
 
