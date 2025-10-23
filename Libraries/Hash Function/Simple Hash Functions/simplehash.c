@@ -2,7 +2,7 @@
 #include "simplehash.h"
 
 
-uint32_t SimpleHash_FNV(const void *data, uint32_t data_size)
+uint32_t SimpleHash_FNV(void *data, uint32_t data_size)
 {
 	#define FNV_32_PRIME 0x01000193
 	
@@ -19,7 +19,7 @@ uint32_t SimpleHash_FNV(const void *data, uint32_t data_size)
 }
 
 
-uint32_t SimpleHash_Jenkins(const void *data, uint32_t data_size)
+uint32_t SimpleHash_Jenkins(void *data, uint32_t data_size)
 {
 	uint32_t hash = 0;
 
@@ -37,5 +37,22 @@ uint32_t SimpleHash_Jenkins(const void *data, uint32_t data_size)
 	return hash;
 }
 
+uint32_t SimpleHash_PJWHash(void *data, uint32_t data_size)
+{
+	uint32_t hash = 0;
+	uint32_t test = 0;
+	
+	for (uint32_t i = 0; i < data_size; ++i)
+	{
+		hash = (hash << 4) + *((uint8_t*)data);
+		
+		if ((test = hash & 0xf0000000) != 0)
+		{
+			hash = ((hash ^ (test >> 24)) & (0xfffffff));
+		}
+	}
+	
+	return hash;
+}
 
 
