@@ -38,7 +38,6 @@ static int16_t _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(void *alphabet
 uint16_t Vigenere_Standart_Encrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, void *key, uint16_t key_size)
 {
 	uint16_t i = 0;
-	uint16_t j = 0;
 
 	uint8_t new_data_char_pos = 0;
 	
@@ -50,7 +49,7 @@ uint16_t Vigenere_Standart_Encrypt(void *alphabet, uint8_t alphabet_size, void *
 	{
 		data_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)data)[i]);
 
-		key_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)key)[j % key_size]);
+		key_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)key)[i % key_size]);
 
 
 		if (data_char_pos >= 0 && key_char_pos >= 0)
@@ -61,8 +60,6 @@ uint16_t Vigenere_Standart_Encrypt(void *alphabet, uint8_t alphabet_size, void *
 			{
 				new_data_char_pos -= alphabet_size;
 			}
-			
-			++j;
 
 			((char*)data)[i] = ((char*)alphabet)[new_data_char_pos];
 		}
@@ -75,7 +72,6 @@ uint16_t Vigenere_Standart_Encrypt(void *alphabet, uint8_t alphabet_size, void *
 uint16_t Vigenere_Standart_Decrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, void *key, uint16_t key_size)
 {
 	uint16_t i = 0;
-	uint16_t j = 0;
 
 	uint8_t new_data_char_pos = 0;
 	
@@ -87,7 +83,7 @@ uint16_t Vigenere_Standart_Decrypt(void *alphabet, uint8_t alphabet_size, void *
 	{
 		data_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)data)[i]);
 
-		key_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)key)[j % key_size]);
+		key_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)key)[i % key_size]);
 
 
 		if (data_char_pos >= 0 && key_char_pos >= 0)
@@ -98,8 +94,6 @@ uint16_t Vigenere_Standart_Decrypt(void *alphabet, uint8_t alphabet_size, void *
 			{
 				new_data_char_pos += alphabet_size;
 			}
-			
-			++j;
 
 			((char*)data)[i] = ((char*)alphabet)[new_data_char_pos];
 		}
@@ -113,7 +107,6 @@ uint16_t Vigenere_Standart_Decrypt(void *alphabet, uint8_t alphabet_size, void *
 uint16_t Vigenere_Standart_Stream_Encrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
 {
 	uint16_t i = 0;
-	uint16_t j = 0;
 	
 	uint16_t key_char_counter = v_stream->key_char_counter;
 	
@@ -128,7 +121,7 @@ uint16_t Vigenere_Standart_Stream_Encrypt(void *alphabet, uint8_t alphabet_size,
 		data_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)data)[i]);
 
 
-		key_char_counter = (j + (v_stream->key_char_counter)) % (v_stream->key_size);
+		key_char_counter = (i + (v_stream->key_char_counter)) % (v_stream->key_size);
 
 		key_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)(v_stream->key))[key_char_counter]);
 		
@@ -141,8 +134,6 @@ uint16_t Vigenere_Standart_Stream_Encrypt(void *alphabet, uint8_t alphabet_size,
 			{
 				new_data_char_pos -= alphabet_size;
 			}
-			
-			++j;
 
 			((char*)data)[i] = ((char*)alphabet)[new_data_char_pos];
 		}
@@ -157,7 +148,6 @@ uint16_t Vigenere_Standart_Stream_Encrypt(void *alphabet, uint8_t alphabet_size,
 uint16_t Vigenere_Standart_Stream_Decrypt(void *alphabet, uint8_t alphabet_size, void *data, uint16_t data_size, Vigenere_Stream_Data_t *v_stream)
 {
 	uint16_t i = 0;
-	uint16_t j = 0;
 	
 	uint16_t key_char_counter = v_stream->key_char_counter;
 	
@@ -172,7 +162,7 @@ uint16_t Vigenere_Standart_Stream_Decrypt(void *alphabet, uint8_t alphabet_size,
 		data_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)data)[i]);
 		
 		
-		key_char_counter = (j + (v_stream->key_char_counter)) % (v_stream->key_size);
+		key_char_counter = (i + (v_stream->key_char_counter)) % (v_stream->key_size);
 
 		key_char_pos = _Vigenere_Find_Index_Of_First_Occurrence_Of_A_Byte(alphabet, alphabet_size, ((char*)(v_stream->key))[key_char_counter]);
 		
@@ -185,8 +175,6 @@ uint16_t Vigenere_Standart_Stream_Decrypt(void *alphabet, uint8_t alphabet_size,
 			{
 				new_data_char_pos += alphabet_size;
 			}
-			
-			++j;
 
 			((char*)data)[i] = ((char*)alphabet)[new_data_char_pos];
 		}
@@ -319,6 +307,5 @@ uint16_t Vigenere_XOR_Bytes_Stream_Decrypt(void *data, uint16_t data_size, Vigen
 {
 	return Vigenere_XOR_Bytes_Stream_Encrypt(data, data_size, v_stream);
 }
-
 
 
