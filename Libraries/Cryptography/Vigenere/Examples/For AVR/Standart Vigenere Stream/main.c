@@ -14,12 +14,12 @@
 //
 // -------------------------------------------------------------------------------
 // definitions of instances of structures containing data
-// for the operation of the Vigener cipher in streaming mode
+// for the operation of the Vigenere cipher in streaming mode
 //
 Vigenere_Stream_Data_t v_stream_encrypt, v_stream_decrypt;
 
 
-// алфавит, использующийся для шифра Вижинера.
+// алфавит, использующийся для шифра Виженера.
 // Символы теста входных данных, если они отсутствуют в алфавите,
 // шифроваться не будут (аналогично с символами ключа).
 //
@@ -29,7 +29,7 @@ Vigenere_Stream_Data_t v_stream_encrypt, v_stream_decrypt;
 // тем сложнее получится шифр.
 //
 // -------------------------------------------------------------------------------
-// this alphabet used for the Vizhiner cipher.
+// this alphabet used for the Vigеnere cipher.
 // The characters of the input data test, if they are missing from
 // the alphabet, will not be encrypted (similar to the characters of the key).
 //
@@ -162,6 +162,7 @@ int main(void)
 	{
 	}
 }
+
 
 
 
