@@ -9,7 +9,17 @@
 // В модифицированном варианте алгоритма работа производится с отдельными байтами,
 // используя процедуры сложения или фунции XOR.
 //
+// В данной реализации шифра Виженера те символы в открытом тексте,
+// которые отсутствуют в алфавите игнорируются и не шифруются. В тоже время такие
+// символы в ключе шифрования влияют на процесс шифрования, что усиливает
+// сложность дешифрования
+//
 // Кроме того, данные типы шифра Виженера можно использовать в потоковом режиме
+//
+//
+// Внимание! Данный шифр в совремепнных условиях не является криптостойким,
+// библиотека была написана just for fun. Для серьёзных применений рекомендуется
+// использовать более совершенные алгоритмы шифрования
 //
 // -------------------------------------------------------------------------------
 //
@@ -20,7 +30,17 @@
 // In a modified version of the algorithm, work is performed with individual bytes
 // using the addition or XOR function procedures.
 //
+// In this implementation of the Vigener cipher, those characters in
+// the plaintext that are missing from the alphabet are ignored and not encrypted.
+// At the same time, such characters in the encryption key affect the encryption
+// process, which increases the complexity of decryption.
+//
 // In addition, these types of Vigener cipher can be used in streaming mode
+//
+//
+// Attention! This cipher is not cryptographically secure in modern conditions,
+// the library was written just for fun. For serious applications,
+// it is recommended to use more advanced encryption algorithms.
 //
 // ===============================================================================
 
@@ -90,6 +110,7 @@ uint16_t Vigenere_XOR_Bytes_Stream_Decrypt(void *data, uint16_t data_size, Vigen
 
 
 #endif
+
 
 
 
