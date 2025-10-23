@@ -28,14 +28,15 @@
 #include <stdint.h>
 
 
-uint32_t SimpleHash_FNV(const void* data, uint32_t data_size);
+uint32_t SimpleHash_FNV(const void *data, uint32_t data_size);
 
-uint32_t SimpleHash_Jenkins(const void* data, uint32_t data_size);
+uint32_t SimpleHash_Jenkins(const void *data, uint32_t data_size);
 
 
 
 
 #endif
+
 
 
 
