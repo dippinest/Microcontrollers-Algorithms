@@ -2,19 +2,19 @@
 
 // ===============================================================================
 //
-// Эта библиотека содержит реализации простых алгоритмов хештрования.
-// На данный момент есть реализации следующих алгоритмов:
+// Р­С‚Р° Р±РёР±Р»РёРѕС‚РµРєР° СЃРѕРґРµСЂР¶РёС‚ СЂРµР°Р»РёР·Р°С†РёРё РїСЂРѕСЃС‚С‹С… Р°Р»РіРѕСЂРёС‚РјРѕРІ С…РµС€С‚СЂРѕРІР°РЅРёСЏ.
+// РќР° РґР°РЅРЅС‹Р№ РјРѕРјРµРЅС‚ РµСЃС‚СЊ СЂРµР°Р»РёР·Р°С†РёРё СЃР»РµРґСѓСЋС‰РёС… Р°Р»РіРѕСЂРёС‚РјРѕРІ:
 //
-// 1. FNV (статья в Википедии: https://ru.wikipedia.org/wiki/FNV)
+// 1. FNV (СЃС‚Р°С‚СЊСЏ РІ Р’РёРєРёРїРµРґРёРё: https://ru.wikipedia.org/wiki/FNV)
 //
-// 2. Jenkins (статья в Википедии: https://ru.wikipedia.org/wiki/Хеш-функция_Дженкинса)
+// 2. Jenkins (СЃС‚Р°С‚СЊСЏ РІ Р’РёРєРёРїРµРґРёРё: https://ru.wikipedia.org/wiki/РҐРµС€-С„СѓРЅРєС†РёСЏ_Р”Р¶РµРЅРєРёРЅСЃР°)
 //
 // -------------------------------------------------------------------------------
 //
 // This library contains implementations of simple hashing algorithms.
 // Currently, there are implementations of the following algorithms:
 //
-// 1. FNV (Wikipedia article: https://en.wikipedia.org/wiki/Fowler–Noll–Vo_hash_function)
+// 1. FNV (Wikipedia article: https://en.wikipedia.org/wiki/FowlerвЂ“NollвЂ“Vo_hash_function)
 //
 // 2. Jenkins (Wikipedia article: https://en.wikipedia.org/wiki/Jenkins_hash_function)
 //
@@ -36,6 +36,7 @@ uint32_t SimpleHash_Jenkins(const void* data, uint32_t data_size);
 
 
 #endif
+
 
 
 
