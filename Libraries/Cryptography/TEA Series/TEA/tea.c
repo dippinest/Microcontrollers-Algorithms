@@ -76,7 +76,6 @@ uint32_t TEA_Decrypt_ECB(void *data, const uint32_t data_size, const void *key_1
 uint32_t TEA_Encrypt_CBC(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_128bit)
 {
 	uint8_t *vector = (uint8_t*)init_vector_64bit;
-	
 
 	uint32_t num_of_encrypted_bytes = 0;
 	
@@ -262,5 +261,6 @@ uint32_t TEA_Decrypt_OFB(void *init_vector_64bit, void *data, const uint32_t dat
 {
 	return TEA_Encrypt_OFB(init_vector_64bit, data, data_size, key_128bit);
 }
+
 
 
