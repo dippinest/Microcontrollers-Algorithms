@@ -104,7 +104,6 @@ uint32_t TEA_Decrypt_CBC(void *init_vector_64bit, void *data, const uint32_t dat
 	uint8_t *vector_1 = (uint8_t*)init_vector_64bit;
 	
 	uint8_t vector_2[8];
-	
 
 	uint32_t num_of_decrypted_bytes = 0;
 	
@@ -136,7 +135,6 @@ uint32_t TEA_Encrypt_PCBC(void *init_vector_64bit, void *data, const uint32_t da
 	uint8_t *vector_1 = (uint8_t*)init_vector_64bit;
 	
 	uint8_t vector_2[8];
-	
 
 	uint32_t num_of_encrypted_bytes = 0;
 	
@@ -165,7 +163,6 @@ uint32_t TEA_Decrypt_PCBC(void *init_vector_64bit, void *data, const uint32_t da
 	uint8_t *vector_1 = (uint8_t*)init_vector_64bit;
 	
 	uint8_t vector_2[8];
-	
 
 	uint32_t num_of_decrypted_bytes = 0;
 	
@@ -192,7 +189,6 @@ uint32_t TEA_Decrypt_PCBC(void *init_vector_64bit, void *data, const uint32_t da
 uint32_t TEA_Encrypt_CFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_128bit)
 {
 	uint8_t *vector = (uint8_t*)init_vector_64bit;
-	
 
 	uint32_t num_of_encrypted_bytes = 0;
 	
@@ -216,7 +212,6 @@ uint32_t TEA_Decrypt_CFB(void *init_vector_64bit, void *data, const uint32_t dat
 	uint8_t *vector_1 = (uint8_t*)init_vector_64bit;
 	
 	uint8_t vector_2[8];
-	
 
 	uint32_t num_of_decrypted_bytes = 0;
 	
@@ -246,7 +241,6 @@ uint32_t TEA_Decrypt_CFB(void *init_vector_64bit, void *data, const uint32_t dat
 uint32_t TEA_Encrypt_OFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_128bit)
 {
 	uint8_t *vector = (uint8_t*)init_vector_64bit;
-	
 
 	uint32_t num_of_encrypted_bytes = 0;
 	
