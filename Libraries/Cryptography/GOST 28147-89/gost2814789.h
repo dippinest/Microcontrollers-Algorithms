@@ -12,15 +12,14 @@
 // В данной библиотеке реализованы режимы шифрования ECB, CBC, PCBC, CFB и OFB.
 //
 // Следует отметить, что S-блок замены 4-х битных элементов в алгоритме
-// нестандартизирован, поэтому вы можете заменить его на свой.
+// нестандартизирован, поэтому Вы можете заменить его на свой.
 // Я взял значения S-блока из статьи в Википедии.
 //
 // -------------------------------------------------------------------------------
 //
 // Library with the implementation of the cryptographic block algorithm
 // of the GOST 28147-89 standard, developed in the USSR by the 8th directorate
-// of the KGB - Committee for State Security USSR
-// (Wikipedia link: https://en.wikipedia.org/wiki/GOST_(block_cipher) ).
+// of the KGB (Wikipedia link: https://en.wikipedia.org/wiki/GOST_(block_cipher) ).
 //
 // This algorithm uses a Feistel network and is designed to work with
 // a 64-bit block and a 256-bit encryption key.
@@ -49,26 +48,24 @@ uint32_t GOST2814789_Encrypt_ECB(void *data, const uint32_t data_size, const voi
 
 uint32_t GOST2814789_Decrypt_ECB(void *data, const uint32_t data_size, const void *key_256bit);
 
-uint32_t GOST2814789_Encrypt_CBC(const void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
+uint32_t GOST2814789_Encrypt_CBC(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
-uint32_t GOST2814789_Decrypt_CBC(const void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
+uint32_t GOST2814789_Decrypt_CBC(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
-uint32_t GOST2814789_Encrypt_PCBC(const void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
+uint32_t GOST2814789_Encrypt_PCBC(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
-uint32_t GOST2814789_Decrypt_PCBC(const void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
+uint32_t GOST2814789_Decrypt_PCBC(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
-uint32_t GOST2814789_Encrypt_CFB(const void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
+uint32_t GOST2814789_Encrypt_CFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
-uint32_t GOST2814789_Decrypt_CFB(const void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
+uint32_t GOST2814789_Decrypt_CFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
-uint32_t GOST2814789_Encrypt_OFB(const void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
+uint32_t GOST2814789_Encrypt_OFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
-uint32_t GOST2814789_Decrypt_OFB(const void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
+uint32_t GOST2814789_Decrypt_OFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
 
 #endif
-
-
 
 
 
