@@ -46,6 +46,7 @@ static void _XTEA1_64bit_Block_Decrypt(void *_64bit_block, const void *key_128bi
 uint32_t XTEA1_Encrypt_ECB(void *data, const uint32_t data_size, const void *key_128bit, uint8_t num_of_rounds)
 {
 	uint32_t num_of_encrypted_bytes = 0;
+	
 
 	for (; num_of_encrypted_bytes < data_size; num_of_encrypted_bytes += 8)
 	{
@@ -58,6 +59,7 @@ uint32_t XTEA1_Encrypt_ECB(void *data, const uint32_t data_size, const void *key
 uint32_t XTEA1_Decrypt_ECB(void *data, const uint32_t data_size, const void *key_128bit, uint8_t num_of_rounds)
 {
 	uint32_t num_of_decrypted_bytes = 0;
+	
 
 	for (; num_of_decrypted_bytes < data_size; num_of_decrypted_bytes += 8)
 	{
@@ -255,5 +257,6 @@ uint32_t XTEA1_Decrypt_OFB(void *init_vector_64bit, void *data, const uint32_t d
 {
 	return XTEA1_Encrypt_OFB(init_vector_64bit, data, data_size, key_128bit, num_of_rounds);
 }
+
 
 
