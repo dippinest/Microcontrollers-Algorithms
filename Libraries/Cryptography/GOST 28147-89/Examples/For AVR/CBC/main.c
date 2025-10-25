@@ -21,12 +21,13 @@ char data[DATA_SIZE] = "This is my a supersecret data";
 const char key[KEY_SIZE]   = "Supersecret key!";
 
 
-// длина инициализирующего вектора должна быть равна 8 байтам (64 битам)!
+// длина инициализирующих векторов должна быть равна 8 байтам (64 битам)!
 // -------------------------------------------------------------------------------
-// length of the initializing vector must be 8 bytes (64 bits)!
+// length of the initializing vectors must be 8 bytes (64 bits)!
 #define INITIAL_VECTOR_SIZE  8
 
-char initial_vector_64bit[INITIAL_VECTOR_SIZE] = "1234567";
+char initial_encrypt_vector_64bit[INITIAL_VECTOR_SIZE] = "1234567";
+char initial_decrypt_vector_64bit[INITIAL_VECTOR_SIZE] = "1234567";
 
 
 void print_data(void *data, uint16_t data_size)
@@ -44,16 +45,15 @@ int main(void)
 	
 	UART_StringFmt_Transmit("\r\n\r\nOpen data:    "); print_data(data, DATA_SIZE);
 	
-	uint16_t encrypt_data_size = GOST2814789_Encrypt_CBC(initial_vector_64bit, data, DATA_SIZE, key);
+	uint16_t encrypt_data_size = GOST2814789_Encrypt_CBC(initial_encrypt_vector_64bit, data, DATA_SIZE, key);
 	UART_StringFmt_Transmit("\r\n\r\nEncrypt data: "); print_data(data, encrypt_data_size);
 	
-	uint16_t decrypt_data_size = GOST2814789_Decrypt_CBC(initial_vector_64bit, data, encrypt_data_size, key);
+	uint16_t decrypt_data_size = GOST2814789_Decrypt_CBC(initial_decrypt_vector_64bit, data, encrypt_data_size, key);
 	UART_StringFmt_Transmit("\r\n\r\nDecrypt data: "); print_data(data, decrypt_data_size);
 	
 	while (1)
 	{
 	}
 }
-
 
 
