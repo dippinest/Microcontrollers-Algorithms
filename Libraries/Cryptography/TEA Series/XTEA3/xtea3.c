@@ -21,10 +21,10 @@ static void _XTEA3_128bit_Block_Encrypt(void* _128bit_block, const void* key_256
 	for (uint8_t i = 0; i < num_of_rounds; ++i)
 	{
 		v0 += (((v1 << 4) + _rol(((uint32_t*)key_256bit)[(sum % 4) + 4], v1)) ^
-			(v3 + sum) ^ ((v1 >> 5) + _rol(((uint32_t*)key_256bit)[sum % 4], v1 >> 27)));
+		(v3 + sum) ^ ((v1 >> 5) + _rol(((uint32_t*)key_256bit)[sum % 4], v1 >> 27)));
 		sum += 0x9E3779B9;
 		v2 += (((v3 << 4) + _rol(((uint32_t*)key_256bit)[((sum >> 11) % 4) + 4], v3)) ^
-			(v1 + sum) ^ ((v3 >> 5) + _rol(((uint32_t*)key_256bit)[(sum >> 11) % 4], v3 >> 27)));
+		(v1 + sum) ^ ((v3 >> 5) + _rol(((uint32_t*)key_256bit)[(sum >> 11) % 4], v3 >> 27)));
 
 		vv = v0;
 		v0 = v1;
@@ -59,10 +59,10 @@ static void _XTEA3_128bit_Block_Decrypt(void* _128bit_block, const void* key_256
 		v0 = vv;
 
 		v2 -= (((v3 << 4) + _rol(((uint32_t*)key_256bit)[((sum >> 11) % 4) + 4], v3)) ^
-			(v1 + sum) ^ ((v3 >> 5) + _rol(((uint32_t*)key_256bit)[(sum >> 11) % 4], v3 >> 27)));
+		(v1 + sum) ^ ((v3 >> 5) + _rol(((uint32_t*)key_256bit)[(sum >> 11) % 4], v3 >> 27)));
 		sum -= 0x9E3779B9;
 		v0 -= (((v1 << 4) + _rol(((uint32_t*)key_256bit)[(sum % 4) + 4], v1)) ^
-			(v3 + sum) ^ ((v1 >> 5) + _rol(((uint32_t*)key_256bit)[sum % 4], v1 >> 27)));
+		(v3 + sum) ^ ((v1 >> 5) + _rol(((uint32_t*)key_256bit)[sum % 4], v1 >> 27)));
 	}
 
 	((uint32_t*)_128bit_block)[3] = v3 - ((uint32_t*)key_256bit)[3];
@@ -74,6 +74,7 @@ static void _XTEA3_128bit_Block_Decrypt(void* _128bit_block, const void* key_256
 uint32_t XTEA3_Encrypt_ECB(void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
 	uint32_t num_of_encrypted_bytes = 0;
+	
 
 	for (; num_of_encrypted_bytes < data_size; num_of_encrypted_bytes += 16)
 	{
@@ -86,6 +87,7 @@ uint32_t XTEA3_Encrypt_ECB(void* data, const uint32_t data_size, const void* key
 uint32_t XTEA3_Decrypt_ECB(void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
 	uint32_t num_of_decrypted_bytes = 0;
+	
 
 	for (; num_of_decrypted_bytes < data_size; num_of_decrypted_bytes += 16)
 	{
@@ -95,16 +97,12 @@ uint32_t XTEA3_Decrypt_ECB(void* data, const uint32_t data_size, const void* key
 	return num_of_decrypted_bytes;
 }
 
-uint32_t XTEA3_Encrypt_CBC(const void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
+uint32_t XTEA3_Encrypt_CBC(void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
-	uint8_t vector[16];
-
-	for (uint8_t i = 0; i < 16; ++i)
-	{
-		vector[i] = ((uint8_t*)init_vector_128bit)[i];
-	}
+	uint8_t *vector = (uint8_t*)init_vector_128bit;
 
 	uint32_t num_of_encrypted_bytes = 0;
+	
 
 	for (; num_of_encrypted_bytes < data_size; num_of_encrypted_bytes += 16)
 	{
@@ -124,17 +122,14 @@ uint32_t XTEA3_Encrypt_CBC(const void* init_vector_128bit, void* data, const uin
 	return num_of_encrypted_bytes;
 }
 
-uint32_t XTEA3_Decrypt_CBC(const void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
+uint32_t XTEA3_Decrypt_CBC(void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
-	uint8_t vector_1[16];
+	uint8_t *vector_1 = (uint8_t*)init_vector_128bit;
+	
 	uint8_t vector_2[16];
 
 	uint32_t num_of_decrypted_bytes = 0;
-
-	for (uint8_t i = 0; i < 16; ++i)
-	{
-		vector_1[i] = ((uint8_t*)init_vector_128bit)[i];
-	}
+	
 
 	for (; num_of_decrypted_bytes < data_size; num_of_decrypted_bytes += 16)
 	{
@@ -158,17 +153,14 @@ uint32_t XTEA3_Decrypt_CBC(const void* init_vector_128bit, void* data, const uin
 	return num_of_decrypted_bytes;
 }
 
-uint32_t XTEA3_Encrypt_PCBC(const void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
+uint32_t XTEA3_Encrypt_PCBC(void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
-	uint8_t vector_1[16];
+	uint8_t *vector_1 = (uint8_t*)init_vector_128bit;
+	
 	uint8_t vector_2[16];
 
-	for (uint8_t i = 0; i < 16; ++i)
-	{
-		vector_1[i] = ((uint8_t*)init_vector_128bit)[i];
-	}
-
 	uint32_t num_of_encrypted_bytes = 0;
+	
 
 	for (; num_of_encrypted_bytes < data_size; num_of_encrypted_bytes += 16)
 	{
@@ -189,17 +181,14 @@ uint32_t XTEA3_Encrypt_PCBC(const void* init_vector_128bit, void* data, const ui
 	return num_of_encrypted_bytes;
 }
 
-uint32_t XTEA3_Decrypt_PCBC(const void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
+uint32_t XTEA3_Decrypt_PCBC(void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
-	uint8_t vector_1[16];
+	uint8_t *vector_1 = (uint8_t*)init_vector_128bit;
+	
 	uint8_t vector_2[16];
 
-	for (uint8_t i = 0; i < 16; ++i)
-	{
-		vector_1[i] = ((uint8_t*)init_vector_128bit)[i];
-	}
-
 	uint32_t num_of_decrypted_bytes = 0;
+	
 
 	for (; num_of_decrypted_bytes < data_size; num_of_decrypted_bytes += 16)
 	{
@@ -220,16 +209,12 @@ uint32_t XTEA3_Decrypt_PCBC(const void* init_vector_128bit, void* data, const ui
 	return num_of_decrypted_bytes;
 }
 
-uint32_t XTEA3_Encrypt_CFB(const void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
+uint32_t XTEA3_Encrypt_CFB(void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
-	uint8_t vector[16];
-
-	for (uint8_t i = 0; i < 16; ++i)
-	{
-		vector[i] = ((uint8_t*)init_vector_128bit)[i];
-	}
+	uint8_t *vector = (uint8_t*)init_vector_128bit;
 
 	uint32_t num_of_encrypted_bytes = 0;
+	
 
 	for (; num_of_encrypted_bytes < data_size; num_of_encrypted_bytes += 16)
 	{
@@ -245,17 +230,14 @@ uint32_t XTEA3_Encrypt_CFB(const void* init_vector_128bit, void* data, const uin
 	return num_of_encrypted_bytes;
 }
 
-uint32_t XTEA3_Decrypt_CFB(const void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
+uint32_t XTEA3_Decrypt_CFB(void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
-	uint8_t vector_1[16];
+	uint8_t *vector_1 = (uint8_t*)init_vector_128bit;
+	
 	uint8_t vector_2[16];
 
 	uint32_t num_of_decrypted_bytes = 0;
-
-	for (uint8_t i = 0; i < 16; ++i)
-	{
-		vector_1[i] = ((uint8_t*)init_vector_128bit)[i];
-	}
+	
 
 	for (; num_of_decrypted_bytes < data_size; num_of_decrypted_bytes += 16)
 	{
@@ -279,16 +261,12 @@ uint32_t XTEA3_Decrypt_CFB(const void* init_vector_128bit, void* data, const uin
 	return num_of_decrypted_bytes;
 }
 
-uint32_t XTEA3_Encrypt_OFB(const void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
+uint32_t XTEA3_Encrypt_OFB(void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
-	uint8_t vector[16];
-
-	for (uint8_t i = 0; i < 16; ++i)
-	{
-		vector[i] = ((uint8_t*)init_vector_128bit)[i];
-	}
+	uint8_t *vector = (uint8_t*)init_vector_128bit;
 
 	uint32_t num_of_encrypted_bytes = 0;
+	
 
 	for (; num_of_encrypted_bytes < data_size; num_of_encrypted_bytes += 16)
 	{
@@ -303,12 +281,9 @@ uint32_t XTEA3_Encrypt_OFB(const void* init_vector_128bit, void* data, const uin
 	return num_of_encrypted_bytes;
 }
 
-uint32_t XTEA3_Decrypt_OFB(const void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
+uint32_t XTEA3_Decrypt_OFB(void* init_vector_128bit, void* data, const uint32_t data_size, const void* key_128bit, uint8_t num_of_rounds)
 {
 	return XTEA3_Encrypt_OFB(init_vector_128bit, data, data_size, key_128bit, num_of_rounds);
 }
-
-
-
 
 
