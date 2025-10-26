@@ -9,9 +9,9 @@
 #include "xtea3.h"
 
 
-// длина шифруемого блока должна быть равна 16 байтам (128 битам)!
+// длина блока данных должна быть равна 16 байтам (128 битам)!
 // -------------------------------------------------------------------------------
-// encrypted block length must be 16 bytes (128 bits)!
+// data block length must be 16 bytes (128 bits)!
 #define DATA_SIZE 16
 
 char data1[DATA_SIZE];
@@ -97,6 +97,7 @@ int main(void)
 		_delay_ms(1000);
 	}
 }
+
 
 
 
