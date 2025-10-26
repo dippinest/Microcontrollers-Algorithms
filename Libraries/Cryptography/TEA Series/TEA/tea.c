@@ -3,6 +3,7 @@
 #include "tea.h"
 
 
+
 static void _TEA_64bit_Block_Encrypt(void *_64bit_block, const void *key_128bit)
 {
 	uint32_t v0 = ((uint32_t*)_64bit_block)[0];
@@ -323,6 +324,7 @@ void *TEA_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *k
 
 	return _64bit_block;
 }
+
 
 
 
