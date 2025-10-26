@@ -42,6 +42,16 @@ uint32_t TEA_Encrypt_OFB(void *init_vector_64bit, void *data, const uint32_t dat
 
 uint32_t TEA_Decrypt_OFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_128bit);
 
+
+// ===============================================================================
+
+
+void *TEA_Encrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_256bit);
+
+void *TEA_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_256bit);
+
+
 #endif
+
 
 
