@@ -360,6 +360,15 @@ void *GOST2814789_CTR(void *init_vector_64bit, void *_64bit_block, const void *k
 	_GOST2814789_64bit_Block_Encrypt(_64bit_block, key_256bit);
 	
 	
+	//
+	// В данной реализации счётчик на основе
+	// инициализирующего вектора инкрементируется полностью
+	//
+	// ===============================================================================
+	//
+	// In this implementation, the counter is fully
+	// incremented based on the initializing vector
+	//
 	++(*_32bit_vector_right_path);
 	
 	if (*_32bit_vector_right_path == 0)
@@ -369,6 +378,7 @@ void *GOST2814789_CTR(void *init_vector_64bit, void *_64bit_block, const void *k
 
 	return _64bit_block;
 }
+
 
 
 
