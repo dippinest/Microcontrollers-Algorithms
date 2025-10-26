@@ -1,5 +1,7 @@
 
+
 #include "xtea2.h"
+
 
 static uint32_t _rol(uint32_t base, uint8_t shift)
 {
@@ -281,5 +283,94 @@ uint32_t XTEA2_Decrypt_OFB(void *init_vector_128bit, void *data, const uint32_t 
 {
 	return XTEA2_Encrypt_OFB(init_vector_128bit, data, data_size, key_128bit, num_of_rounds);
 }
+
+
+// ===============================================================================
+
+
+void *XTEA2_Encrypt_CTR(void *init_vector_128bit, void *_128bit_block, const void *key_128bit, uint8_t num_of_rounds)
+{
+	uint32_t *_32bit_vector_left2_path  = &(((uint32_t*)init_vector_128bit)[0]);
+	uint32_t *_32bit_vector_left1_path  = &(((uint32_t*)init_vector_128bit)[1]);
+	uint32_t *_32bit_vector_right2_path = &(((uint32_t*)init_vector_128bit)[2]);
+	uint32_t *_32bit_vector_right1_path = &(((uint32_t*)init_vector_128bit)[2]);
+	
+	
+	_XTEA2_128bit_Block_Encrypt(_128bit_block, key_128bit, num_of_rounds);
+	
+	
+	//
+	// В данной реализации счётчик на основе
+	// инициализирующего вектора инкрементируется полностью
+	//
+	// ===============================================================================
+	//
+	// In this implementation, the counter is fully
+	// incremented based on the initializing vector
+	//
+	++(*_32bit_vector_right1_path);
+	
+	if (*_32bit_vector_right1_path == 0)
+	{
+		++(*_32bit_vector_right2_path);
+	}
+	
+	if (*_32bit_vector_right2_path == 0)
+	{
+		++(*_32bit_vector_left1_path);
+	}
+	
+	if (*_32bit_vector_left1_path == 0)
+	{
+		++(*_32bit_vector_left2_path);
+	}
+
+	return _128bit_block;
+}
+
+void *XTEA2_Decrypt_CTR(void *init_vector_128bit, void *_128bit_block, const void *key_128bit, uint8_t num_of_rounds)
+{
+	uint32_t *_32bit_vector_left2_path  = &(((uint32_t*)init_vector_128bit)[0]);
+	uint32_t *_32bit_vector_left1_path  = &(((uint32_t*)init_vector_128bit)[1]);
+	uint32_t *_32bit_vector_right2_path = &(((uint32_t*)init_vector_128bit)[2]);
+	uint32_t *_32bit_vector_right1_path = &(((uint32_t*)init_vector_128bit)[2]);
+	
+	
+	_XTEA2_128bit_Block_Decrypt(_128bit_block, key_128bit, num_of_rounds);
+	
+	
+	//
+	// В данной реализации счётчик на основе
+	// инициализирующего вектора инкрементируется полностью
+	//
+	// ===============================================================================
+	//
+	// In this implementation, the counter is fully
+	// incremented based on the initializing vector
+	//
+	++(*_32bit_vector_right1_path);
+	
+	if (*_32bit_vector_right1_path == 0)
+	{
+		++(*_32bit_vector_right2_path);
+	}
+	
+	if (*_32bit_vector_right2_path == 0)
+	{
+		++(*_32bit_vector_left1_path);
+	}
+	
+	if (*_32bit_vector_left1_path == 0)
+	{
+		++(*_32bit_vector_left2_path);
+	}
+
+	return _128bit_block;
+}
+
+
+
+
+
 
 
