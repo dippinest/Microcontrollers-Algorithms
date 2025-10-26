@@ -1,5 +1,7 @@
 
+
 #include "gost2814789.h"
+
 
 
 // S-блок 4-х битной замены. Поскольку он не стандартизирован, вы можете
@@ -406,6 +408,7 @@ void *GOST2814789_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const
 
 	return _64bit_block;
 }
+
 
 
 
