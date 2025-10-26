@@ -348,5 +348,30 @@ uint32_t GOST2814789_Decrypt_OFB(void *init_vector_64bit, void *data, const uint
 }
 
 
+// ===============================================================================
+
+
+void *GOST2814789_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_256bit)
+{
+	uint32_t *_32bit_vector_left_path  = &(((uint32_t*)init_vector_64bit)[0]);
+	uint32_t *_32bit_vector_right_path = &(((uint32_t*)init_vector_64bit)[1]);
+	
+	
+	_GOST2814789_64bit_Block_Encrypt(_64bit_block, key_256bit);
+	
+	
+	++(*_32bit_vector_right_path);
+	
+	if (*_32bit_vector_right_path == 0)
+	{
+		++(*_32bit_vector_left_path);
+	}
+
+	return _64bit_block;
+}
+
+
+
+
 
 
