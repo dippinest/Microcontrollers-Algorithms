@@ -68,10 +68,13 @@ uint32_t GOST2814789_Decrypt_OFB(void *init_vector_64bit, void *data, const uint
 // ===============================================================================
 
 
-void *GOST2814789_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_256bit);
+void *GOST2814789_Encrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_256bit);
+
+void *GOST2814789_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_256bit);
 
 
 #endif
+
 
 
 
