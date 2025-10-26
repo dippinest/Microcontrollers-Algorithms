@@ -293,7 +293,7 @@ void *XTEA2_Encrypt_CTR(void *init_vector_128bit, void *_128bit_block, const voi
 	uint32_t *_32bit_vector_left2_path  = &(((uint32_t*)init_vector_128bit)[0]);
 	uint32_t *_32bit_vector_left1_path  = &(((uint32_t*)init_vector_128bit)[1]);
 	uint32_t *_32bit_vector_right2_path = &(((uint32_t*)init_vector_128bit)[2]);
-	uint32_t *_32bit_vector_right1_path = &(((uint32_t*)init_vector_128bit)[2]);
+	uint32_t *_32bit_vector_right1_path = &(((uint32_t*)init_vector_128bit)[3]);
 	
 	
 	_XTEA2_128bit_Block_Encrypt(_128bit_block, key_128bit, num_of_rounds);
@@ -333,7 +333,7 @@ void *XTEA2_Decrypt_CTR(void *init_vector_128bit, void *_128bit_block, const voi
 	uint32_t *_32bit_vector_left2_path  = &(((uint32_t*)init_vector_128bit)[0]);
 	uint32_t *_32bit_vector_left1_path  = &(((uint32_t*)init_vector_128bit)[1]);
 	uint32_t *_32bit_vector_right2_path = &(((uint32_t*)init_vector_128bit)[2]);
-	uint32_t *_32bit_vector_right1_path = &(((uint32_t*)init_vector_128bit)[2]);
+	uint32_t *_32bit_vector_right1_path = &(((uint32_t*)init_vector_128bit)[3]);
 	
 	
 	_XTEA2_128bit_Block_Decrypt(_128bit_block, key_128bit, num_of_rounds);
@@ -367,6 +367,7 @@ void *XTEA2_Decrypt_CTR(void *init_vector_128bit, void *_128bit_block, const voi
 
 	return _128bit_block;
 }
+
 
 
 
