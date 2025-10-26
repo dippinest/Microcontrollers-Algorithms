@@ -3,6 +3,7 @@
 #include "xtea1.h"
 
 
+
 static uint32_t _rol(uint32_t base, uint8_t shift)
 {
 	shift &= 0x1F;
@@ -317,6 +318,7 @@ void *XTEA1_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void 
 
 	return _64bit_block;
 }
+
 
 
 
