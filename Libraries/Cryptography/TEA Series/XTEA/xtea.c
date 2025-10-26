@@ -3,6 +3,7 @@
 #include "xtea.h"
 
 
+
 static void _XTEA_64bit_Block_Encrypt(void *_64bit_block, const void *key_128bit, uint8_t num_of_rounds)
 {
 	uint32_t v0 = ((uint32_t*)_64bit_block)[0];
@@ -314,6 +315,7 @@ void *XTEA_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *
 
 	return _64bit_block;
 }
+
 
 
 
