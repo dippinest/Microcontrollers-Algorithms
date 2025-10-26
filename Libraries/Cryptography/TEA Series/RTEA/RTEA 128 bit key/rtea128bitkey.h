@@ -4,13 +4,13 @@
 //
 // Эта библиотека, реализует криптографический алгоритм RTEA
 // с размером ключа 128 бит. Функции библиотеки позволяют использовать
-// различные режимы шифрования данных: ECB, CBC, PCBC, CFB и OFB
+// различные режимы шифрования данных: ECB, CBC, PCBC, CFB, OFB и CTR
 //
 // -------------------------------------------------------------------------------
 //
 // This library implements the RTEA cryptographic algorithm
 // with a key size of 128 bits. The library functions allow you to use
-// various data encryption modes: ECB, CBC, PCBC, CFB and OFB
+// various data encryption modes: ECB, CBC, PCBC, CFB, OFB and CTR
 // ===============================================================================
 
 
@@ -39,6 +39,14 @@ uint32_t RTEA128BitKey_Decrypt_CFB(void *init_vector_64bit, void *data, const ui
 uint32_t RTEA128BitKey_Encrypt_OFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_128bit);
 
 uint32_t RTEA128BitKey_Decrypt_OFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_128bit);
+
+
+// ===============================================================================
+
+
+void *RTEA128BitKey_Encrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_128bit);
+
+void *RTEA128BitKey_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_128bit);
 
 
 #endif
