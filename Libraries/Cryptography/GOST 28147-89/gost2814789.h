@@ -9,7 +9,7 @@
 // Данный алгоритм использует сеть Фейстеля и предназначен для работы
 // с 64-х битным блоком и 256-ти битным ключём шифрования.
 //
-// В данной библиотеке реализованы режимы шифрования ECB, CBC, PCBC, CFB и OFB.
+// В данной библиотеке реализованы режимы шифрования ECB, CBC, PCBC, CFB, OFB и CTR.
 //
 // Следует отметить, что S-блок замены 4-х битных элементов в алгоритме
 // нестандартизирован, поэтому Вы можете заменить его на свой.
@@ -28,7 +28,7 @@
 // the algorithm is not standardized, so you can replace it with your own.
 // I took the values of the S-block from the Wikipedia article.
 //
-// This library implements the ECB, CBC, PCBC, CFB and OFB encryption modes.
+// This library implements the ECB, CBC, PCBC, CFB, OFB and CTR encryption modes.
 //
 // ===============================================================================
 
@@ -65,7 +65,14 @@ uint32_t GOST2814789_Encrypt_OFB(void *init_vector_64bit, void *data, const uint
 uint32_t GOST2814789_Decrypt_OFB(void *init_vector_64bit, void *data, const uint32_t data_size, const void *key_256bit);
 
 
+// ===============================================================================
+
+
+void *GOST2814789_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_256bit);
+
+
 #endif
+
 
 
 
