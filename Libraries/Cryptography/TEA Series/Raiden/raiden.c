@@ -1,5 +1,8 @@
 
+
 #include "raiden.h"
+
+
 
 static void _RAIDEN_64bit_Block_Encrypt(void *_64bit_block, const void *key_128bit)
 {
@@ -275,5 +278,70 @@ uint32_t RAIDEN_Decrypt_OFB(void *init_vector_64bit, void *data, const uint32_t 
 {
 	return RAIDEN_Encrypt_OFB(init_vector_64bit, data, data_size, key_128bit);
 }
+
+
+// ===============================================================================
+
+
+void *RAIDEN_Encrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_128bit)
+{
+	uint32_t *_32bit_vector_left_path  = &(((uint32_t*)init_vector_64bit)[0]);
+	uint32_t *_32bit_vector_right_path = &(((uint32_t*)init_vector_64bit)[1]);
+	
+	
+	_RAIDEN_64bit_Block_Encrypt(_64bit_block, key_128bit);
+	
+	
+	//
+	// В данной реализации счётчик на основе
+	// инициализирующего вектора инкрементируется полностью
+	//
+	// ===============================================================================
+	//
+	// In this implementation, the counter is fully
+	// incremented based on the initializing vector
+	//
+	++(*_32bit_vector_right_path);
+	
+	if (*_32bit_vector_right_path == 0)
+	{
+		++(*_32bit_vector_left_path);
+	}
+
+	return _64bit_block;
+}
+
+void *RAIDEN_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_128bit)
+{
+	uint32_t *_32bit_vector_left_path  = &(((uint32_t*)init_vector_64bit)[0]);
+	uint32_t *_32bit_vector_right_path = &(((uint32_t*)init_vector_64bit)[1]);
+	
+	
+	_RAIDEN_64bit_Block_Decrypt(_64bit_block, key_128bit);
+	
+	
+	//
+	// В данной реализации счётчик на основе
+	// инициализирующего вектора инкрементируется полностью
+	//
+	// ===============================================================================
+	//
+	// In this implementation, the counter is fully
+	// incremented based on the initializing vector
+	//
+	++(*_32bit_vector_right_path);
+	
+	if (*_32bit_vector_right_path == 0)
+	{
+		++(*_32bit_vector_left_path);
+	}
+
+	return _64bit_block;
+}
+
+
+
+
+
 
 
