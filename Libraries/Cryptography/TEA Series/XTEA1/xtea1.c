@@ -1,5 +1,7 @@
 
+
 #include "xtea1.h"
+
 
 static uint32_t _rol(uint32_t base, uint8_t shift)
 {
@@ -46,7 +48,6 @@ static void _XTEA1_64bit_Block_Decrypt(void *_64bit_block, const void *key_128bi
 uint32_t XTEA1_Encrypt_ECB(void *data, const uint32_t data_size, const void *key_128bit, uint8_t num_of_rounds)
 {
 	uint32_t num_of_encrypted_bytes = 0;
-	
 
 	for (; num_of_encrypted_bytes < data_size; num_of_encrypted_bytes += 8)
 	{
@@ -59,7 +60,6 @@ uint32_t XTEA1_Encrypt_ECB(void *data, const uint32_t data_size, const void *key
 uint32_t XTEA1_Decrypt_ECB(void *data, const uint32_t data_size, const void *key_128bit, uint8_t num_of_rounds)
 {
 	uint32_t num_of_decrypted_bytes = 0;
-	
 
 	for (; num_of_decrypted_bytes < data_size; num_of_decrypted_bytes += 8)
 	{
@@ -257,6 +257,70 @@ uint32_t XTEA1_Decrypt_OFB(void *init_vector_64bit, void *data, const uint32_t d
 {
 	return XTEA1_Encrypt_OFB(init_vector_64bit, data, data_size, key_128bit, num_of_rounds);
 }
+
+
+// ===============================================================================
+
+
+void *XTEA1_Encrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_128bit, uint8_t num_of_rounds)
+{
+	uint32_t *_32bit_vector_left_path  = &(((uint32_t*)init_vector_64bit)[0]);
+	uint32_t *_32bit_vector_right_path = &(((uint32_t*)init_vector_64bit)[1]);
+	
+	
+	_XTEA1_64bit_Block_Encrypt(_64bit_block, key_128bit, num_of_rounds);
+	
+	
+	//
+	// В данной реализации счётчик на основе
+	// инициализирующего вектора инкрементируется полностью
+	//
+	// ===============================================================================
+	//
+	// In this implementation, the counter is fully
+	// incremented based on the initializing vector
+	//
+	++(*_32bit_vector_right_path);
+	
+	if (*_32bit_vector_right_path == 0)
+	{
+		++(*_32bit_vector_left_path);
+	}
+
+	return _64bit_block;
+}
+
+void *XTEA1_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const void *key_128bit, uint8_t num_of_rounds)
+{
+	uint32_t *_32bit_vector_left_path  = &(((uint32_t*)init_vector_64bit)[0]);
+	uint32_t *_32bit_vector_right_path = &(((uint32_t*)init_vector_64bit)[1]);
+	
+	
+	_XTEA1_64bit_Block_Decrypt(_64bit_block, key_128bit, num_of_rounds);
+	
+	
+	//
+	// В данной реализации счётчик на основе
+	// инициализирующего вектора инкрементируется полностью
+	//
+	// ===============================================================================
+	//
+	// In this implementation, the counter is fully
+	// incremented based on the initializing vector
+	//
+	++(*_32bit_vector_right_path);
+	
+	if (*_32bit_vector_right_path == 0)
+	{
+		++(*_32bit_vector_left_path);
+	}
+
+	return _64bit_block;
+}
+
+
+
+
 
 
 
