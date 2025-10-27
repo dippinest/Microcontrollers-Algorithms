@@ -14,10 +14,8 @@
 // data block length must be 16 bytes (128 bits)!
 #define DATA_SIZE 16
 
-char data1[DATA_SIZE];
-char data2[DATA_SIZE];
-
-char dataXOR[DATA_SIZE];
+char data_encode[DATA_SIZE];
+char data_decode[DATA_SIZE];
 
 
 
@@ -62,42 +60,33 @@ int main(void)
 		// -------------------------------------------------------------------------------
 		// calculating the gamma in CTR encryption mode
 		//
-		XTEA3_Encrypt_CTR(initial_vector_encode_128bit, data1, key, 64);
-			
-		UART_String_Transmit("data1 = < "); print_data(data1, DATA_SIZE);
-			
+		XTEA3_Encrypt_CTR(initial_vector_encode_128bit, data_encode, key, 64);
+		
+		UART_String_Transmit("data encode = < "); print_data(data_encode, DATA_SIZE);
 		
 		
-		// копируем data1 в data2 и выполняем функцию XOR, записывая результат в dataXOR
+		
+		// копируем data_encode в data_decode
 		//
 		// -------------------------------------------------------------------------------
-		// copy data1 to data2 and perform the XOR function, writing the result to dataXOR
+		// copy data_encode to data_decode
 		//
-		memcpy(data2, data1, DATA_SIZE);
-			
-		for (uint16_t i = 0; i < DATA_SIZE; ++i)
-		{
-			dataXOR[i] = data1[i] ^ data2[i];
-		}
-			
+		memcpy(data_decode, data_encode, DATA_SIZE);
+		
 		
 		// вычисляем гамму в режиме CTR дешифрования
 		//
 		// -------------------------------------------------------------------------------
 		// calculating the gamma in CTR decryption mode
 		//
-		XTEA3_Decrypt_CTR(initial_vector_decode_128bit, data2, key, 64);
-			
-		UART_String_Transmit(">\r\ndata2 = < "); print_data(data2, DATA_SIZE);
+		XTEA3_Decrypt_CTR(initial_vector_decode_128bit, data_decode, key, 64);
+		
+		UART_String_Transmit(">\r\ndata decode = < "); print_data(data_decode, DATA_SIZE); UART_String_Transmit(">\r\n\r\n");
 		
 		
-		UART_String_Transmit(">\r\nXOR =   < "); print_data(dataXOR, DATA_SIZE); UART_String_Transmit(">\r\n\r\n");
-			
-			
 		_delay_ms(1000);
 	}
 }
-
 
 
 
