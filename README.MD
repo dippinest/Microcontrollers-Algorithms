@@ -51,6 +51,8 @@ ___
 
    - [Библиотека генератора псевдослучайных чисел на основе изменяемого массива (MAPRNG - Mutable Array Pseudo-Random Number Generator)](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/PRNG%20Algorithms/MAPRNG)
 
+   - [Библиотека ГПСЧ из класса LFSR генераторов с длиной регистра 128 бит](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/PRNG%20Algorithms/XOR128LFSR)
+
 
 - Криптографические алгоритмы:
 
@@ -122,6 +124,8 @@ ___
 
    - [A library for a pseudo-random number generator based on a mutable array (MAPRNG - Mutable Array Pseudo-Random Number Generator)](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/PRNG%20Algorithms/MAPRNG)
 
+   - [A library of RNGs from the LFSR class of generators with a register length of 128 bits](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/PRNG%20Algorithms/XOR128LFSR)
+
 
 - Cryptographic algorithms:
 
@@ -153,6 +157,7 @@ ___
 ___
 
 ##### The implementation of test programs for AVR family microcontrollers (avr-gcc compiler) is given as examples of algorithms.
+
 
 
 
