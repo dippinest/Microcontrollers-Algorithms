@@ -17,8 +17,9 @@
 // A set of functions for manipulating data in an array.
 //
 // I specifically did not put them in a separate library,
-// because the data type in the array can be diverse, and the C language
-// does not support template functions (without using special tricks
+// because the data type in the array can be diverse,
+// and the C programming language does not support
+// template functions (without using special tricks
 // with _Generic in the C11 standard).
 //
 // That is why, for each specific application,
@@ -349,6 +350,7 @@ int main()
 	Array_Shift_Left_Pos(arr, arr_size, 3);
 	__Print_Array("Shifted to left array (3 pos)", arr, arr_size);
 }
+
 
 
 
