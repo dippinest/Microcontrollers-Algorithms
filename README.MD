@@ -34,6 +34,8 @@ ___
 
    - [Функции преобразования целых чисел в двоично-десятичное представление и обратно](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/bcd)
 
+   - [Функции преобразования данных по стандартам Base64, Base32, Base16, Base8, Base4 и Base2](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Data%20Conversion/base%20coding%20standards)
+
    - [Функции преобразования чисел в код Грея и обратно](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/grayscode)
 
    - [Функции работы с числами с фиксированной точкой](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/fixpoint)
@@ -107,6 +109,8 @@ ___
 
    - [Functions for converting integers to binary-decimal representation and vice versa](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/bcd )
 
+   - [Functions for data conversion according to Base64, Base32, Base16, Base8, Base4 and Base2 standards](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Data%20Conversion/base%20coding%20standards)
+
    - [Functions for converting numbers to Gray's code and vice versa](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/grayscode)
 
    - [Functions for working with fixed-point numbers](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/fixpoint )
@@ -157,6 +161,7 @@ ___
 ___
 
 ##### The implementation of test programs for AVR family microcontrollers (avr-gcc compiler) is given as examples of algorithms.
+
 
 
 
