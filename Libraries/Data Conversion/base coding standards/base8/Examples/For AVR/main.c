@@ -21,7 +21,7 @@
 // -------------------------------------------------------------------------------
 // defining arrays for encoded and decoded data
 //
-char encoded_data_buf[DATA_SIZE * 2]; // // overhead = 166%
+char encoded_data_buf[DATA_SIZE * 2]; // overhead = 166%
 char decoded_data_buf[DATA_SIZE];
 
 
@@ -66,6 +66,7 @@ int main(void)
 	{
 	}
 }
+
 
 
 
