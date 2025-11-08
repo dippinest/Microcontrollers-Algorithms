@@ -21,14 +21,14 @@
 // of the GOST 28147-89 standard, developed in the USSR by the 8th directorate
 // of the KGB (Wikipedia link: https://en.wikipedia.org/wiki/GOST_(block_cipher) ).
 //
+// This library implements the ECB, CBC, PCBC, CFB, OFB and CTR encryption modes.
+//
 // This algorithm uses a Feistel network and is designed to work with
 // a 64-bit block and a 256-bit encryption key.
 //
 // It should be noted that the S-block for replacing 4-bit elements in
 // the algorithm is not standardized, so you can replace it with your own.
 // I took the values of the S-block from the Wikipedia article.
-//
-// This library implements the ECB, CBC, PCBC, CFB, OFB and CTR encryption modes.
 //
 // ===============================================================================
 
@@ -74,6 +74,7 @@ void *GOST2814789_Decrypt_CTR(void *init_vector_64bit, void *_64bit_block, const
 
 
 #endif
+
 
 
 
