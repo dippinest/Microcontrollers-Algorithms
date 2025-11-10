@@ -42,7 +42,7 @@
 // redefinitions of data types
 //
 typedef uint8_t  DATA_TYPE;
-typedef uint16_t DATA_SIZE_TYPE;
+typedef int16_t DATA_SIZE_TYPE;
 
 
 
@@ -220,18 +220,23 @@ DATA_TYPE* Array_Shift_Right_Pos(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, DATA_S
 
 
 // случайная перестановка элементов массива
-// (с использованием функции генератора псевдослучайных чисел rand()
+// (в ней используется функции генератора псевдослучайных чисел srand() и rand()
 // из библиотеки stdlib.h)
 //
 // -------------------------------------------------------------------------------
-// random permutation of array elements (using the rand()
-// pseudo-random number generator function from the stdlib.h library)
+// random permutation of array elements
+// (it uses the pseudo-random number generator functions srand() and rand()
+// from the stdlib.h library)
 //
-DATA_TYPE* Array_Shuffle(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
+DATA_TYPE* Array_Shuffle(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, uint16_t rand_seed)
 {
+	srand(rand_seed);
+
+
 	DATA_TYPE tmp;
 
 	DATA_SIZE_TYPE tmp_index;
+
 
 	for (DATA_SIZE_TYPE i = arr_size - 1; i > 0; --i)
 	{
@@ -243,6 +248,66 @@ DATA_TYPE* Array_Shuffle(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
 	}
 
 	return arr;
+}
+
+
+// инволюция предыдущей функции случайной перестановки элементов массива
+// (в ней используется функции генератора псевдослучайных чисел rand()
+// из библиотеки stdlib.h)
+//
+// -------------------------------------------------------------------------------
+// an involution of the previous random array element permutation function
+// (it uses the rand() pseudorandom number generator function
+// from the stdlib.h library)
+//
+DATA_TYPE* Array_Unshuffle(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, uint16_t rand_seed)
+{
+	DATA_TYPE tmp;
+
+	DATA_SIZE_TYPE tmp_index;
+
+
+	for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
+	{
+		srand(rand_seed);
+
+		for (DATA_SIZE_TYPE j = 0; j < (arr_size - i - 1); ++j)
+		{
+			tmp_index = (DATA_SIZE_TYPE)rand();
+		}
+
+		tmp_index = (DATA_SIZE_TYPE)rand() % (i + 1);
+
+		tmp = arr[i];
+		arr[i] = arr[tmp_index];
+		arr[tmp_index] = tmp;
+	}
+
+	return arr;
+}
+
+
+// поиск элемента в массиве, возвращаемое значение - индекс элемента.
+// Если элемента в массиве нет, функция возвращает значение -1
+//
+// -------------------------------------------------------------------------------
+// searching for an element in an array, the return value is the index of the element.
+// If there is no element in the array, the function returns the value -1
+//
+DATA_SIZE_TYPE Array_Find_Element_Index(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, DATA_TYPE element)
+{
+	DATA_SIZE_TYPE element_index = -1;
+
+		
+	for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
+	{
+		if (arr[i] == element)
+		{
+			element_index = i; break;
+		}
+	}
+
+	return element_index;
 }
 
 
@@ -270,29 +335,17 @@ void __Print_Array(const char* msg, DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
 
 
 
-// определение и инициализация массива из 20 элементов
+// определение и инициализация массива из 30 элементов
 //
 // -------------------------------------------------------------------------------
-// defining and initializing an array of 20 elements
+// defining and initializing an array of 30 elements
 //
-DATA_TYPE arr[] = { 13, 14, 4, 6, 17, 5, 16, 1, 3, 2, 7, 0, 11, 9, 12, 8, 10, 19, 20, 15, 18 };
+DATA_TYPE arr[] = { 13, 14, 4, 6, 17, 5, 16, 1, 3, 2, 7, 0, 11, 9, 12, 8, 10, 19, 20, 15, 18, 33, 34, 76, 54, 61, 94, 23, 67, 83 };
 
 
 
 int main()
 {
-	// инициализация функции генератора псевдослучайных чисел rand()
-	// из библиотеки stdlib.h, которая необходима для работы функции
-	// случайной перестановки элементов массива
-	//
-	// -------------------------------------------------------------------------------
-	// initialization of the rand() pseudorandom number generator function
-	// from the stdlib library.h, which is necessary for the function of
-	// random permutation of array elements to work
-	//
-	srand(0x1234);
-
-
 	// вычисление количества элементов массива
 	//
 	// -------------------------------------------------------------------------------
@@ -334,8 +387,29 @@ int main()
 	__Print_Array("Shifted to right array (1 pos)", arr, arr_size);
 
 
-	Array_Shuffle(arr, arr_size);
+
+
+	
+	// для работы с функцией случайной перестановки
+	// (и функции с обратным преобразованием этой перестановки)
+	// используются функции генератора псевдослучайных чисел из библиотеки stdlib.h.
+	// Третьим параметром в функции передаются значение зерна для генератора rand()
+	//
+	// -------------------------------------------------------------------------------
+	// to work with the random permutation function
+	// (and the function with the inverse transformation of this permutation),
+	// the functions of the pseudo-random number generator from the stdlib.h library.
+	// The third parameter in the function is the grain value for the rand() generator
+	//
+	Array_Shuffle(arr, arr_size, 0x0000);
 	__Print_Array("Random shuffled array", arr, arr_size);
+
+
+	Array_Shuffle(arr, arr_size, 0x0000);
+	__Print_Array("Unshuffled array", arr, arr_size);
+
+
+
 
 
 	Array_Reverse_Bubble_Sort(arr, arr_size);
@@ -348,6 +422,20 @@ int main()
 
 	Array_Shift_Left_Pos(arr, arr_size, 3);
 	__Print_Array("Shifted to left array (3 pos)", arr, arr_size);
+
+
+
+
+	// поиск элемента в массиве
+	//
+	// -------------------------------------------------------------------------------
+	// searching for an element in an array
+	//
+	DATA_TYPE element = 18;
+
+	DATA_SIZE_TYPE element_index = Array_Find_Element_Index(arr, arr_size, element);
+
+	printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
 }
 
 
