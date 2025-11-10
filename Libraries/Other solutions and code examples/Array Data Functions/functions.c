@@ -264,7 +264,7 @@ DATA_TYPE* Array_Unshuffle(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, uint16_t ran
 {
 	DATA_TYPE tmp;
 
-	DATA_SIZE_TYPE tmp_index;
+	volatile DATA_SIZE_TYPE tmp_index;
 
 
 	for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
@@ -437,6 +437,7 @@ int main()
 
 	printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
 }
+
 
 
 
