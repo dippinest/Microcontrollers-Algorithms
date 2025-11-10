@@ -298,7 +298,7 @@ DATA_SIZE_TYPE Array_Find_Element_Index(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size,
 {
 	DATA_SIZE_TYPE element_index = -1;
 
-		
+
 	for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
 	{
 		if (arr[i] == element)
@@ -389,7 +389,7 @@ int main()
 
 
 
-	
+
 	// для работы с функцией случайной перестановки
 	// (и функции с обратным преобразованием этой перестановки)
 	// используются функции генератора псевдослучайных чисел из библиотеки stdlib.h.
@@ -405,7 +405,7 @@ int main()
 	__Print_Array("Random shuffled array", arr, arr_size);
 
 
-	Array_Shuffle(arr, arr_size, 0x0000);
+	Array_Unshuffle(arr, arr_size, 0x0000);
 	__Print_Array("Unshuffled array", arr, arr_size);
 
 
@@ -437,6 +437,7 @@ int main()
 
 	printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
 }
+
 
 
 
