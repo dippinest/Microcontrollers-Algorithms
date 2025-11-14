@@ -112,7 +112,7 @@ DATA_TYPE* Array_Reverse(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
 {
 	DATA_TYPE temp;
 
-	for (DATA_SIZE_TYPE i = 0, j = (arr_size - 1); i < (arr_size >> 1) || j >(arr_size >> 1); ++i, --j)
+	for (DATA_SIZE_TYPE i = 0, j = (arr_size - 1); i < (arr_size >> 1) || j > (arr_size >> 1); ++i, --j)
 	{
 		temp = arr[i];
 		arr[i] = arr[j];
@@ -437,6 +437,7 @@ int main()
 
 	printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
 }
+
 
 
 
