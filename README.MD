@@ -58,7 +58,7 @@ ___
 
 - Криптографические алгоритмы:
 
-   - [Алгоритм стандарта СССР ГОСТ 28147-89](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Cryptography/GOST%2028147-89) 
+   - [Алгоритм стандарта ГОСТ 28147-89](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Cryptography/GOST%2028147-89) 
 
    - [Алгоритмы семейства TEA (TEA, XTEA, XTEA1, XTEA2, XTEA3, RTEA, Raiden)](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Cryptography/TEA%20Series)
 
@@ -161,6 +161,7 @@ ___
 ___
 
 ##### The implementation of test programs for AVR family microcontrollers (avr-gcc compiler) is given as examples of algorithms.
+
 
 
 
