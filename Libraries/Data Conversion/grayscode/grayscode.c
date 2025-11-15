@@ -73,6 +73,31 @@ uint64_t GRAYSCODE_UInt64Grayscode_To_UInt64(uint64_t gray_code)
 	return n;
 }
 
+
 #endif
+
+
+
+void *GRAYSCODE_Raw_Data_To_Grayscode_Data(void *raw_data, const uint16_t raw_data_size)
+{
+	for (uint16_t i = 0; i < raw_data_size; ++i)
+	{
+		((uint8_t*)raw_data)[i] = GRAYSCODE_UInt8_To_UInt8Grayscode(((uint8_t*)raw_data)[i]);
+	}
+
+	return raw_data;
+}
+
+void *GRAYSCODE_Grayscode_Data_To_Raw_Data(void *grayscode_data, const uint16_t grayscode_data_size)
+{
+	for (uint16_t i = 0; i < grayscode_data_size; ++i)
+	{
+		((uint8_t*)grayscode_data)[i] = GRAYSCODE_UInt8Grayscode_To_UInt8(((uint8_t*)grayscode_data)[i]);
+	}
+
+	return grayscode_data;
+}
+
+
 
 
