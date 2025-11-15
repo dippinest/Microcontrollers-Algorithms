@@ -42,6 +42,13 @@ uint64_t GRAYSCODE_UInt64Grayscode_To_UInt64(uint64_t gray_code);
 #endif
 
 
+void *GRAYSCODE_Raw_Data_To_Grayscode_Data(void *raw_data, const uint16_t raw_data_size);
+
+void *GRAYSCODE_Grayscode_Data_To_Raw_Data(void *grayscode_data, const uint16_t grayscode_data_size);
+
+
 #endif
+
+
 
 
