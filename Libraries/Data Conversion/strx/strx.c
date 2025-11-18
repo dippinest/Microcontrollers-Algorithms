@@ -1,7 +1,5 @@
 
-
 #include "strx.h"
-
 
 
 uint8_t STRX_Convert_Digit_Char_To_Digit(const char ch)
@@ -913,6 +911,7 @@ uint16_t STRX_Split_Into_Tokens_Using_Delimiters_Set
 
 	return num_of_tokens;
 }
+
 
 
 
