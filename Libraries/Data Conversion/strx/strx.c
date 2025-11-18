@@ -759,7 +759,7 @@ uint16_t STRX_Get_Num_Of_Substring_Occurrences(char *str, const char *substr)
 
 	uint16_t substr_size = strlen(substr);
 
-	char* str_ptr = str;
+	char *str_ptr = str;
 
 
 	while ((str_ptr = strstr(str_ptr, substr)) != NULL)
@@ -911,6 +911,7 @@ uint16_t STRX_Split_Into_Tokens_Using_Delimiters_Set
 
 	return num_of_tokens;
 }
+
 
 
 
