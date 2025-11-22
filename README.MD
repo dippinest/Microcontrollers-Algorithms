@@ -42,6 +42,8 @@ ___
 
    - [Функции математического преобразования чисел (расширяющие стандартную библиотеку math.h)](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/mathx)
 
+   - [Функции работы с C-строками (расширяющие стандартную библиотеку string.h)](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Data%20Conversion/strx)
+
    - [Функции конвертирования различных физических величин](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/valconvert)
 
 
@@ -117,6 +119,8 @@ ___
 
    - [Mathematical number conversion functions (extending the standard math.h library)](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/mathx )
 
+   - [Functions for working with C strings (extending the standard string.h library)](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Data%20Conversion/strx )
+
    - [Various physical conversion functions](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Data%20Conversion/valconvert)
 
 
@@ -161,6 +165,7 @@ ___
 ___
 
 ##### The implementation of test programs for AVR family microcontrollers (avr-gcc compiler) is given as examples of algorithms.
+
 
 
 
