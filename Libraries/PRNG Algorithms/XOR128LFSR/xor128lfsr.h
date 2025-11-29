@@ -26,15 +26,15 @@
 
 typedef struct
 {
-	uint32_t byte1;
-	uint32_t byte2;
-	uint32_t byte3;
-	uint32_t byte4;
+	uint32_t value_32bit_0;
+	uint32_t value_32bit_1;
+	uint32_t value_32bit_2;
+	uint32_t value_32bit_3;
 	
 } XOR128LFSR_t;
 
 
-XOR128LFSR_t XOR128LFSR_Create_Object(uint32_t byte1, uint32_t byte2, uint32_t byte3, uint32_t byte4);
+XOR128LFSR_t XOR128LFSR_Create_Object(uint32_t value_32bit_0, uint32_t value_32bit_1, uint32_t value_32bit_2, uint32_t value_32bit_3);
 
 // ===============================================================================
 
@@ -53,7 +53,6 @@ float XOR128LFSR_Get_Float_Value(XOR128LFSR_t *generator);
 
 
 #endif
-
 
 
 
