@@ -4,14 +4,14 @@
 
 
 
-XOR128LFSR_t XOR128LFSR_Create_Object(uint32_t byte1, uint32_t byte2, uint32_t byte3, uint32_t byte4)
+XOR128LFSR_t XOR128LFSR_Create_Object(uint32_t value_32bit_0, uint32_t value_32bit_1, uint32_t value_32bit_2, uint32_t value_32bit_3)
 {
 	XOR128LFSR_t generator;
 	
-	generator.byte1 = byte1;
-	generator.byte2 = byte2;
-	generator.byte3 = byte3;
-	generator.byte4 = byte4;
+	generator.value_32bit_0 = value_32bit_0;
+	generator.value_32bit_1 = value_32bit_1;
+	generator.value_32bit_2 = value_32bit_2;
+	generator.value_32bit_3 = value_32bit_3;
 	
 	return generator;
 }
@@ -22,20 +22,20 @@ XOR128LFSR_t XOR128LFSR_Create_Object(uint32_t byte1, uint32_t byte2, uint32_t b
 
 uint32_t XOR128LFSR_Get_Value(XOR128LFSR_t *generator)
 {
-	uint32_t t = generator->byte4;
+	uint32_t t = generator->value_32bit_3;
 	
-	uint32_t s = generator->byte1;
+	uint32_t s = generator->value_32bit_0;
 	
-	generator->byte4 = generator->byte3;
-	generator->byte3 = generator->byte2;
-	generator->byte2 = s;
+	generator->value_32bit_3 = generator->value_32bit_2;
+	generator->value_32bit_2 = generator->value_32bit_1;
+	generator->value_32bit_1 = s;
 	
 	t ^= (t << 11);
 	t ^= (t >> 8);
 	
-	generator->byte1 = t ^ s ^ (s >> 19);
+	generator->value_32bit_0 = t ^ s ^ (s >> 19);
 	
-	return generator->byte1;
+	return generator->value_32bit_0;
 }
 
 
