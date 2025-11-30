@@ -57,9 +57,5 @@ int32_t Random_Get_Int32_Value(int32_t min, int32_t max)
 	return (int32_t)r;
 }
 
-float Random_Get_Float_Value()
-{
-	return (float)rand() / RAND_MAX;
-}
 
 
