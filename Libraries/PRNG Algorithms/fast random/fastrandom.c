@@ -56,10 +56,6 @@ int32_t FASTRandom_Get_Int32_Value(int32_t min, int32_t max)
 	return (int32_t)r;
 }
 
-float FASTRandom_Get_Float_Value()
-{
-	return (float)FASTRandom_Get_UInt16_Value(0, 65535) / _FASTRANDOM_RAND_MAX;
-}
 
 
 
