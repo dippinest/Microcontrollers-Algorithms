@@ -155,9 +155,5 @@ int32_t MAPRNG_Get_Int32_Value(MAPRNG_t* maprng, int32_t min, int32_t max)
 	return (int32_t)r;
 }
 
-float MAPRNG_Get_Float_Value(MAPRNG_t* maprng)
-{
-	return (float)MAPRNG_Get_32Bit_Value(maprng) / 4294967295ULL;
-}
 
 
