@@ -26,9 +26,6 @@
 //    Random_Get_Int32_Value(int32_t min, int32_t max) - возвращает
 //    32-ти битное случайное значение от min до (max - 1)
 //
-// 6. float Random_Get_Float_Value() - возвращают случайное значение
-//    типа float от 0.0 до 1.0 (включительно)
-//
 // -------------------------------------------------------------------------------
 //
 // Library that facilitates working with the standard PRNG function rand().
@@ -55,9 +52,6 @@
 // 5. Random_Get_UInt32_Value(uint32_t min, uint32_t max) and
 //    Random_Get_Int32_Value(int32_t min, int32_t max) - returns
 //    a 32-bit random value from min to (max - 1)
-//
-// 6. float Random_Get_Float_Value() - returns a random float
-//    value from 0.0 to 1.0 (inclusive)
 //
 // ===============================================================================
 
@@ -88,8 +82,7 @@ uint32_t Random_Get_UInt32_Value(uint32_t min, uint32_t max);
 
 int32_t Random_Get_Int32_Value(int32_t min, int32_t max);
 
-float Random_Get_Float_Value();
-
 
 #endif
+
 
