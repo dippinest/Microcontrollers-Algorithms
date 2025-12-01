@@ -3,15 +3,15 @@ import numpy             as np
 import matplotlib.pyplot as plt
 
 
-# Это статистический тест распределения псевдослучайных чисел библиотеки maprng.h
+# Это статистический тест распределения псевдослучайных чисел библиотеки xorshift128.h
 #
 # Для теста было использовано 20 000 сгенерированных значений в диапазоне
 # от 0 до 256 (код программы находится в файле main.cpp)
 #
 # =================================================================================
 #
-# This is a statistical test of the pseudorandom number distribution of the 
-# maprng.h library
+# This is a statistical test of the pseudorandom number distribution
+# of the xorshift128.h library
 #
 # 20,000 generated values in the range from 0 to 256 were used for the test
 # (the program code is in the file main.cpp)
@@ -34,6 +34,7 @@ print(f"\tVariance =========== {np.var(data)}\n")
 plt.hist(data, bins = np.arange(min(data), max(data) + 2, 1), density=True)
 
 plt.show()
+
 
 
 
