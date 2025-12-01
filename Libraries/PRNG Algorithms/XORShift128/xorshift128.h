@@ -24,6 +24,7 @@
 #include <stdbool.h>
 
 
+
 typedef struct
 {
 	uint32_t value_32bit_0;
@@ -54,6 +55,7 @@ int32_t XORShift128_Get_Int32_Value(XORShift128_t *generator, int32_t min, int32
 
 
 #endif
+
 
 
 
