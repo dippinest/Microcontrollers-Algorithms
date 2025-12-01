@@ -22,7 +22,10 @@ int main(void)
 	// при каждом запуске и пр.). Кроме того, при инициализации желательно
 	// использовать ещё и какую-либо константу, чтобы исключить инициализацию
 	// данного ГСПЧ нулевым значением. В данном примере первые 3 параметра были
-	// инициализированы шумом АЦП, а четвёртый - константой
+	// инициализированы шумом АЦП, а четвёртый - константой.
+	//
+	// Внимание! Следите за тем, чтобы начальное значение (seed)
+	// не было равным нулю, иначе генератор работать не будет!
 	//
 	// -------------------------------------------------------------------------------
 	// any relatively random value should be used as the initial value
@@ -33,6 +36,9 @@ int main(void)
 	// to exclude initialization of this RNG with a zero value. In this example,
 	// the first 3 parameters were initialized with ADC noise, and the fourth
 	// parameter was a constant.
+	//
+	// Attention! Make sure that the initial value (seed)
+	// is not zero, otherwise the generator will not work!
 	//
 	XORShift128_t generator = XORShift128_Create_Object(
 	
@@ -58,6 +64,7 @@ int main(void)
 		_delay_ms(100);
 	}
 }
+
 
 
 
