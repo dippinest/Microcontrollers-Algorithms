@@ -55,17 +55,19 @@ int main(void)
 	//
 	Vigenere_XOR_Bytes_Encrypt(data, data_size, key, key_size);
 
-
-
 	UART_String_Transmit("Encrypt data: "); print_hex_data(data, data_size); UART_String_Transmit("\r\n\r\n");
+
+	
 	Vigenere_XOR_Bytes_Decrypt(data, data_size, key, key_size);
 
 	UART_String_Transmit("Decrypt data: "); print_hex_data(data, data_size); UART_String_Transmit("\r\n\r\n");
+
 	
 	while (1)
 	{
 	}
 }
+
 
 
 
