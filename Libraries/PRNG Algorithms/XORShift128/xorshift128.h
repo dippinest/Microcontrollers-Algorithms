@@ -36,9 +36,12 @@ typedef struct
 
 XORShift128_t XORShift128_Create_Object(uint32_t value_32bit_0, uint32_t value_32bit_1, uint32_t value_32bit_2, uint32_t value_32bit_3);
 
+
 // ===============================================================================
 
+
 uint32_t XORShift128_Get_Value(XORShift128_t *generator);
+
 
 // ===============================================================================
 
@@ -51,6 +54,7 @@ int32_t XORShift128_Get_Int32_Value(XORShift128_t *generator, int32_t min, int32
 
 
 #endif
+
 
 
 
