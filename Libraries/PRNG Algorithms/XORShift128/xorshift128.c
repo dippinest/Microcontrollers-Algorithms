@@ -23,7 +23,6 @@ XORShift128_t XORShift128_Create_Object(uint32_t value_32bit_0, uint32_t value_3
 uint32_t XORShift128_Get_Value(XORShift128_t *generator)
 {
 	uint32_t t = generator->value_32bit_3;
-	
 	uint32_t s = generator->value_32bit_0;
 	
 	generator->value_32bit_3 = generator->value_32bit_2;
@@ -60,6 +59,7 @@ int32_t XORShift128_Get_Int32_Value(XORShift128_t *generator, int32_t min, int32
 
 	return (int32_t)r;
 }
+
 
 
 
