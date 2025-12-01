@@ -60,14 +60,9 @@ int main(void)
 	UART_StringFmt_Transmit("Open data:    %s\r\n\r\n", data);
 
 
-
-
-
 	Vigenere_Standart_Encrypt(alphabet, alphabet_size, data, data_size, key, key_size);
 
 	UART_StringFmt_Transmit("Encrypt data: %s\r\n\r\n", data);
-
-
 
 
 	Vigenere_Standart_Decrypt(alphabet, alphabet_size, data, data_size, key, key_size);
@@ -75,10 +70,12 @@ int main(void)
 	UART_StringFmt_Transmit("Decrypt data: %s\r\n\r\n", data);
 	
 
+	
 	while (1)
 	{
 	}
 }
+
 
 
 
