@@ -49,7 +49,7 @@ RGB_t Color_Transform_HSV_To_RGB(HSV_t hsv)
 {
 	RGB_t rgb;
 	
-	uint8_t region, remainder, p, q, t;
+	uint16_t region, remainder, p, q, t;
     
     if (hsv.s == 0)
     {
@@ -259,4 +259,5 @@ RGB_t Color_Transform_HSV_Float_To_RGB(HSV_Float_t hsv_f)
 		
 	return rgb;
 }
+
 
