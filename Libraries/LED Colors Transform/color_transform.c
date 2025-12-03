@@ -50,64 +50,64 @@ RGB_t Color_Transform_HSV_To_RGB(HSV_t hsv)
 	RGB_t rgb;
 	
 	uint16_t region, remainder, p, q, t;
-    
-    if (hsv.s == 0)
-    {
-	    rgb.r = hsv.v;
-	    rgb.g = hsv.v;
-	    rgb.b = hsv.v;
+	
+	if (hsv.s == 0)
+	{
+		rgb.r = hsv.v;
+		rgb.g = hsv.v;
+		rgb.b = hsv.v;
 		
-	    return rgb;
-    }
-    
-    region    =  hsv.h / 43;
-    remainder = (hsv.h - (region * 43)) * 6;
-    
-    p = (hsv.v * (255 -   hsv.s)) >> 8;
-    q = (hsv.v * (255 - ((hsv.s * remainder) >> 8))) >> 8;
-    t = (hsv.v * (255 - ((hsv.s * (255 - remainder)) >> 8))) >> 8;
-    
-    switch (region)
-    {
-	    case 0:
-	    rgb.r = hsv.v;
+		return rgb;
+	}
+	
+	region    =  hsv.h / 43;
+	remainder = (hsv.h - (region * 43)) * 6;
+	
+	p = (hsv.v * (255 -   hsv.s)) >> 8;
+	q = (hsv.v * (255 - ((hsv.s * remainder) >> 8))) >> 8;
+	t = (hsv.v * (255 - ((hsv.s * (255 - remainder)) >> 8))) >> 8;
+	
+	switch (region)
+	{
+		case 0:
+		rgb.r = hsv.v;
 		rgb.g = t;
 		rgb.b = p;
-	    break;
+		break;
 		
-	    case 1:
-	    rgb.r = q;
+		case 1:
+		rgb.r = q;
 		rgb.g = hsv.v;
 		rgb.b = p;
-	    break;
+		break;
 		
-	    case 2:
-	    rgb.r = p;
+		case 2:
+		rgb.r = p;
 		rgb.g = hsv.v;
 		rgb.b = t;
-	    break;
+		break;
 		
-	    case 3:
-	    rgb.r = p;
+		case 3:
+		rgb.r = p;
 		rgb.g = q;
 		rgb.b = hsv.v;
-	    break;
+		break;
 		
-	    case 4:
-	    rgb.r = t;
+		case 4:
+		rgb.r = t;
 		rgb.g = p;
 		rgb.b = hsv.v;
-	    break;
+		break;
 		
 		case 5:
-	    default:
-	    rgb.r = hsv.v;
+		default:
+		rgb.r = hsv.v;
 		rgb.g = p;
 		rgb.b = q;
-	    break;
-    }
-    
-    return rgb;
+		break;
+	}
+	
+	return rgb;
 }
 
 
@@ -191,10 +191,10 @@ RGB_t Color_Transform_HSV_Float_To_RGB(HSV_Float_t hsv_f)
 		g = hsv_f.v;
 		b = hsv_f.v;
 
-		rgb.r = (uint8_t)(r * 255);
-		rgb.g = (uint8_t)(g * 255);
-		rgb.b = (uint8_t)(b * 255);
-			
+		rgb.r = (uint8_t)(r * 255.0 + 0.5);
+		rgb.g = (uint8_t)(g * 255.0 + 0.5);
+		rgb.b = (uint8_t)(b * 255.0 + 0.5);
+		
 		return rgb;
 	}
 
@@ -253,11 +253,12 @@ RGB_t Color_Transform_HSV_Float_To_RGB(HSV_Float_t hsv_f)
 		break;
 	}
 	
-	rgb.r = (uint8_t)(r * 255);
-	rgb.g = (uint8_t)(g * 255);
-	rgb.b = (uint8_t)(b * 255);
-		
+	rgb.r = (uint8_t)(r * 255.0 + 0.5);
+	rgb.g = (uint8_t)(g * 255.0 + 0.5);
+	rgb.b = (uint8_t)(b * 255.0 + 0.5);
+	
 	return rgb;
 }
+
 
 
