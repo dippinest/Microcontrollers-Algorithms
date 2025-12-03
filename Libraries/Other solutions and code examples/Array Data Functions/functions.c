@@ -1,5 +1,8 @@
 
 
+///////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
 // ===============================================================================
 //
 // Набор функций для манипуляций данными в массиве.
@@ -42,7 +45,7 @@
 // redefinitions of data types
 //
 typedef uint8_t  DATA_TYPE;
-typedef int16_t DATA_SIZE_TYPE;
+typedef int16_t  DATA_SIZE_TYPE;
 
 
 
@@ -51,14 +54,19 @@ typedef int16_t DATA_SIZE_TYPE;
 
 
 
-// пузырьковая сортировка массива
+// пузырьковая сортировка
+// 
+// Данный алгоритм оптимален только для сортирвки небольших массивов
 //
 // -------------------------------------------------------------------------------
-// bubble array sorting
+// bubble sorting
+// 
+// This algorithm is optimal only for sorting small arrays
 //
-DATA_TYPE* Array_Bubble_Sort(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
+DATA_TYPE* Array_Bubble_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
 	DATA_TYPE temp;
+
 
 	for (DATA_SIZE_TYPE i = 0; i < (arr_size - 1); ++i)
 	{
@@ -77,14 +85,19 @@ DATA_TYPE* Array_Bubble_Sort(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
 }
 
 
-// реверсивная пузырьковая сортировка массива
+// обратная (реверсивная) пузырьковая сортировка
+// 
+// Данный алгоритм оптимален только для сортирвки небольших массивов
 //
 // -------------------------------------------------------------------------------
-// reversible bubble sorting of an array
+// reverse bubble sorting
+// 
+// This algorithm is optimal only for sorting small arrays
 //
-DATA_TYPE* Array_Reverse_Bubble_Sort(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
+DATA_TYPE* Array_Reverse_Bubble_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
 	DATA_TYPE temp;
+
 
 	for (DATA_SIZE_TYPE i = 0; i < (arr_size - 1); ++i)
 	{
@@ -103,12 +116,186 @@ DATA_TYPE* Array_Reverse_Bubble_Sort(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
 }
 
 
+// сортировка вставками
+// 
+// Данный алгоритм оптимален для сортирвки почти отсортированных массивов
+//
+// -------------------------------------------------------------------------------
+// insertion sorting
+// 
+// This algorithm is optimal for sorting almost sorted arrays
+//
+DATA_TYPE* Array_Insertion_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
+{
+	DATA_SIZE_TYPE i = 1;
+	DATA_SIZE_TYPE j;
+
+	DATA_TYPE tmp;
+
+
+	while (i < arr_size)
+	{
+		tmp = arr[i];
+
+		j = i - 1;
+
+		while (j >= 0 && arr[j] > tmp)
+		{
+			arr[j + 1] = arr[j]; --j;
+		}
+
+		arr[j + 1] = tmp;
+
+		++i;
+	}
+
+	return arr;
+}
+
+
+// обратная (реверсивная) сортировка вставками
+// 
+// Данный алгоритм оптимален для сортирвки почти отсортированных массивов
+//
+// -------------------------------------------------------------------------------
+// reverse insertion sorting
+// 
+// This algorithm is optimal for sorting almost sorted arrays
+//
+DATA_TYPE* Array_Reverse_Insertion_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
+{
+	DATA_SIZE_TYPE i = 1;
+	DATA_SIZE_TYPE j;
+
+	DATA_TYPE tmp;
+
+
+	while (i < arr_size)
+	{
+		tmp = arr[i];
+
+		j = i - 1;
+
+		while (j >= 0 && arr[j] < tmp)
+		{
+			arr[j + 1] = arr[j]; --j;
+		}
+
+		arr[j + 1] = tmp;
+
+		++i;
+	}
+
+	return arr;
+}
+
+
+// сортировка выбором
+// 
+// Данный алгоритм оптимален в случаях необходимости
+// минимизации операций записи в память
+// (к примеру, когда сортировка проиходит в EEPROM или Flash памяти)
+//
+// -------------------------------------------------------------------------------
+// selection sorting
+// 
+// This algorithm is optimal when it is necessary
+// to minimize memory reads
+// (for example, when sorting takes place in EEPROM or Flash memory)
+//
+DATA_TYPE* Array_Selection_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
+{
+	DATA_SIZE_TYPE i = 0;
+	DATA_SIZE_TYPE j;
+
+	DATA_SIZE_TYPE tmp_index;
+
+	DATA_TYPE tmp;
+
+
+	while (i < (arr_size - 1))
+	{
+		tmp_index = i;
+
+		j = (i + 1);
+
+		while (j < arr_size)
+		{
+			if (arr[j] < arr[tmp_index])
+			{
+				tmp_index = j;
+			}
+
+			++j;
+		}
+
+		tmp = arr[i];
+		arr[i] = arr[tmp_index];
+		arr[tmp_index] = tmp;
+
+		++i;
+	}
+
+	return arr;
+}
+
+
+// обратная (реверсивная) сортировка выбором
+// 
+// Данный алгоритм оптимален в случаях необходимости
+// минимизации операций записи в память
+// (к примеру, когда сортировка проиходит в EEPROM или Flash памяти)
+//
+// -------------------------------------------------------------------------------
+// reverse selection sorting
+// 
+// This algorithm is optimal when it is necessary
+// to minimize write operations to memory
+// (for example, when sorting takes place in EEPROM or Flash memory)
+//
+DATA_TYPE* Array_Reverse_Selection_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
+{
+	DATA_SIZE_TYPE i = 0;
+	DATA_SIZE_TYPE j;
+
+	DATA_SIZE_TYPE tmp_index;
+
+	DATA_TYPE tmp;
+
+
+	while (i < (arr_size - 1))
+	{
+		tmp_index = i;
+
+		j = (i + 1);
+
+		while (j < arr_size)
+		{
+			if (arr[j] > arr[tmp_index])
+			{
+				tmp_index = j;
+			}
+
+			++j;
+		}
+
+		tmp = arr[i];
+		arr[i] = arr[tmp_index];
+		arr[tmp_index] = tmp;
+
+		++i;
+	}
+
+	return arr;
+}
+
+
 // реверс массива
 //
 // -------------------------------------------------------------------------------
 // array reverse
 //
-DATA_TYPE* Array_Reverse(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
+DATA_TYPE* Array_Reverse(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
 	DATA_TYPE temp;
 
@@ -128,7 +315,7 @@ DATA_TYPE* Array_Reverse(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
 // -------------------------------------------------------------------------------
 // shifting an array to the left by 1 element
 //
-DATA_TYPE* Array_Shift_Left(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
+DATA_TYPE* Array_Shift_Left(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
 	DATA_TYPE tmp = arr[0];
 
@@ -159,7 +346,7 @@ DATA_TYPE* Array_Shift_Left(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
 // -------------------------------------------------------------------------------
 // shifting the array to the left by n_pos elements
 //
-DATA_TYPE* Array_Shift_Left_Pos(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, DATA_SIZE_TYPE n_pos)
+DATA_TYPE* Array_Shift_Left_Pos(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const DATA_SIZE_TYPE n_pos)
 {
 
 	for (DATA_SIZE_TYPE i = 0; i < n_pos; ++i)
@@ -176,7 +363,7 @@ DATA_TYPE* Array_Shift_Left_Pos(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, DATA_SI
 // -------------------------------------------------------------------------------
 // shifting an array to the right by 1 element
 //
-DATA_TYPE* Array_Shift_Right(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
+DATA_TYPE* Array_Shift_Right(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
 	DATA_TYPE tmp = arr[arr_size - 1];
 
@@ -207,7 +394,7 @@ DATA_TYPE* Array_Shift_Right(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
 // -------------------------------------------------------------------------------
 // shifting the array to the right by n_pos elements
 //
-DATA_TYPE* Array_Shift_Right_Pos(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, DATA_SIZE_TYPE n_pos)
+DATA_TYPE* Array_Shift_Right_Pos(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const DATA_SIZE_TYPE n_pos)
 {
 
 	for (DATA_SIZE_TYPE i = 0; i < n_pos; ++i)
@@ -228,7 +415,7 @@ DATA_TYPE* Array_Shift_Right_Pos(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, DATA_S
 // (it uses the pseudo-random number generator functions srand() and rand()
 // from the stdlib.h library)
 //
-DATA_TYPE* Array_Shuffle(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, uint16_t rand_seed)
+DATA_TYPE* Array_Shuffle(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const uint16_t rand_seed)
 {
 	srand(rand_seed);
 
@@ -260,7 +447,7 @@ DATA_TYPE* Array_Shuffle(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, uint16_t rand_
 // (it uses the rand() pseudorandom number generator function
 // from the stdlib.h library)
 //
-DATA_TYPE* Array_Unshuffle(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, uint16_t rand_seed)
+DATA_TYPE* Array_Unshuffle(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const uint16_t rand_seed)
 {
 	DATA_TYPE tmp;
 
@@ -287,14 +474,18 @@ DATA_TYPE* Array_Unshuffle(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, uint16_t ran
 }
 
 
-// поиск элемента в массиве, возвращаемое значение - индекс элемента.
+// линейный поиск элемента в массиве,
+// возвращаемое значение - индекс элемента.
+// 
 // Если элемента в массиве нет, функция возвращает значение -1
 //
 // -------------------------------------------------------------------------------
-// searching for an element in an array, the return value is the index of the element.
+// linear searching for an element in an array,
+// the return value is the index of the element.
+// 
 // If there is no element in the array, the function returns the value -1
 //
-DATA_SIZE_TYPE Array_Find_Element_Index(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size, DATA_TYPE element)
+DATA_SIZE_TYPE Array_Linear_Search_Element_Index(const DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, DATA_TYPE element)
 {
 	DATA_SIZE_TYPE element_index = -1;
 
@@ -308,6 +499,52 @@ DATA_SIZE_TYPE Array_Find_Element_Index(DATA_TYPE* arr, DATA_SIZE_TYPE arr_size,
 	}
 
 	return element_index;
+}
+
+
+// поиск элемента в отсортированном массиве,
+// возвращаемое значение - индекс элемента.
+// 
+// Если элемента в массиве нет, функция возвращает значение -1
+//
+// -------------------------------------------------------------------------------
+// searching for an element in a sorted array,
+// the return value is the index of the element.
+// 
+// If there is no element in the array, the function returns the value -1
+//
+DATA_SIZE_TYPE Array_Binary_Search_Element_Index(const DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, DATA_TYPE element)
+{
+	DATA_TYPE tmp;
+
+	DATA_SIZE_TYPE left_element_index = 0;
+	DATA_SIZE_TYPE right_element_index = arr_size - 1;
+	DATA_SIZE_TYPE median_element_index;
+
+
+	while (left_element_index <= right_element_index)
+	{
+		median_element_index = (left_element_index + right_element_index) >> 1;
+
+		tmp = arr[median_element_index];
+
+		if (element == tmp)
+		{
+			return median_element_index;
+		}
+
+
+		if (element < tmp)
+		{
+			right_element_index = median_element_index - 1;
+		}
+		else
+		{
+			left_element_index = median_element_index + 1;
+		}
+	}
+
+	return -1;
 }
 
 
@@ -393,13 +630,21 @@ int main()
 	// для работы с функцией случайной перестановки
 	// (и функции с обратным преобразованием этой перестановки)
 	// используются функции генератора псевдослучайных чисел из библиотеки stdlib.h.
+	// 
 	// Третьим параметром в функции передаются значение зерна для генератора rand()
+	// (в случае функции Array_Unshuffle значение зерна должно быть тем же,
+	// что использовался при вызове функции Array_Shuffle)
 	//
 	// -------------------------------------------------------------------------------
 	// to work with the random permutation function
 	// (and the function with the inverse transformation of this permutation),
 	// the functions of the pseudo-random number generator from the stdlib.h library.
-	// The third parameter in the function is the grain value for the rand() generator
+	// 
+	// The third parameter in the function passes the grain value
+	// for the rand() generator
+	// (in the case of the Array_Unshuffle function,
+	// the grain value must be the same as that used when calling
+	// the Array_Shuffle function)
 	//
 	Array_Shuffle(arr, arr_size, 0x0000);
 	__Print_Array("Random shuffled array", arr, arr_size);
@@ -426,18 +671,45 @@ int main()
 
 
 
-	// поиск элемента в массиве
+	// линейный поиск элемента в массиве
 	//
 	// -------------------------------------------------------------------------------
-	// searching for an element in an array
+	// linear searching for an element in an array
 	//
 	DATA_TYPE element = 18;
 
-	DATA_SIZE_TYPE element_index = Array_Find_Element_Index(arr, arr_size, element);
+	DATA_SIZE_TYPE element_index = Array_Linear_Search_Element_Index(arr, arr_size, element);
+
+	printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
+
+
+
+	// сортировка массива алгоритмом insertion sort
+	//
+	// -------------------------------------------------------------------------------
+	// sorting an array using the insertion sort algorithm
+	//
+	Array_Insertion_Sort(arr, arr_size);
+	__Print_Array("Sorted array (insertion sort)", arr, arr_size);
+
+
+
+
+	// бинарный поиск элемента в массиве
+	// 
+	// Внимание! Бинарный поиск работает только на отсортированных данных!
+	//
+	// -------------------------------------------------------------------------------
+	// binary searching for an element in an array
+	// 
+	// Attention! Binary search only works on sorted data!
+	//
+	element = 15;
+
+	element_index = Array_Binary_Search_Element_Index(arr, arr_size, element);
 
 	printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
 }
-
 
 
 
