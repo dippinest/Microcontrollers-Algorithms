@@ -176,7 +176,7 @@ int main(void)
 		//
 		if (is_temperature_sensor_working_properly)
 		{
-		
+			
 			// отправка данных на плоттер
 			// (для визуализации процесса регулирования температуры)
 			//
@@ -228,6 +228,16 @@ int main(void)
 			{
 				Heater_On();
 			}
+		}
+		else
+		{
+			// если датчик температуры неисправен - немедленно отключаем нагрузку
+			//
+			// -------------------------------------------------------------------------------
+			//
+			// if the temperature sensor is faulty, turn off the load immediately
+			//
+			Heater_Emergency_Shutdown();
 		}
 		
 		
