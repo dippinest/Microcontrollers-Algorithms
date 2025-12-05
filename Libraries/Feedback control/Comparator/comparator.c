@@ -1,8 +1,5 @@
 
-
 #include "comparator.h"
-
-
 
 
 bool Comparator_Int8_Update_And_Get_Output_Value
@@ -99,6 +96,7 @@ bool Comparator_Float_Update_And_Get_Output_Value
 	
 	return *comparator_state;
 }
+
 
 
 
