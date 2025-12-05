@@ -1,20 +1,20 @@
 
 // ===============================================================================
 //
-// Библиотека программной реализации компаратора с верхним и нижним гистерезисом.
+// Р‘РёР±Р»РёРѕС‚РµРєР° РїСЂРѕРіСЂР°РјРјРЅРѕР№ СЂРµР°Р»РёР·Р°С†РёРё РєРѕРјРїР°СЂР°С‚РѕСЂР° СЃ РІРµСЂС…РЅРёРј Рё РЅРёР¶РЅРёРј РіРёСЃС‚РµСЂРµР·РёСЃРѕРј.
 //
-// Компаратор сравнивает значения положительного (input_positive)
-// и отрицательного (input_negative) входов и даёт на выходе следующие значения:
+// РљРѕРјРїР°СЂР°С‚РѕСЂ СЃСЂР°РІРЅРёРІР°РµС‚ Р·РЅР°С‡РµРЅРёСЏ РїРѕР»РѕР¶РёС‚РµР»СЊРЅРѕРіРѕ (input_positive)
+// Рё РѕС‚СЂРёС†Р°С‚РµР»СЊРЅРѕРіРѕ (input_negative) РІС…РѕРґРѕРІ Рё РґР°С‘С‚ РЅР° РІС‹С…РѕРґРµ СЃР»РµРґСѓСЋС‰РёРµ Р·РЅР°С‡РµРЅРёСЏ:
 //
 //
-//                     / COMPARATOR_OUTPUT_IS_HIGH (true): если input_positive >= (input_negative + high_hysteresys)
+//                     / COMPARATOR_OUTPUT_IS_HIGH (true): РµСЃР»Рё input_positive >= (input_negative + high_hysteresys)
 // Comparator_output = |
-//                     \ COMPARATOR_OUTPUT_IS_LOW (false): если input_positive <= (input_negative + high_hysteresys)
+//                     \ COMPARATOR_OUTPUT_IS_LOW (false): РµСЃР»Рё input_positive <= (input_negative + high_hysteresys)
 //
 //
-// Компаратор используется в простых системах управления объектами, обладающими большой инерционностью
-// (например, управление включения света в зависимости от освещённости,
-// управление мощным нагревателем и т.д.)
+// РљРѕРјРїР°СЂР°С‚РѕСЂ РёСЃРїРѕР»СЊР·СѓРµС‚СЃСЏ РІ РїСЂРѕСЃС‚С‹С… СЃРёСЃС‚РµРјР°С… СѓРїСЂР°РІР»РµРЅРёСЏ РѕР±СЉРµРєС‚Р°РјРё, РѕР±Р»Р°РґР°СЋС‰РёРјРё Р±РѕР»СЊС€РѕР№ РёРЅРµСЂС†РёРѕРЅРЅРѕСЃС‚СЊСЋ
+// (РЅР°РїСЂРёРјРµСЂ, СѓРїСЂР°РІР»РµРЅРёРµ РІРєР»СЋС‡РµРЅРёСЏ СЃРІРµС‚Р° РІ Р·Р°РІРёСЃРёРјРѕСЃС‚Рё РѕС‚ РѕСЃРІРµС‰С‘РЅРЅРѕСЃС‚Рё,
+// СѓРїСЂР°РІР»РµРЅРёРµ РјРѕС‰РЅС‹Рј РЅР°РіСЂРµРІР°С‚РµР»РµРј Рё С‚.Рґ.)
 //
 // -------------------------------------------------------------------------------
 //
@@ -26,11 +26,13 @@
 //
 //
 //
-//                     / COMPARATOR_OUTPUT_IS_HIGH (true): если input_positive >= (input_negative + high_hysteresys)
+//                     / COMPARATOR_OUTPUT_IS_HIGH (true): РµСЃР»Рё input_positive >= (input_negative + high_hysteresys)
 // Comparator_output = |
-//                     \ COMPARATOR_OUTPUT_IS_LOW (false): если input_positive <= (input_negative + high_hysteresys)
+//                     \ COMPARATOR_OUTPUT_IS_LOW (false): РµСЃР»Рё input_positive <= (input_negative + high_hysteresys)
 //
-// The comparator is used in simple control systems// (for example, control of turning on the light depending on the illumination,// control of a powerful heater, etc.)
+// The comparator is used in simple control systems
+// (for example, control of turning on the light depending on the illumination,
+// control of a powerful heater, etc.)
 //
 // ===============================================================================
 
@@ -93,6 +95,7 @@ bool Comparator_Float_Update_And_Get_Output_Value
 
 
 #endif
+
 
 
 
