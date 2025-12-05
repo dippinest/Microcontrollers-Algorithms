@@ -71,6 +71,18 @@ ___
    - [Стандартный и модифицированный алгоритм Виженера](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Cryptography/Vigenere)
 
 
+- Алгоритмы управления с обратной связью (ТАУ):
+
+   - [Программная реализация компаратора с верхним и нижним гистерезисом](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Feedback%20control/Comparator)
+
+
+- Прочие алгоритмы:
+
+   - [Алгоритм расчета температуры с помощью NTC терморезистора](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Other%20solutions%20and%20code%20examples/NTC%20Thermometer)
+
+   - [Алгоритмы работы со статическими массивами](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Other%20solutions%20and%20code%20examples/Array%20Data%20Functions)
+
+
 - Алгоритмы цифровой фильтрации данных ([ссылка](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Digital%20Filters))
 
 
@@ -86,14 +98,10 @@ ___
 - Алгоритмы вычисления контрольной суммы (CRC) ([ссылка](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/CRC%20Calculation))
 
 
-- Реализация алгоритма расчета температуры с помощью NTC терморезистора ([ссылка](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/NTC%20Thermometer))
-
-
 ___
 
 ##### В качестве примеров алгоритмов приведены реализации тестовых программ для микроконтроллеров семейства AVR (компилятор avr-gcc).
 
-___
 ___
 ___
 
@@ -152,6 +160,18 @@ ___
    - [Standard and modified Vigener algorithm](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Cryptography/Vigenere )
 
 
+- Feedback Control Algorithms (Control engineering):
+
+   - [Software implementation of a comparator with upper and lower hysteresis](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Feedback%20control/Comparator)
+
+
+- Other algorithms:
+
+   - [Algorithm for calculating temperature using an NTC thermistor](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Other%20solutions%20and%20code%20examples/NTC%20Thermometer)
+
+   - [Algorithms for working with static arrays](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/Other%20solutions%20and%20code%20examples/Array%20Data%20Functions)
+
+
 - Algorithms for digital data filtering ([link](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/Digital%20Filters ))
 
 
@@ -167,12 +187,10 @@ ___
 - Checksum Calculation Algorithms (CRC) ([link](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/CRC%20Calculation ))
 
 
-- Implementation of the temperature calculation algorithm using an NTC thermistor ([link](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/NTC%20Thermometer ))
-
-
 ___
 
 ##### The implementation of test programs for AVR family microcontrollers (avr-gcc compiler) is given as examples of algorithms.
+
 
 
 
