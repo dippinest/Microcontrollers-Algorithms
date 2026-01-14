@@ -215,7 +215,7 @@ uint64_t CRC64_Get_Value(void* data, uint16_t data_size, uint64_t polynomial, ui
 	{
 		uint64_t crc64_inv = 0;
 
-		for (i = 0; i < 32; ++i)
+		for (i = 0; i < 64; ++i)
 		{
 			crc64_inv <<= 1;
 			crc64_inv += initial & 1;
@@ -230,5 +230,6 @@ uint64_t CRC64_Get_Value(void* data, uint16_t data_size, uint64_t polynomial, ui
 
 
 #endif
+
 
 
