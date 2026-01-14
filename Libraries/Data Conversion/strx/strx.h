@@ -106,7 +106,7 @@ inline bool STRX_Char_Is_Upper_Case(const char ch)
 
 inline bool STRX_Char_Is_Lower_Case(const char ch)
 {
-	return (bool)isupper(ch);
+	return (bool)islower(ch);
 }
 
 inline char STRX_Convert_Char_To_Upper_Case(const char ch)
@@ -310,6 +310,7 @@ uint16_t STRX_Split_Into_Tokens_Using_Delimiters_Set
 
 
 #endif
+
 
 
 
