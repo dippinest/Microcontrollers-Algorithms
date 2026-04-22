@@ -168,11 +168,11 @@ int main(void)
 		
 		
 		
-		// опрос датчика температуры с периодом DELTA_T_SENSOR
+		// если датчик температуры исправен и работает, реализуем управление в штатном режиме
 		//
 		// -------------------------------------------------------------------------------
 		//
-		// polling a temperature sensor with a DELTA_T_SENSOR period
+		// if the temperature sensor is working properly, we will implement control in the normal mode
 		//
 		if (is_temperature_sensor_working_properly)
 		{
