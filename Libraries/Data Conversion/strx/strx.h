@@ -12,10 +12,10 @@
 // стандартной библиотеки string.h, так и новые функции для различных
 // манипуляций со строками.
 //
-// Функции библиотеки не используют динамическую память для своей работы,
-// поэтому может без ограничений использоваться в различных embedded системах
-// (при этом пользователь всё же должен внимательно следить за размерами
-// передаваемых в функции буферов для корректной работы!)
+// Функции библиотеки (в большинстве своём) не используют динамическую память
+// для своей работы, поэтому может без ограничений использоваться в различных
+// embedded системах (при этом пользователь всё же должен внимательно следить
+// за размерами передаваемых в функции буферов для корректной работы!)
 //
 // -------------------------------------------------------------------------------
 //
@@ -28,10 +28,10 @@
 // of the standard string.h library, as well as new functions and new functions
 // for various string manipulations.
 //
-// The library functions do not use dynamic memory for their work,
-// so they can be used without restrictions in various embedded systems
-// (while the user still needs to carefully monitor the size of the buffers
-// passed to the function for correct operation!)
+// The library functions (for the most part) do not use dynamic memory
+// for their work, so they can be used without restrictions in various
+// embedded systems (while the user still needs to carefully monitor
+// the size of buffers passed to the function for correct operation!)
 //
 // ===============================================================================
 
