@@ -81,7 +81,7 @@ bool Array_Is_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 //
 // -------------------------------------------------------------------------------
 // 
-// checking whether the array is back-sorted
+// checking whether the array is reverse-sorted
 //
 bool Array_Is_Reverse_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
