@@ -51,6 +51,58 @@ typedef int16_t  DATA_SIZE_TYPE;
 
 
 
+// проверка, является ли массив отсортированным
+//
+// -------------------------------------------------------------------------------
+// 
+// checking whether the array is sorted
+//
+bool Array_Is_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
+{
+    if (arr_size < 2)
+    {
+        return true;
+    }
+
+
+    for (DATA_SIZE_TYPE i = 1; i < arr_size; ++i)
+    {
+        if (arr[i - 1] > arr[i])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
+// проверка, является ли массив обратно отсортированным
+//
+// -------------------------------------------------------------------------------
+// 
+// checking whether the array is back-sorted
+//
+bool Array_Is_Reverse_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
+{
+    if (arr_size < 2)
+    {
+        return true;
+    }
+
+
+    for (DATA_SIZE_TYPE i = 1; i < arr_size; ++i)
+    {
+        if (arr[i - 1] < arr[i])
+        {
+            return false;
+        }
+    }
+
+    return true;
+}
+
+
 // пузырьковая сортировка
 // 
 // Данный алгоритм оптимален только для сортировки небольших массивов
@@ -62,23 +114,23 @@ typedef int16_t  DATA_SIZE_TYPE;
 //
 DATA_TYPE* Array_Bubble_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
-	DATA_TYPE temp;
+    DATA_TYPE temp;
 
 
-	for (DATA_SIZE_TYPE i = 0; i < (arr_size - 1); ++i)
-	{
-		for (DATA_SIZE_TYPE j = 0; j < (arr_size - i - 1); j++)
-		{
-			if (arr[j] > arr[j + 1])
-			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-		}
-	}
+    for (DATA_SIZE_TYPE i = 0; i < (arr_size - 1); ++i)
+    {
+        for (DATA_SIZE_TYPE j = 0; j < (arr_size - i - 1); j++)
+        {
+            if (arr[j] > arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -93,23 +145,23 @@ DATA_TYPE* Array_Bubble_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 //
 DATA_TYPE* Array_Reverse_Bubble_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
-	DATA_TYPE temp;
+    DATA_TYPE temp;
 
 
-	for (DATA_SIZE_TYPE i = 0; i < (arr_size - 1); ++i)
-	{
-		for (DATA_SIZE_TYPE j = 0; j < (arr_size - i - 1); j++)
-		{
-			if (arr[j] <= arr[j + 1])
-			{
-				temp = arr[j];
-				arr[j] = arr[j + 1];
-				arr[j + 1] = temp;
-			}
-		}
-	}
+    for (DATA_SIZE_TYPE i = 0; i < (arr_size - 1); ++i)
+    {
+        for (DATA_SIZE_TYPE j = 0; j < (arr_size - i - 1); j++)
+        {
+            if (arr[j] <= arr[j + 1])
+            {
+                temp = arr[j];
+                arr[j] = arr[j + 1];
+                arr[j + 1] = temp;
+            }
+        }
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -124,29 +176,29 @@ DATA_TYPE* Array_Reverse_Bubble_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_si
 //
 DATA_TYPE* Array_Insertion_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
-	DATA_SIZE_TYPE i = 1;
-	DATA_SIZE_TYPE j;
+    DATA_SIZE_TYPE i = 1;
+    DATA_SIZE_TYPE j;
 
-	DATA_TYPE tmp;
+    DATA_TYPE tmp;
 
 
-	while (i < arr_size)
-	{
-		tmp = arr[i];
+    while (i < arr_size)
+    {
+        tmp = arr[i];
 
-		j = i - 1;
+        j = i - 1;
 
-		while (j >= 0 && arr[j] > tmp)
-		{
-			arr[j + 1] = arr[j]; --j;
-		}
+        while (j >= 0 && arr[j] > tmp)
+        {
+            arr[j + 1] = arr[j]; --j;
+        }
 
-		arr[j + 1] = tmp;
+        arr[j + 1] = tmp;
 
-		++i;
-	}
+        ++i;
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -161,29 +213,29 @@ DATA_TYPE* Array_Insertion_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 //
 DATA_TYPE* Array_Reverse_Insertion_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
-	DATA_SIZE_TYPE i = 1;
-	DATA_SIZE_TYPE j;
+    DATA_SIZE_TYPE i = 1;
+    DATA_SIZE_TYPE j;
 
-	DATA_TYPE tmp;
+    DATA_TYPE tmp;
 
 
-	while (i < arr_size)
-	{
-		tmp = arr[i];
+    while (i < arr_size)
+    {
+        tmp = arr[i];
 
-		j = i - 1;
+        j = i - 1;
 
-		while (j >= 0 && arr[j] < tmp)
-		{
-			arr[j + 1] = arr[j]; --j;
-		}
+        while (j >= 0 && arr[j] < tmp)
+        {
+            arr[j + 1] = arr[j]; --j;
+        }
 
-		arr[j + 1] = tmp;
+        arr[j + 1] = tmp;
 
-		++i;
-	}
+        ++i;
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -202,38 +254,38 @@ DATA_TYPE* Array_Reverse_Insertion_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr
 //
 DATA_TYPE* Array_Selection_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
-	DATA_SIZE_TYPE i = 0;
-	DATA_SIZE_TYPE j;
+    DATA_SIZE_TYPE i = 0;
+    DATA_SIZE_TYPE j;
 
-	DATA_SIZE_TYPE tmp_index;
+    DATA_SIZE_TYPE tmp_index;
 
-	DATA_TYPE tmp;
+    DATA_TYPE tmp;
 
 
-	while (i < (arr_size - 1))
-	{
-		tmp_index = i;
+    while (i < (arr_size - 1))
+    {
+        tmp_index = i;
 
-		j = (i + 1);
+        j = (i + 1);
 
-		while (j < arr_size)
-		{
-			if (arr[j] < arr[tmp_index])
-			{
-				tmp_index = j;
-			}
+        while (j < arr_size)
+        {
+            if (arr[j] < arr[tmp_index])
+            {
+                tmp_index = j;
+            }
 
-			++j;
-		}
+            ++j;
+        }
 
-		tmp = arr[i];
-		arr[i] = arr[tmp_index];
-		arr[tmp_index] = tmp;
+        tmp = arr[i];
+        arr[i] = arr[tmp_index];
+        arr[tmp_index] = tmp;
 
-		++i;
-	}
+        ++i;
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -252,38 +304,38 @@ DATA_TYPE* Array_Selection_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 //
 DATA_TYPE* Array_Reverse_Selection_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
-	DATA_SIZE_TYPE i = 0;
-	DATA_SIZE_TYPE j;
+    DATA_SIZE_TYPE i = 0;
+    DATA_SIZE_TYPE j;
 
-	DATA_SIZE_TYPE tmp_index;
+    DATA_SIZE_TYPE tmp_index;
 
-	DATA_TYPE tmp;
+    DATA_TYPE tmp;
 
 
-	while (i < (arr_size - 1))
-	{
-		tmp_index = i;
+    while (i < (arr_size - 1))
+    {
+        tmp_index = i;
 
-		j = (i + 1);
+        j = (i + 1);
 
-		while (j < arr_size)
-		{
-			if (arr[j] > arr[tmp_index])
-			{
-				tmp_index = j;
-			}
+        while (j < arr_size)
+        {
+            if (arr[j] > arr[tmp_index])
+            {
+                tmp_index = j;
+            }
 
-			++j;
-		}
+            ++j;
+        }
 
-		tmp = arr[i];
-		arr[i] = arr[tmp_index];
-		arr[tmp_index] = tmp;
+        tmp = arr[i];
+        arr[i] = arr[tmp_index];
+        arr[tmp_index] = tmp;
 
-		++i;
-	}
+        ++i;
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -294,16 +346,16 @@ DATA_TYPE* Array_Reverse_Selection_Sort(DATA_TYPE* arr, const DATA_SIZE_TYPE arr
 //
 DATA_TYPE* Array_Reverse(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
-	DATA_TYPE temp;
+    DATA_TYPE temp;
 
-	for (DATA_SIZE_TYPE i = 0, j = (arr_size - 1); i < (arr_size >> 1) || j > (arr_size >> 1); ++i, --j)
-	{
-		temp = arr[i];
-		arr[i] = arr[j];
-		arr[j] = temp;
-	}
+    for (DATA_SIZE_TYPE i = 0, j = (arr_size - 1); i < (arr_size >> 1) || j >(arr_size >> 1); ++i, --j)
+    {
+        temp = arr[i];
+        arr[i] = arr[j];
+        arr[j] = temp;
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -314,27 +366,27 @@ DATA_TYPE* Array_Reverse(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 //
 DATA_TYPE* Array_Shift_Left(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
-	DATA_TYPE tmp = arr[0];
+    DATA_TYPE tmp = arr[0];
 
-	DATA_SIZE_TYPE i = 0, next_index;
+    DATA_SIZE_TYPE i = 0, next_index;
 
-	while (1)
-	{
-		next_index = i + 1;
+    while (1)
+    {
+        next_index = i + 1;
 
-		if (next_index >= arr_size)
-		{
-			break;
-		}
+        if (next_index >= arr_size)
+        {
+            break;
+        }
 
-		arr[i] = arr[next_index];
+        arr[i] = arr[next_index];
 
-		++i;
-	}
+        ++i;
+    }
 
-	arr[i] = tmp;
+    arr[i] = tmp;
 
-	return arr;
+    return arr;
 }
 
 
@@ -346,12 +398,12 @@ DATA_TYPE* Array_Shift_Left(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 DATA_TYPE* Array_Shift_Left_Pos(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const DATA_SIZE_TYPE n_pos)
 {
 
-	for (DATA_SIZE_TYPE i = 0; i < n_pos; ++i)
-	{
-		Array_Shift_Left(arr, arr_size);
-	}
+    for (DATA_SIZE_TYPE i = 0; i < n_pos; ++i)
+    {
+        Array_Shift_Left(arr, arr_size);
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -362,27 +414,27 @@ DATA_TYPE* Array_Shift_Left_Pos(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, c
 //
 DATA_TYPE* Array_Shift_Right(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 {
-	DATA_TYPE tmp = arr[arr_size - 1];
+    DATA_TYPE tmp = arr[arr_size - 1];
 
-	DATA_SIZE_TYPE i = (arr_size - 1), next_index;
+    DATA_SIZE_TYPE i = (arr_size - 1), next_index;
 
-	while (1)
-	{
-		next_index = i - 1;
+    while (1)
+    {
+        next_index = i - 1;
 
-		if (i == 0)
-		{
-			break;
-		}
+        if (i == 0)
+        {
+            break;
+        }
 
-		arr[i] = arr[next_index];
+        arr[i] = arr[next_index];
 
-		--i;
-	}
+        --i;
+    }
 
-	arr[0] = tmp;
+    arr[0] = tmp;
 
-	return arr;
+    return arr;
 }
 
 
@@ -394,12 +446,12 @@ DATA_TYPE* Array_Shift_Right(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
 DATA_TYPE* Array_Shift_Right_Pos(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const DATA_SIZE_TYPE n_pos)
 {
 
-	for (DATA_SIZE_TYPE i = 0; i < n_pos; ++i)
-	{
-		Array_Shift_Right(arr, arr_size);
-	}
+    for (DATA_SIZE_TYPE i = 0; i < n_pos; ++i)
+    {
+        Array_Shift_Right(arr, arr_size);
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -414,24 +466,24 @@ DATA_TYPE* Array_Shift_Right_Pos(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, 
 //
 DATA_TYPE* Array_Shuffle(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const uint16_t rand_seed)
 {
-	srand(rand_seed);
+    srand(rand_seed);
 
 
-	DATA_TYPE tmp;
+    DATA_TYPE tmp;
 
-	DATA_SIZE_TYPE tmp_index;
+    DATA_SIZE_TYPE tmp_index;
 
 
-	for (DATA_SIZE_TYPE i = arr_size - 1; i > 0; --i)
-	{
-		tmp_index = (DATA_SIZE_TYPE)rand() % (i + 1);
+    for (DATA_SIZE_TYPE i = arr_size - 1; i > 0; --i)
+    {
+        tmp_index = (DATA_SIZE_TYPE)rand() % (i + 1);
 
-		tmp = arr[i];
-		arr[i] = arr[tmp_index];
-		arr[tmp_index] = tmp;
-	}
+        tmp = arr[i];
+        arr[i] = arr[tmp_index];
+        arr[tmp_index] = tmp;
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -446,28 +498,28 @@ DATA_TYPE* Array_Shuffle(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const ui
 //
 DATA_TYPE* Array_Unshuffle(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const uint16_t rand_seed)
 {
-	DATA_TYPE tmp;
+    DATA_TYPE tmp;
 
-	volatile DATA_SIZE_TYPE tmp_index;
+    volatile DATA_SIZE_TYPE tmp_index;
 
 
-	for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
-	{
-		srand(rand_seed);
+    for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
+    {
+        srand(rand_seed);
 
-		for (DATA_SIZE_TYPE j = 0; j < (arr_size - i - 1); ++j)
-		{
-			tmp_index = (DATA_SIZE_TYPE)rand();
-		}
+        for (DATA_SIZE_TYPE j = 0; j < (arr_size - i - 1); ++j)
+        {
+            tmp_index = (DATA_SIZE_TYPE)rand();
+        }
 
-		tmp_index = (DATA_SIZE_TYPE)rand() % (i + 1);
+        tmp_index = (DATA_SIZE_TYPE)rand() % (i + 1);
 
-		tmp = arr[i];
-		arr[i] = arr[tmp_index];
-		arr[tmp_index] = tmp;
-	}
+        tmp = arr[i];
+        arr[i] = arr[tmp_index];
+        arr[tmp_index] = tmp;
+    }
 
-	return arr;
+    return arr;
 }
 
 
@@ -484,18 +536,18 @@ DATA_TYPE* Array_Unshuffle(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, const 
 //
 DATA_SIZE_TYPE Array_Linear_Search_Element_Index(const DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, DATA_TYPE element)
 {
-	DATA_SIZE_TYPE element_index = -1;
+    DATA_SIZE_TYPE element_index = -1;
 
 
-	for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
-	{
-		if (arr[i] == element)
-		{
-			element_index = i; break;
-		}
-	}
+    for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
+    {
+        if (arr[i] == element)
+        {
+            element_index = i; break;
+        }
+    }
 
-	return element_index;
+    return element_index;
 }
 
 
@@ -512,40 +564,112 @@ DATA_SIZE_TYPE Array_Linear_Search_Element_Index(const DATA_TYPE* arr, const DAT
 //
 DATA_SIZE_TYPE Array_Binary_Search_Element_Index(const DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size, DATA_TYPE element)
 {
-	DATA_TYPE tmp;
+    DATA_TYPE tmp;
 
-	DATA_SIZE_TYPE left_element_index = 0;
-	DATA_SIZE_TYPE right_element_index = arr_size - 1;
-	DATA_SIZE_TYPE median_element_index;
-
-
-	while (left_element_index <= right_element_index)
-	{
-		median_element_index = (left_element_index + right_element_index) >> 1;
-
-		tmp = arr[median_element_index];
-
-		if (element == tmp)
-		{
-			return median_element_index;
-		}
+    DATA_SIZE_TYPE left_element_index = 0;
+    DATA_SIZE_TYPE right_element_index = arr_size - 1;
+    DATA_SIZE_TYPE median_element_index;
 
 
-		if (element < tmp)
-		{
-			right_element_index = median_element_index - 1;
-		}
-		else
-		{
-			left_element_index = median_element_index + 1;
-		}
-	}
+    while (left_element_index <= right_element_index)
+    {
+        median_element_index = (left_element_index + right_element_index) >> 1;
 
-	return -1;
+        tmp = arr[median_element_index];
+
+        if (element == tmp)
+        {
+            return median_element_index;
+        }
+
+
+        if (element < tmp)
+        {
+            right_element_index = median_element_index - 1;
+        }
+        else
+        {
+            left_element_index = median_element_index + 1;
+        }
+    }
+
+    return -1;
+}
+
+
+// Алгоритм получения очередной перестановки
+// 
+// Внимание! Для корректной работы данного алгоритма
+// в первоначальный момент времени массив должен быть отсортирован!
+// 
+// Число всех перестановок N = factorial(arr_size)
+//
+// -------------------------------------------------------------------------------
+//
+// The algorithm for obtaining the next permutation
+// 
+// Attention! For this algorithm to work correctly,
+// the array must be sorted at the initial time!
+// 
+// The number of all permutations N = factorial(arr_size)
+//
+bool Array_Generate_Next_Permutation(DATA_TYPE* arr, const DATA_SIZE_TYPE arr_size)
+{
+    int8_t i = arr_size - 2;
+
+    while ((i >= 0) && (arr[i] >= arr[i + 1]))
+    {
+        --i;
+    }
+
+    if (i < 0)
+    {
+        return false;
+    }
+
+
+
+    int8_t j = arr_size - 1;
+
+    while (arr[j] <= arr[i])
+    {
+        --j;
+    }
+
+
+    DATA_TYPE temp;
+
+    temp = arr[i];
+    arr[i] = arr[j];
+    arr[j] = temp;
+
+
+    int8_t left_index  = i + 1;
+    int8_t right_index = arr_size - 1;
+
+    while (left_index < right_index)
+    {
+        temp = arr[left_index];
+
+        arr[left_index] = arr[right_index];
+
+        arr[right_index] = temp;
+
+        ++left_index;
+
+        --right_index;
+    }
+
+    return true;
 }
 
 
 
+
+
+
+// ===============================================================================
+// ===============================================================================
 // ===============================================================================
 
 
@@ -557,14 +681,14 @@ DATA_SIZE_TYPE Array_Binary_Search_Element_Index(const DATA_TYPE* arr, const DAT
 //
 void __Print_Array(const char* msg, DATA_TYPE* arr, DATA_SIZE_TYPE arr_size)
 {
-	printf("%s: ", msg);
+    printf("%s: ", msg);
 
-	for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
-	{
-		printf("%d ", arr[i]);
-	}
+    for (DATA_SIZE_TYPE i = 0; i < arr_size; ++i)
+    {
+        printf("%d ", arr[i]);
+    }
 
-	printf("\r\n\r\n");
+    printf("\r\n\r\n");
 }
 
 
@@ -580,134 +704,188 @@ DATA_TYPE arr[] = { 13, 14, 4, 6, 17, 5, 16, 1, 3, 2, 7, 0, 11, 9, 12, 8, 10, 19
 
 int main()
 {
-	// вычисление количества элементов массива
-	//
-	// -------------------------------------------------------------------------------
-	// calculating the number of array elements
-	//
-	const DATA_SIZE_TYPE arr_size = sizeof(arr) / sizeof(DATA_TYPE);
+    // вычисление количества элементов массива
+    //
+    // -------------------------------------------------------------------------------
+    // calculating the number of array elements
+    //
+    const DATA_SIZE_TYPE arr_size = sizeof(arr) / sizeof(DATA_TYPE);
 
 
 
 
-	// печать оригинального массива
-	//
-	// -------------------------------------------------------------------------------
-	// printing the original array
-	//
-	__Print_Array("Original array", arr, arr_size);
+    // печать оригинального массива
+    //
+    // -------------------------------------------------------------------------------
+    // printing the original array
+    //
+    __Print_Array("Original array", arr, arr_size);
 
 
 
 
-	// выполнение различных манипуляций с массивом
-	//
-	// -------------------------------------------------------------------------------
-	// performing various array manipulations
-	//
-	Array_Bubble_Sort(arr, arr_size);
-	__Print_Array("Sorted array", arr, arr_size);
+    // выполнение различных манипуляций с массивом
+    //
+    // -------------------------------------------------------------------------------
+    // performing various array manipulations
+    //
+    Array_Bubble_Sort(arr, arr_size);
+    __Print_Array("Sorted array", arr, arr_size);
 
 
-	Array_Reverse(arr, arr_size);
-	__Print_Array("Reversed array", arr, arr_size);
+    Array_Reverse(arr, arr_size);
+    __Print_Array("Reversed array", arr, arr_size);
 
 
-	Array_Shift_Left(arr, arr_size);
-	__Print_Array("Shifted to left array (1 pos)", arr, arr_size);
+    Array_Shift_Left(arr, arr_size);
+    __Print_Array("Shifted to left array (1 pos)", arr, arr_size);
 
 
-	Array_Shift_Right(arr, arr_size);
-	__Print_Array("Shifted to right array (1 pos)", arr, arr_size);
-
-
-
-
-
-	// для работы с функцией случайной перестановки
-	// (и функции с обратным преобразованием этой перестановки)
-	// используются функции генератора псевдослучайных чисел из библиотеки stdlib.h.
-	// 
-	// Третьим параметром в функции передаются значение зерна для генератора rand()
-	// (в случае функции Array_Unshuffle значение зерна должно быть тем же,
-	// что использовался при вызове функции Array_Shuffle)
-	//
-	// -------------------------------------------------------------------------------
-	// to work with the random permutation function
-	// (and the function with the inverse transformation of this permutation),
-	// the functions of the pseudo-random number generator from the stdlib.h library.
-	// 
-	// The third parameter in the function passes the grain value
-	// for the rand() generator
-	// (in the case of the Array_Unshuffle function,
-	// the grain value must be the same as that used when calling
-	// the Array_Shuffle function)
-	//
-	Array_Shuffle(arr, arr_size, 0x0000);
-	__Print_Array("Random shuffled array", arr, arr_size);
-
-
-	Array_Unshuffle(arr, arr_size, 0x0000);
-	__Print_Array("Unshuffled array", arr, arr_size);
+    Array_Shift_Right(arr, arr_size);
+    __Print_Array("Shifted to right array (1 pos)", arr, arr_size);
 
 
 
 
 
-	Array_Reverse_Bubble_Sort(arr, arr_size);
-	__Print_Array("Reverse sorted array", arr, arr_size);
+    // для работы с функцией случайной перестановки
+    // (и функции с обратным преобразованием этой перестановки)
+    // используются функции генератора псевдослучайных чисел из библиотеки stdlib.h.
+    // 
+    // Третьим параметром в функции передаются значение зерна для генератора rand()
+    // (в случае функции Array_Unshuffle значение зерна должно быть тем же,
+    // что использовался при вызове функции Array_Shuffle)
+    //
+    // -------------------------------------------------------------------------------
+    // to work with the random permutation function
+    // (and the function with the inverse transformation of this permutation),
+    // the functions of the pseudo-random number generator from the stdlib.h library.
+    // 
+    // The third parameter in the function passes the grain value
+    // for the rand() generator
+    // (in the case of the Array_Unshuffle function,
+    // the grain value must be the same as that used when calling
+    // the Array_Shuffle function)
+    //
+    Array_Shuffle(arr, arr_size, 0x0000);
+    __Print_Array("Random shuffled array", arr, arr_size);
 
 
-	Array_Shift_Right_Pos(arr, arr_size, 3);
-	__Print_Array("Shifted to right array (3 pos)", arr, arr_size);
-
-
-	Array_Shift_Left_Pos(arr, arr_size, 3);
-	__Print_Array("Shifted to left array (3 pos)", arr, arr_size);
-
-
-
-
-	// линейный поиск элемента в массиве
-	//
-	// -------------------------------------------------------------------------------
-	// linear searching for an element in an array
-	//
-	DATA_TYPE element = 18;
-
-	DATA_SIZE_TYPE element_index = Array_Linear_Search_Element_Index(arr, arr_size, element);
-
-	printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
-
-
-
-	// сортировка массива алгоритмом insertion sort
-	//
-	// -------------------------------------------------------------------------------
-	// sorting an array using the insertion sort algorithm
-	//
-	Array_Insertion_Sort(arr, arr_size);
-	__Print_Array("Sorted array (insertion sort)", arr, arr_size);
+    Array_Unshuffle(arr, arr_size, 0x0000);
+    __Print_Array("Unshuffled array", arr, arr_size);
 
 
 
 
-	// бинарный поиск элемента в массиве
-	// 
-	// Внимание! Бинарный поиск работает только на отсортированных данных!
-	//
-	// -------------------------------------------------------------------------------
-	// binary searching for an element in an array
-	// 
-	// Attention! Binary search only works on sorted data!
-	//
-	element = 15;
 
-	element_index = Array_Binary_Search_Element_Index(arr, arr_size, element);
+    Array_Reverse_Bubble_Sort(arr, arr_size);
+    __Print_Array("Reverse sorted array", arr, arr_size);
 
-	printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
+
+    Array_Shift_Right_Pos(arr, arr_size, 3);
+    __Print_Array("Shifted to right array (3 pos)", arr, arr_size);
+
+
+    Array_Shift_Left_Pos(arr, arr_size, 3);
+    __Print_Array("Shifted to left array (3 pos)", arr, arr_size);
+
+
+
+
+    // линейный поиск элемента в массиве
+    //
+    // -------------------------------------------------------------------------------
+    // linear searching for an element in an array
+    //
+    DATA_TYPE element = 18;
+
+    DATA_SIZE_TYPE element_index = Array_Linear_Search_Element_Index(arr, arr_size, element);
+
+    printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
+
+
+
+    // сортировка массива алгоритмом insertion sort
+    //
+    // -------------------------------------------------------------------------------
+    // sorting an array using the insertion sort algorithm
+    //
+    Array_Insertion_Sort(arr, arr_size);
+    __Print_Array("Sorted array (insertion sort)", arr, arr_size);
+
+
+
+
+    // бинарный поиск элемента в массиве
+    // 
+    // Внимание! Бинарный поиск работает только на отсортированных данных!
+    //
+    // -------------------------------------------------------------------------------
+    // binary searching for an element in an array
+    // 
+    // Attention! Binary search only works on sorted data!
+    //
+    element = 15;
+
+    element_index = Array_Binary_Search_Element_Index(arr, arr_size, element);
+
+    printf("Element \'%d\' is located at the index %d\n\n", element, element_index);
+
+
+
+
+
+
+
+
+
+
+    printf("\n\n==================================================================\n\n");
+
+
+    // пример генерации всех перестановок массива
+    // 
+    // Для примера используется строковый массив
+    //
+    // -------------------------------------------------------------------------------
+    // example of generating all permutations of an array
+    // 
+    // For example, a string array is used
+    //
+    char str[] = "ABCD";
+
+    DATA_SIZE_TYPE str_size = strlen(str);
+
+
+
+    // перед генерацией перестановок необходимо отсортировать массив!
+    //
+    // -------------------------------------------------------------------------------
+    // before generating permutations, you need to sort the array!
+    //
+    Array_Bubble_Sort((DATA_TYPE*)str, str_size);
+
+
+
+    // генерируем все перестановки в цикле.
+    // 
+    // Всего будет 4! = 24 перестановки
+    //
+    // -------------------------------------------------------------------------------
+    // generating all the permutations in the loop.
+    // 
+    // There will be 4! = 24 permutations in total
+    //
+    uint32_t num_of_permutation = 0;
+
+    do
+    {
+        ++num_of_permutation;
+
+        printf("PERMUTATION %d: \"%s\"\n", num_of_permutation, str);
+
+    } while (Array_Generate_Next_Permutation((DATA_TYPE*)str, str_size));
 }
-
 
 
 
