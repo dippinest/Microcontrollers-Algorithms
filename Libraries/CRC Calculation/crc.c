@@ -3,8 +3,8 @@
 
 uint8_t CRC8_Get_Value(void *data, uint16_t data_size, uint8_t polynomial, uint8_t initial, bool refin, bool refout, uint8_t xor_out)
 {
-	register uint8_t i;
-	register uint8_t* byte_ptr = (uint8_t*)data;
+	uint8_t i;
+	uint8_t* byte_ptr = (uint8_t*)data;
 
 	while (data_size--)
 	{
@@ -59,8 +59,8 @@ uint8_t CRC8_Get_Value(void *data, uint16_t data_size, uint8_t polynomial, uint8
 
 uint16_t CRC16_Get_Value(void *data, uint16_t data_size, uint16_t polynomial, uint16_t initial, bool refin, bool refout, uint16_t xor_out)
 {
-	register uint8_t i;
-	register uint8_t* byte_ptr = (uint8_t*)data;
+	uint8_t i;
+	uint8_t* byte_ptr = (uint8_t*)data;
 
 	while (data_size--)
 	{
@@ -115,8 +115,8 @@ uint16_t CRC16_Get_Value(void *data, uint16_t data_size, uint16_t polynomial, ui
 
 uint32_t CRC32_Get_Value(void *data, uint16_t data_size, uint32_t polynomial, uint32_t initial, bool refin, bool refout, uint32_t xor_out)
 {
-	register uint8_t i;
-	register uint8_t* byte_ptr = (uint8_t*)data;
+	uint8_t i;
+	uint8_t* byte_ptr = (uint8_t*)data;
 
 	while (data_size--)
 	{
@@ -174,8 +174,8 @@ uint32_t CRC32_Get_Value(void *data, uint16_t data_size, uint32_t polynomial, ui
 
 uint64_t CRC64_Get_Value(void* data, uint16_t data_size, uint64_t polynomial, uint64_t initial, bool refin, bool refout, uint64_t xor_out)
 {
-	register uint8_t i;
-	register uint8_t* byte_ptr = (uint8_t*)data;
+	uint8_t i;
+	uint8_t* byte_ptr = (uint8_t*)data;
 
 	while (data_size--)
 	{
