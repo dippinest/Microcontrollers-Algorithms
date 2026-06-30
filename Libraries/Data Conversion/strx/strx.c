@@ -4,23 +4,6 @@
 
 
 
-uint8_t STRX_Convert_Digit_Char_To_Digit(const char ch)
-{
-	if (isdigit(ch))
-	{
-		return (ch & 0xF);
-	}
-
-	return 0;
-}
-
-
-char STRX_Convert_Digit_To_Digit_Char(const uint8_t digit)
-{
-	return (char)((digit % 10) + 0x30);
-}
-
-
 int8_t STRX_Get_Char_Pos_In_Latin_Alphabet(const char ch)
 {
 	char c = toupper(ch);
