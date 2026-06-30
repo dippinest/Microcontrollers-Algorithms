@@ -115,11 +115,6 @@ inline char STRX_Convert_Char_To_Lower_Case(const char ch)
 
 
 
-uint8_t STRX_Convert_Digit_Char_To_Digit(const char ch);
-
-char STRX_Convert_Digit_To_Digit_Char(const uint8_t digit);
-
-
 // если символ отсутствует в наборе, функция вернёт значение -1
 //
 // -------------------------------------------------------------------------------
