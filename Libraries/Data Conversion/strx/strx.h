@@ -10,12 +10,7 @@
 //
 // Библиотека включает в себя как более удобные аналоги функций
 // стандартной библиотеки string.h, так и новые функции для различных
-// манипуляций со строками.
-//
-// Функции библиотеки (в большинстве своём) не используют динамическую память
-// для своей работы, поэтому может без ограничений использоваться в различных
-// embedded системах (при этом пользователь всё же должен внимательно следить
-// за размерами передаваемых в функции буферов для корректной работы!)
+// манипуляций со строками
 //
 // -------------------------------------------------------------------------------
 //
@@ -26,12 +21,7 @@
 //
 // The library includes both more convenient analogues of the functions
 // of the standard string.h library, as well as new functions and new functions
-// for various string manipulations.
-//
-// The library functions (for the most part) do not use dynamic memory
-// for their work, so they can be used without restrictions in various
-// embedded systems (while the user still needs to carefully monitor
-// the size of buffers passed to the function for correct operation!)
+// for various string manipulations
 //
 // ===============================================================================
 
@@ -106,7 +96,7 @@ inline bool STRX_Char_Is_Upper_Case(const char ch)
 
 inline bool STRX_Char_Is_Lower_Case(const char ch)
 {
-	return (bool)islower(ch);
+	return (bool)isupper(ch);
 }
 
 inline char STRX_Convert_Char_To_Upper_Case(const char ch)
@@ -136,6 +126,32 @@ char STRX_Convert_Digit_To_Digit_Char(const uint8_t digit);
 // if the character is missing from the set, the function returns the value -1
 //
 int8_t STRX_Get_Char_Pos_In_Latin_Alphabet(const char ch);
+
+
+// если индекс невалиден, функция вернёт значение EOL (символ конца строки '\0')
+//
+// -------------------------------------------------------------------------------
+// if the index is invalid, the function returns the value EOL
+// (the end-of-line character '\0')
+//
+char STRX_Get_Latin_Alphabet_Char_By_Pos(uint8_t pos);
+
+
+// если символ отсутствует в наборе, функция вернёт значение -1
+//
+// -------------------------------------------------------------------------------
+// if the character is missing from the set, the function returns the value -1
+//
+int8_t STRX_Get_Char_Pos_In_Numerical_Digit(const char ch);
+
+
+// если индекс невалиден, функция вернёт значение EOL (символ конца строки '\0')
+//
+// -------------------------------------------------------------------------------
+// if the index is invalid, the function returns the value EOL
+// (the end-of-line character '\0')
+//
+char STRX_Get_Numerical_Digit_Char_By_Pos(uint8_t pos);
 
 
 
@@ -310,9 +326,6 @@ uint16_t STRX_Split_Into_Tokens_Using_Delimiters_Set
 
 
 #endif
-
-
-
 
 
 
