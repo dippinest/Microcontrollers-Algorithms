@@ -1,5 +1,7 @@
 
+
 #include "strx.h"
+
 
 
 uint8_t STRX_Convert_Digit_Char_To_Digit(const char ch)
@@ -29,6 +31,41 @@ int8_t STRX_Get_Char_Pos_In_Latin_Alphabet(const char ch)
 	}
 
 	return (int8_t)(c - 0x41);
+}
+
+
+char STRX_Get_Latin_Alphabet_Char_By_Pos(uint8_t pos)
+{
+	if (pos < 26)
+	{
+		return (pos + 0x41);
+	}
+	
+	return '\0';
+}
+
+
+int8_t STRX_Get_Char_Pos_In_Numerical_Digit(const char ch)
+{
+	char c = toupper(ch);
+
+	if ((c < 0x30) || (c > 0x39))
+	{
+		return -1;
+	}
+
+	return (int8_t)(c - 0x30);
+}
+
+
+char STRX_Get_Numerical_Digit_Char_By_Pos(uint8_t pos)
+{
+	if (pos < 10)
+	{
+		return (pos + 0x30);
+	}
+	
+	return '\0';
 }
 
 
@@ -759,7 +796,7 @@ uint16_t STRX_Get_Num_Of_Substring_Occurrences(char *str, const char *substr)
 
 	uint16_t substr_size = strlen(substr);
 
-	char *str_ptr = str;
+	char* str_ptr = str;
 
 
 	while ((str_ptr = strstr(str_ptr, substr)) != NULL)
@@ -911,8 +948,6 @@ uint16_t STRX_Split_Into_Tokens_Using_Delimiters_Set
 
 	return num_of_tokens;
 }
-
-
 
 
 
