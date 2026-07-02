@@ -550,7 +550,7 @@ char *STRX_Trim_All_Right_Extra_Symbols(char *str, const char symbol)
 }
 
 
-char *STRX_Trim_All_Extra_Symbols_To_Tagret_Symbol(char *str, const char target_symbol)
+char *STRX_Trim_All_Extra_Symbols_To_Target_Symbol(char *str, const char target_symbol)
 {
 	int16_t i = 0;
 	int16_t j = 0;
@@ -574,7 +574,7 @@ char *STRX_Trim_All_Extra_Symbols_To_Tagret_Symbol(char *str, const char target_
 }
 
 
-char *STRX_Trim_All_Extra_Symbols_After_Tagret_Symbol(char *str, const char target_symbol)
+char *STRX_Trim_All_Extra_Symbols_After_Target_Symbol(char *str, const char target_symbol)
 {
 	if (strlen(str) == 0)
 	{
