@@ -244,9 +244,9 @@ char *STRX_Trim_All_Left_Extra_Symbols(char *str, const char symbol);
 
 char *STRX_Trim_All_Right_Extra_Symbols(char *str, const char symbol);
 
-char *STRX_Trim_All_Extra_Symbols_To_Tagret_Symbol(char *str, const char target_symbol);
+char *STRX_Trim_All_Extra_Symbols_To_Target_Symbol(char *str, const char target_symbol);
 
-char *STRX_Trim_All_Extra_Symbols_After_Tagret_Symbol(char *str, const char target_symbol);
+char *STRX_Trim_All_Extra_Symbols_After_Target_Symbol(char *str, const char target_symbol);
 
 char *STRX_Replace_All_Symbols(char *str, const char old_symbol, const char new_symbol);
 
