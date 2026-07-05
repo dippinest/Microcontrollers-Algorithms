@@ -99,6 +99,12 @@ inline bool STRX_Char_Is_Lower_Case(const char ch)
 	return (bool)islower(ch);
 }
 
+
+
+// ===============================================================================
+
+
+
 inline char STRX_Convert_Char_To_Upper_Case(const char ch)
 {
 	return (char)toupper(ch);
