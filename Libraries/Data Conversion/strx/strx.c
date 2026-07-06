@@ -4,59 +4,6 @@
 
 
 
-int8_t STRX_Get_Char_Pos_In_Latin_Alphabet(const char ch)
-{
-	char c = toupper(ch);
-
-	if ((c < 0x41) || (c > 0x5A))
-	{
-		return -1;
-	}
-
-	return (int8_t)(c - 0x41);
-}
-
-
-char STRX_Get_Latin_Alphabet_Char_By_Pos(uint8_t pos)
-{
-	if (pos < 26)
-	{
-		return (pos + 0x41);
-	}
-	
-	return '\0';
-}
-
-
-int8_t STRX_Get_Char_Pos_In_Numerical_Digit(const char ch)
-{
-	char c = toupper(ch);
-
-	if ((c < 0x30) || (c > 0x39))
-	{
-		return -1;
-	}
-
-	return (int8_t)(c - 0x30);
-}
-
-
-char STRX_Get_Numerical_Digit_Char_By_Pos(uint8_t pos)
-{
-	if (pos < 10)
-	{
-		return (pos + 0x30);
-	}
-	
-	return '\0';
-}
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
-
-
-
 uint16_t STRX_Get_String_Size(const char* str)
 {
 	uint16_t str_size = 0;
