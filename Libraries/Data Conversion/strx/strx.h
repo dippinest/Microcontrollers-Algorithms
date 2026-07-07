@@ -352,7 +352,7 @@ char *STRX_Replace_All_Symbols_To_Target_Symbol
 	char *str,
 	const char old_symbol,
 	const char new_symbol,
-	const char target_symbo
+	const char target_symbol
 );
 
 char *STRX_Replace_All_Symbols_After_Target_Symbol
