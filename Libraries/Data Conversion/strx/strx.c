@@ -917,7 +917,7 @@ char *STRX_Trim_All_Extra_Symbols_To_Target_Symbol(char *str, const char target_
 }
 
 
-char *STRX_Trim_All_Extra_Symbols_After_Target_Symbol(char str, const char target_symbol)
+char *STRX_Trim_All_Extra_Symbols_After_Target_Symbol(char *str, const char target_symbol)
 {
 	const uint16_t str_size = strlen(str);
 
