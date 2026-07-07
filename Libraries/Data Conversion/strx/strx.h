@@ -417,6 +417,71 @@ uint16_t STRX_Split_Into_Tokens_Using_Delimiters_Set
 );
 
 
+
+// ===============================================================================
+
+
+
+bool STRX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings);
+
+bool STRX_Strings_Is_Reverce_Sort(char** strings, const uint16_t num_of_strings);
+
+
+
+// ===============================================================================
+
+
+
+int8_t STRX_BuildIn_Custom_STRCMP(const char* str1, const char* str2);
+
+int8_t STRX_BuildIn_Custom_STRCMP_Ignore_Case(const char* str1, const char* str2);
+
+int8_t STRX_BuildIn_Custom_STRCMP_Reverse(const char* str1, const char* str2);
+
+int8_t STRX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char* str1, const char* str2);
+
+
+
+// ===============================================================================
+
+
+
+// пузырьковая сортировка
+//
+// Данный алгоритм оптимален только для сортировки небольших массивов
+//
+// -------------------------------------------------------------------------------
+// bubble sorting
+//
+// This algorithm is optimal only for sorting small arrays
+//
+void STRX_Strings_Lexicographic_Bubble_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2));
+
+
+// сортировка вставками
+//
+// Данный алгоритм оптимален для сортировки почти отсортированных массивов
+//
+// -------------------------------------------------------------------------------
+// insertion sorting
+//
+// This algorithm is optimal for sorting almost sorted arrays
+//
+void STRX_Strings_Lexicographic_Insertion_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2));
+
+
+// сортировка выбором
+//
+// Стабильная сортировка
+//
+// -------------------------------------------------------------------------------
+// selection sorting
+//
+// Stable sorting
+//
+void STRX_Strings_Lexicographic_Selection_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2));
+
+
 #endif
 
 
