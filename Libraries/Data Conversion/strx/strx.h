@@ -309,7 +309,7 @@ char *STRX_Trim_All_Extra_Symbols_After_Target_Symbol(char *str, const char targ
 
 char *STRX_Replace_All_Symbols(char *str, const char old_symbol, const char new_symbol);
 
-char *STRX_Replace_All_Symbols_To_Tagret_Symbol
+char *STRX_Replace_All_Symbols_To_Target_Symbol
 (
 	char *str,
 	const char old_symbol,
@@ -317,7 +317,7 @@ char *STRX_Replace_All_Symbols_To_Tagret_Symbol
 	const char target_symbo
 );
 
-char *STRX_Replace_All_Symbols_After_Tagret_Symbol
+char *STRX_Replace_All_Symbols_After_Target_Symbol
 (
 	char *str,
 	const char old_symbol,
