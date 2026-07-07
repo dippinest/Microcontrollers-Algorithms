@@ -433,13 +433,9 @@ bool STRX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strings)
 
 
 // случайная перестановка элементов массива
-// (в ней используется функции генератора псевдослучайных чисел srand() и rand()
-// из библиотеки stdlib.h)
 //
 // -------------------------------------------------------------------------------
 // random permutation of array elements
-// (it uses the pseudo-random number generator functions srand() and rand()
-// from the stdlib.h library)
 //
 void STRX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_strings, uint16_t(*_16bit_random_generator)(void));
 
