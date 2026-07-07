@@ -546,7 +546,7 @@ char *STRX_Generate_Random_Strings_With_Alphabet(
 	uint16_t(*_16bit_random_generator)(void)
 )
 {
-	if ((str_buf_size == 0) || (alphabet == NULL) || (alphabet_size == NULL) || (_16bit_random_generator == NULL))
+	if ((str_buf_size == 0) || (alphabet == NULL) || (alphabet_size == 0) || (_16bit_random_generator == NULL))
 	{
 		return NULL;
 	}
