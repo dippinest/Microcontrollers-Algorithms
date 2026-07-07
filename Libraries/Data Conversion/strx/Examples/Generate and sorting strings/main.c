@@ -63,12 +63,12 @@ int main(void)
 
 
 
-	// заполнение строк случайными значениями (строки с символами от 'A' до 'Z')
-	// случайной длины (от 8 до MAX_STRING_SIZE символов)
+	// заполнение строк случайной длины (от 8 до (MAX_STRING_SIZE - 1) символов)
+	// случайными значениями (строки с символами от 'A' до 'Z')
 	// 
 	// -------------------------------------------------------------------------------
-	// filling lines with random values (lines with characters from 'A' to 'Z')
-	// with random length (from 8 to MAX_STRING_SIZE characters)
+	// filling strings of random length (from 8 to (MAX_STRING_SIZE - 1) characters)
+	// with random values (strings with characters from 'A' to 'Z')
 	//
 	for (uint16_t i = 0; i < NUM_OF_STRINGS; ++i)
 	{
