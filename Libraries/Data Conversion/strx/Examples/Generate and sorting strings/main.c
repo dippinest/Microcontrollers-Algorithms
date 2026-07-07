@@ -15,8 +15,8 @@
 // -------------------------------------------------------------------------------
 // parameters of a two-dimensional static array
 //
-#define NUM_OF_STRINGS  20
 #define MAX_STRING_SIZE 30
+#define NUM_OF_STRINGS  20
 
 
 // двумерный статический массив для хранения строк
