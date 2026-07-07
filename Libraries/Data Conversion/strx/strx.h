@@ -432,10 +432,10 @@ bool STRX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strings)
 
 
 
-// случайная перестановка элементов массива
+// случайная перестановка массива строк (алгоритм Фишера-Йетса)
 //
 // -------------------------------------------------------------------------------
-// random permutation of array elements
+// random permutation of an array of strings (Fisher-Yates algorithm)
 //
 void STRX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_strings, uint16_t(*_16bit_random_generator)(void));
 
