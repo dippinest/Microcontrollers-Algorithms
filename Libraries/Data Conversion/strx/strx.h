@@ -256,7 +256,8 @@ bool STRX_Strings_Is_Equivalent_Ignore_Case_Safe(char *str1, const uint16_t str1
 
 
 
-char *STRX_Generate_Random_Strings(
+char *STRX_Generate_Random_Strings
+(
 	char *str_buf,
 	const uint16_t str_buf_size,
 	char min_char_index,
@@ -264,7 +265,9 @@ char *STRX_Generate_Random_Strings(
 	uint16_t (*_16bit_random_generator)(void)
 );
 
-char *STRX_Generate_Random_Strings_With_Alphabet(
+
+char *STRX_Generate_Random_Strings_With_Alphabet
+(
 	char *str_buf,
 	const uint16_t str_buf_size,
 	const char *alphabet,
