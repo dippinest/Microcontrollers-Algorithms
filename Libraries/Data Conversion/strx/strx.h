@@ -137,6 +137,11 @@ inline char STRX_Convert_Char_To_Lower_Case(const char ch)
 
 
 
+// если символ отсутствует в наборе, функция вернёт значение -1
+//
+// -------------------------------------------------------------------------------
+// if the character is missing from the set, the function returns the value -1
+//
 inline int8_t STRX_Get_Char_Pos_In_Latin_Alphabet(const char ch)
 {
 	char c = toupper(ch);
@@ -150,6 +155,12 @@ inline int8_t STRX_Get_Char_Pos_In_Latin_Alphabet(const char ch)
 }
 
 
+// если индекс невалиден, функция вернёт значение EOL (символ конца строки '\0')
+//
+// -------------------------------------------------------------------------------
+// if the index is invalid, the function returns the value EOL
+// (the end-of-line character '\0')
+//
 inline char STRX_Get_Latin_Alphabet_Char_By_Pos(const uint8_t pos)
 {
 	if (pos < 26)
@@ -161,6 +172,11 @@ inline char STRX_Get_Latin_Alphabet_Char_By_Pos(const uint8_t pos)
 }
 
 
+// если символ отсутствует в наборе, функция вернёт значение -1
+//
+// -------------------------------------------------------------------------------
+// if the character is missing from the set, the function returns the value -1
+//
 inline int8_t STRX_Get_Char_Pos_In_Numerical_Digit(const char ch)
 {
 	char c = toupper(ch);
@@ -174,6 +190,12 @@ inline int8_t STRX_Get_Char_Pos_In_Numerical_Digit(const char ch)
 }
 
 
+// если индекс невалиден, функция вернёт значение EOL (символ конца строки '\0')
+//
+// -------------------------------------------------------------------------------
+// if the index is invalid, the function returns the value EOL
+// (the end-of-line character '\0')
+//
 inline char STRX_Get_Numerical_Digit_Char_By_Pos(const uint8_t pos)
 {
 	if (pos < 10)
@@ -187,45 +209,6 @@ inline char STRX_Get_Numerical_Digit_Char_By_Pos(const uint8_t pos)
 
 
 // ===============================================================================
-
-
-
-// если символ отсутствует в наборе, функция вернёт значение -1
-//
-// -------------------------------------------------------------------------------
-// if the character is missing from the set, the function returns the value -1
-//
-int8_t STRX_Get_Char_Pos_In_Latin_Alphabet(const char ch);
-
-
-// если индекс невалиден, функция вернёт значение EOL (символ конца строки '\0')
-//
-// -------------------------------------------------------------------------------
-// if the index is invalid, the function returns the value EOL
-// (the end-of-line character '\0')
-//
-char STRX_Get_Latin_Alphabet_Char_By_Pos(uint8_t pos);
-
-
-// если символ отсутствует в наборе, функция вернёт значение -1
-//
-// -------------------------------------------------------------------------------
-// if the character is missing from the set, the function returns the value -1
-//
-int8_t STRX_Get_Char_Pos_In_Numerical_Digit(const char ch);
-
-
-// если индекс невалиден, функция вернёт значение EOL (символ конца строки '\0')
-//
-// -------------------------------------------------------------------------------
-// if the index is invalid, the function returns the value EOL
-// (the end-of-line character '\0')
-//
-char STRX_Get_Numerical_Digit_Char_By_Pos(uint8_t pos);
-
-
-
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 
 
 
