@@ -8,7 +8,7 @@ bool STRX_Is_String_Contains_Only_Letter(const char *str)
 {
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
-		if ( !STRX_Char_Is_Letter(str[i]) )
+		if (!STRX_Char_Is_Letter(str[i]))
 		{
 			return false;
 		}
