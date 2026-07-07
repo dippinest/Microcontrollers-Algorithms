@@ -64,13 +64,17 @@ int main(void)
 
 
 	// заполнение строк случайными значениями (строки с символами от 'A' до 'Z')
+	// случайной длины (от 8 до MAX_STRING_SIZE символов)
 	// 
 	// -------------------------------------------------------------------------------
 	// filling lines with random values (lines with characters from 'A' to 'Z')
+	// with random length (from 8 to MAX_STRING_SIZE characters)
 	//
 	for (uint16_t i = 0; i < NUM_OF_STRINGS; ++i)
 	{
-		STRX_Generate_Random_Strings(strings[i], MAX_STRING_SIZE, 'A', 'Z', random_generator);
+		uint16_t string_random_size = 8 + random_generator() % (MAX_STRING_SIZE - 8);
+
+		STRX_Generate_Random_Strings(strings[i], string_random_size, 'A', 'Z', random_generator);
 
 		strings_pointers[i] = strings[i];
 	}
