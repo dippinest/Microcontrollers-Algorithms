@@ -1283,6 +1283,236 @@ uint16_t STRX_Split_Into_Tokens_Using_Delimiters_Set
 
 
 
+// ===============================================================================
+
+
+
+bool STRX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings)
+{
+	if (num_of_strings < 2)
+	{
+		return true;
+	}
+
+
+	for (uint16_t i = 0; i < num_of_strings; ++i)
+	{
+		if (STRX_BuildIn_Custom_STRCMP(strings[i - 1], strings[i]) > 0)
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Strings_Is_Reverce_Sort(char** strings, const uint16_t num_of_strings)
+{
+	if (num_of_strings < 2)
+	{
+		return true;
+	}
+
+
+	for (uint16_t i = 0; i < num_of_strings; ++i)
+	{
+		if (STRX_BuildIn_Custom_STRCMP(strings[i - 1], strings[i]) < 0)
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+
+// ===============================================================================
+
+
+
+int8_t STRX_BuildIn_Custom_STRCMP(const char* str1, const char* str2)
+{
+	while (*str1 && *str2 && (*str1 == *str2))
+	{
+		++(str1);
+		++(str2);
+	}
+
+	return (int8_t)(*str1 - *str2);
+}
+
+
+int8_t STRX_BuildIn_Custom_STRCMP_Ignore_Case(const char* str1, const char* str2)
+{
+	char ch1, ch2;
+
+
+	while (*str1 && *str2)
+	{
+		ch1 = toupper(*str1);
+		ch2 = toupper(*str2);
+
+		if (ch1 != ch2)
+		{
+			return (int8_t)(ch1 - ch2);
+		}
+
+		++(str1);
+		++(str2);
+	}
+
+	return (int8_t)(*str1 - *str2);
+}
+
+
+int8_t STRX_BuildIn_Custom_STRCMP_Reverse(const char* str1, const char* str2)
+{
+	while (*str1 && *str2 && (*str1 == *str2))
+	{
+		++(str1);
+		++(str2);
+	}
+
+	return (int8_t)(*str2 - *str1);
+}
+
+
+int8_t STRX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char* str1, const char* str2)
+{
+	char ch1, ch2;
+
+
+	while (*str1 && *str2)
+	{
+		ch1 = toupper(*str1);
+		ch2 = toupper(*str2);
+
+		if (ch1 != ch2)
+		{
+			return (int8_t)(ch2 - ch1);
+		}
+
+		++(str1);
+		++(str2);
+	}
+
+	return (int8_t)(*str2 - *str1);
+}
+
+
+
+// ===============================================================================
+
+
+
+void STRX_Strings_Lexicographic_Bubble_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2))
+{
+	if (num_of_strings < 2)
+	{
+		return;
+	}
+
+
+	char* tmp_string_ptr;
+
+	bool is_swapped = false;
+
+
+	for (uint16_t i = 0; i < (num_of_strings - 1); ++i)
+	{
+		is_swapped = false;
+
+
+		for (uint16_t j = 0; j < (num_of_strings - 1 - i); ++j)
+		{
+			if (comparator(strings[j], strings[j + 1]) > 0)
+			{
+				tmp_string_ptr = strings[j];
+				strings[j]     = strings[j + 1];
+				strings[j + 1] = tmp_string_ptr;
+
+				is_swapped = true;
+			}
+		}
+
+		if (is_swapped == false)
+		{
+			break;
+		}
+	}
+}
+
+
+void STRX_Strings_Lexicographic_Insertion_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2))
+{
+	if (num_of_strings < 2)
+	{
+		return;
+	}
+
+	char* key;
+
+	int16_t j;
+
+
+
+	for (uint16_t i = 1; i < num_of_strings; ++i)
+	{
+		key = strings[i];
+
+		j = i - 1;
+
+
+		while ((j >= 0) && (comparator(strings[j], key) > 0))
+		{
+			strings[j + 1] = strings[j];
+
+			j--;
+		}
+
+		strings[j + 1] = key;
+	}
+}
+
+
+void STRX_Strings_Lexicographic_Selection_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2))
+{
+	if (num_of_strings < 2)
+	{
+		return;
+	}
+
+	char* tmp_string_ptr;
+
+	uint16_t min_index;
+
+
+
+	for (uint16_t i = 0; i < (num_of_strings - 1); ++i)
+	{
+		min_index = i;
+
+		for (uint16_t j = (i + 1); j < num_of_strings; ++j)
+		{
+			if (comparator(strings[j], strings[min_index]) < 0)
+			{
+				min_index = j;
+			}
+		}
+
+		if (min_index != i)
+		{
+			tmp_string_ptr   = strings[i];
+			strings[i]       = strings[min_index];
+			strings[min_index] = tmp_string_ptr;
+		}
+	}
+}
+
+
+
 
 
 
