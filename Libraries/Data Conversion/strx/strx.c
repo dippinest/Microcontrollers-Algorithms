@@ -1295,7 +1295,7 @@ bool STRX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings)
 	}
 
 
-	for (uint16_t i = 0; i < num_of_strings; ++i)
+	for (uint16_t i = 1; i < num_of_strings; ++i)
 	{
 		if (STRX_BuildIn_Custom_STRCMP(strings[i - 1], strings[i]) > 0)
 		{
@@ -1315,7 +1315,7 @@ bool STRX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strings)
 	}
 
 
-	for (uint16_t i = 0; i < num_of_strings; ++i)
+	for (uint16_t i = 1; i < num_of_strings; ++i)
 	{
 		if (STRX_BuildIn_Custom_STRCMP(strings[i - 1], strings[i]) < 0)
 		{
