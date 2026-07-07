@@ -111,7 +111,7 @@ int main(void)
 	//
 	for (uint16_t i = 0; i < NUM_OF_STRINGS; ++i)
 	{
-		printf("Sort String %2.d:   %s\n", (i + 1), strings_pointers[i]);
+		printf("Sort String  %2.d:  %s\n", (i + 1), strings_pointers[i]);
 	}
 }
 
