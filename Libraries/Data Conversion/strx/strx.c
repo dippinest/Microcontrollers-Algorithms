@@ -501,7 +501,8 @@ bool STRX_Strings_Is_Equivalent_Ignore_Case_Safe(char *str1, const uint16_t str1
 
 
 
-char *STRX_Generate_Random_Strings(
+char *STRX_Generate_Random_Strings
+(
 	char *str_buf,
 	const uint16_t str_buf_size,
 	char min_char_index,
@@ -509,7 +510,7 @@ char *STRX_Generate_Random_Strings(
 	uint16_t (*_16bit_random_generator)(void)
 )
 {
-	if ((str_buf_size == 0) || (_16bit_random_generator == NULL))
+	if ((str_buf_size < 1) || (_16bit_random_generator == NULL))
 	{
 		return NULL;
 	}
@@ -524,7 +525,7 @@ char *STRX_Generate_Random_Strings(
 
 	char random_char;
 
-	for (uint16_t i = 0; i < str_buf_size; ++i)
+	for (uint16_t i = 0; i < (str_buf_size - 1); ++i)
 	{
 		random_char = (char)(min_char_index + (_16bit_random_generator() % (max_char_index - min_char_index + 1)));
 
@@ -538,7 +539,8 @@ char *STRX_Generate_Random_Strings(
 }
 
 
-char *STRX_Generate_Random_Strings_With_Alphabet(
+char *STRX_Generate_Random_Strings_With_Alphabet
+(
 	char *str_buf,
 	const uint16_t str_buf_size,
 	const char *alphabet,
@@ -546,7 +548,7 @@ char *STRX_Generate_Random_Strings_With_Alphabet(
 	uint16_t(*_16bit_random_generator)(void)
 )
 {
-	if ((str_buf_size == 0) || (alphabet == NULL) || (alphabet_size == 0) || (_16bit_random_generator == NULL))
+	if ((str_buf_size < 1) || (alphabet == NULL) || (alphabet_size == 0) || (_16bit_random_generator == NULL))
 	{
 		return NULL;
 	}
@@ -554,7 +556,7 @@ char *STRX_Generate_Random_Strings_With_Alphabet(
 	char random_char;
 
 
-	for (uint16_t i = 0; i < str_buf_size; ++i)
+	for (uint16_t i = 0; i < (str_buf_size - 1); ++i)
 	{
 		random_char = alphabet[_16bit_random_generator() % alphabet_size];
 
