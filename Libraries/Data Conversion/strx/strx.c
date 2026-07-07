@@ -1332,6 +1332,35 @@ bool STRX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strings)
 
 
 
+void STRX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_strings, uint16_t(*_16bit_random_generator)(void))
+{
+	if (num_of_strings < 2)
+	{
+		return;
+	}
+	
+	
+	char* tmp_string_ptr;
+
+	uint16_t tmp_index;
+	
+
+	for (uint16_t i = (num_of_strings - 1); i > 0; --i)
+	{
+		tmp_index = _16bit_random_generator() % (i + 1);
+
+		tmp_string_ptr     = strings[i];
+		strings[i]         = strings[tmp_index];
+		strings[tmp_index] = tmp_string_ptr;
+	}
+}
+
+
+
+// ===============================================================================
+
+
+
 int8_t STRX_BuildIn_Custom_STRCMP(const char* str1, const char* str2)
 {
 	while (*str1 && *str2 && (*str1 == *str2))
