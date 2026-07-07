@@ -39,6 +39,22 @@
 
 
 
+inline bool STRX_Char_Is_Empty(const char *str)
+{
+	if ( (str == NULL) || (str[0] == '\0') )
+	{
+		return true;
+	}
+
+	return false;
+}
+
+
+
+// ===============================================================================
+
+
+
 inline bool STRX_Char_Is_Letter(const char ch)
 {
 	return (bool)isalpha(ch);
