@@ -445,6 +445,15 @@ void STRX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_strings, 
 
 
 
+// Функции компараторов. Они являются аналогом функции strcmp()
+// из стандартной библиотеки C и предназначены как для использования
+// самих по себе, так и в связке с функциями сортировки строк
+//
+// -------------------------------------------------------------------------------
+// Functions of comparators. They are an analog of the strcmp() function
+// from the C standard library and are intended both for use on their own
+// and in conjunction with string sorting functions
+//
 int8_t STRX_BuildIn_Custom_STRCMP(const char* str1, const char* str2);
 
 int8_t STRX_BuildIn_Custom_STRCMP_Ignore_Case(const char* str1, const char* str2);
