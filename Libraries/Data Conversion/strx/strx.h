@@ -259,6 +259,42 @@ char *STRX_Invert_String_Case_Safe(char *str, const uint16_t str_size);
 
 
 
+bool STRX_Strings_Is_Equivalent(char *str1, char *str2);
+
+bool STRX_Strings_Is_Equivalent_Safe(char *str1, const uint16_t str1_max_size, char *str2, const uint16_t str2_max_size);
+
+bool STRX_Strings_Is_Equivalent_Ignore_Case(char *str1, char *str2);
+
+bool STRX_Strings_Is_Equivalent_Ignore_Case_Safe(char *str1, const uint16_t str1_max_size, char *str2, const uint16_t str2_max_size);
+
+
+
+// ===============================================================================
+
+
+
+char *STRX_Generate_Random_Strings(
+	char *str_buf,
+	const uint16_t str_buf_size,
+	char min_char_index,
+	char max_char_index,
+	uint16_t (*_16bit_random_generator)(void)
+);
+
+char *STRX_Generate_Random_Strings_With_Alphabet(
+	char *str_buf,
+	const uint16_t str_buf_size,
+	const char *alphabet,
+	const uint16_t alphabet_size,
+	uint16_t(*_16bit_random_generator)(void)
+);
+
+
+
+// ===============================================================================
+
+
+
 char *STRX_Delete_All_Extra_Symbols(char *str, const char extra_symbol);
 
 char *STRX_Delete_All_Extra_Symbols_From_Set(char *str, const char *extra_symbols_set);
