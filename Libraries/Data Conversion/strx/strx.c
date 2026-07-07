@@ -532,7 +532,7 @@ char *STRX_Generate_Random_Strings
 		str_buf[i] = random_char;
 	}
 
-	str_buf[str_buf_size] = '\0';
+	str_buf[(str_buf_size - 1)] = '\0';
 
 
 	return str_buf;
@@ -563,7 +563,7 @@ char *STRX_Generate_Random_Strings_With_Alphabet
 		str_buf[i] = random_char;
 	}
 
-	str_buf[str_buf_size] = '\0';
+	str_buf[(str_buf_size - 1)] = '\0';
 
 
 	return str_buf;
