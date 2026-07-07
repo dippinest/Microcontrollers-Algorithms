@@ -957,7 +957,7 @@ char *STRX_Replace_All_Symbols(char *str, const char old_symbol, const char new_
 }
 
 
-char *STRX_Replace_All_Symbols_To_Tagret_Symbol(char *str, const char old_symbol, const char new_symbol, const char target_symbol)
+char *STRX_Replace_All_Symbols_To_Target_Symbol(char *str, const char old_symbol, const char new_symbol, const char target_symbol)
 {
 	for (uint16_t i = 0; (str[i] != target_symbol) && (str[i] != '\0'); ++i)
 	{
@@ -971,7 +971,7 @@ char *STRX_Replace_All_Symbols_To_Tagret_Symbol(char *str, const char old_symbol
 }
 
 
-char *STRX_Replace_All_Symbols_After_Tagret_Symbol(char *str, const char old_symbol, const char new_symbol, const char target_symbol)
+char *STRX_Replace_All_Symbols_After_Target_Symbol(char *str, const char old_symbol, const char new_symbol, const char target_symbol)
 {
 	for (uint16_t i = (strlen(str) - 1); (str[i] != target_symbol) && (i > 0); --i)
 	{
