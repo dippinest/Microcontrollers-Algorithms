@@ -424,7 +424,7 @@ uint16_t STRX_Split_Into_Tokens_Using_Delimiters_Set
 
 bool STRX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings);
 
-bool STRX_Strings_Is_Reverce_Sort(char** strings, const uint16_t num_of_strings);
+bool STRX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strings);
 
 
 
