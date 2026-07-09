@@ -132,7 +132,7 @@ typedef float      f64;
 // -------------------------------------------------------------------------------
 // exchange of values
 //
-#define MATHX_TSWAP(A, B, val_type) do { val_type tmp = A; A = B; B = tmp; } while(0);
+#define MATHX_TSWAP(A, B, val_type) { val_type tmp = A; A = B; B = tmp; }
 
 
 // циклический битовый сдвиг в целочисленной переменной
