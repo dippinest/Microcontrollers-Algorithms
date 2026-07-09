@@ -124,7 +124,7 @@ typedef float      f64;
 // -------------------------------------------------------------------------------
 // getting a bit in an integer variable at a specific position
 //
-#define MATHX_GETBIT(val, pos) ((val & (1 << pos)) & 0b1)
+#define MATHX_GETBIT(val, pos) (val & (1 << pos))
 
 
 // обмен значениями
