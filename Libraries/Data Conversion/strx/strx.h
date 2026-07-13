@@ -369,7 +369,7 @@ char *STRX_Replace_All_Symbols_After_Target_Symbol
 
 
 
-char *STRX_Delete_All_Dublicate_Symbols_In_Row(char *str, const char symbol);
+char *STRX_Delete_All_Duplicate_Symbols_In_Row(char *str, const char symbol);
 
 char *STRX_Delete_All_Substrings(char *str, const char *substr);
 
