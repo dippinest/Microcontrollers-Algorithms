@@ -992,7 +992,7 @@ char *STRX_Replace_All_Symbols_After_Target_Symbol(char *str, const char old_sym
 
 
 
-char *STRX_Delete_All_Dublicate_Symbols_In_Row(char *str, const char symbol)
+char *STRX_Delete_All_Duplicate_Symbols_In_Row(char *str, const char symbol)
 {
 	char *str_ptr = str;
 
