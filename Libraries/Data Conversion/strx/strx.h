@@ -255,6 +255,28 @@ bool STRX_Strings_Is_Equivalent_Ignore_Case_Safe(char *str1, const uint16_t str1
 // ===============================================================================
 
 
+// функции обфускации строк ASCII алгоритмами ROT13 и ROT47.
+//
+// Используются для сокрытия данных (не для шифрования!)
+//
+// -------------------------------------------------------------------------------
+// functions of obfuscation of ASCII strings using ROT13 and ROT47 algorithms.
+//
+// They are used to hide data (not to encrypt it!)
+//
+char *STRX_Obfuscate_String_ROT13(char *str);
+
+char *STRX_Obfuscate_String_ROT13_Safe(char *str, const uint16_t str_size);
+
+char *STRX_Obfuscate_String_ROT47(char *str);
+
+char *STRX_Obfuscate_String_ROT47_Safe(char *str, const uint16_t str_size);
+
+
+
+// ===============================================================================
+
+
 
 char *STRX_Generate_Random_Strings
 (
