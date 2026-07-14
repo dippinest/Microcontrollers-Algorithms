@@ -16,7 +16,7 @@ char log_string[] = "2026/07/10 10:23:00 -> Temp: 23.1 *C; Humidity: 73%; Pressu
 
 int main()
 {
-    printf("Original log test    : \"%s\"\n\n", log_string);
+    printf("Original log test     : \"%s\"\n\n", log_string);
 
 
     // пример использования функции ROT13 для обсфукации
@@ -29,7 +29,7 @@ int main()
     STRX_Obfuscate_String_ROT13(log_string);
 
 
-    printf("Obfuscate log (ROT13): \"%s\"\n\n", log_string);
+    printf("Obfuscate log (ROT13) : \"%s\"\n\n", log_string);
 
 
     // деобфускация строки
@@ -39,7 +39,7 @@ int main()
     //
     STRX_Obfuscate_String_ROT13(log_string);
 
-    printf("Restored log (orig)  : \"%s\"\n\n", log_string);
+    printf("Restored log (orig)   : \"%s\"\n\n", log_string);
 
 
 
@@ -47,7 +47,7 @@ int main()
 
 
 
-    printf("Original log test    : \"%s\"\n\n", log_string);
+    printf("Original log test     : \"%s\"\n\n", log_string);
 
 
     // пример использования функции ROT47 для обсфукации
@@ -60,7 +60,7 @@ int main()
     STRX_Obfuscate_String_ROT47(log_string);
 
 
-    printf("Obfuscate log (ROT47): \"%s\"\n\n", log_string);
+    printf("Obfuscate log (ROT47) : \"%s\"\n\n", log_string);
 
 
     // деобфускация строки
@@ -70,7 +70,7 @@ int main()
     //
     STRX_Obfuscate_String_ROT47(log_string);
 
-    printf("Restored log (orig)  : \"%s\"\n\n", log_string);
+    printf("Restored log (orig)   : \"%s\"\n\n", log_string);
 }
 
 
