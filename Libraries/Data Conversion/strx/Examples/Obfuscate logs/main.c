@@ -29,7 +29,7 @@ int main()
     STRX_Obfuscate_String_ROT13(log_string);
 
 
-    printf("Obfuscate log (ROT47): \"%s\"\n\n", log_string);
+    printf("Obfuscate log (ROT13): \"%s\"\n\n", log_string);
 
 
     // деобфускация строки
