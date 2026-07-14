@@ -501,6 +501,99 @@ bool STRX_Strings_Is_Equivalent_Ignore_Case_Safe(char *str1, const uint16_t str1
 
 
 
+char *STRX_Obfuscate_String_ROT13(char *str)
+{
+	char ch;
+	
+	
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		ch = str[i];
+		
+		
+		if ((ch >= 'A') && (ch <= 'Z'))
+		{
+			str[i] = ((ch - 'A' + 13) % 26) + 'A';
+		}
+		
+		if ((ch >= 'a') && (ch <= 'z'))
+		{
+			str[i] = ((ch - 'a' + 13) % 26) + 'a';
+		}
+	}
+	
+	return str;
+}
+
+
+char *STRX_Obfuscate_String_ROT13_Safe(char *str, const uint16_t str_size)
+{
+	char ch;
+	
+	
+	for (uint16_t i = 0; ((str[i] != '\0') && (i < str_size)); ++i)
+	{
+		ch = str[i];
+		
+		
+		if ((ch >= 'A') && (ch <= 'Z'))
+		{
+			str[i] = ((ch - 'A' + 13) % 26) + 'A';
+		}
+		
+		if ((ch >= 'a') && (ch <= 'z'))
+		{
+			str[i] = ((ch - 'a' + 13) % 26) + 'a';
+		}
+	}
+	
+	return str;
+}
+
+
+char *STRX_Obfuscate_String_ROT47(char *str)
+{
+	char ch;
+	
+	
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		ch = str[i];
+
+		if ((ch >= 0x20) && (ch <= 0x7E))
+		{
+			str[i] = 0x20 + ((ch - 0x20 + 0x2F) % 94);
+		}
+	}
+	
+	return str;
+}
+
+
+char *STRX_Obfuscate_String_ROT47_Safe(char *str, const uint16_t str_size)
+{
+	char ch;
+	
+	
+	for (uint16_t i = 0; ((str[i] != '\0') && (i < str_size)); ++i)
+	{
+		ch = str[i];
+
+		if ((ch >= 0x20) && (ch <= 0x7E))
+		{
+			str[i] = 0x20 + ((ch - 0x20 + 0x2F) % 94);
+		}
+	}
+	
+	return str;
+}
+
+
+
+// ===============================================================================
+
+
+
 char *STRX_Generate_Random_Strings
 (
 	char *str_buf,
