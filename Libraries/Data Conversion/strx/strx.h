@@ -212,6 +212,193 @@ inline char STRX_Get_Numerical_Digit_Char_By_Pos(const uint8_t pos)
 
 
 
+bool STRX_Is_String_Contains_Only_Letter(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Letter(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Letter_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Letter(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Digit(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Digit(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_HEXDigit(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_HEXDigit(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Letter_Or_Digit(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Letter_Or_Digit(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Whitespace_Or_HTab(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Whitespace_Or_HTab(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Control_Char_CNTRL(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Control_Char_CNTRL(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Printable(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Printable(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Printable_And_Not_Whitespace(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Printable_And_Not_Whitespace(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Space(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Space(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Punctuation_Mark(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Punctuation_Mark(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Upper_Case(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Upper_Case(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Lower_Case(const char *str)
+{
+	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Lower_Case(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+
+/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+
+
+
 uint16_t STRX_Get_String_Size(const char *str);
 
 uint16_t STRX_Get_String_Size_Safe(const char *str, const uint16_t str_max_size);
