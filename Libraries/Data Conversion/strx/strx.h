@@ -39,7 +39,7 @@
 
 
 
-inline bool STRX_Char_Is_Empty(const char *str)
+inline bool STRX_String_Is_Empty(const char *str)
 {
 	if ((str == NULL) || (str[0] == '\0'))
 	{
