@@ -101,6 +101,8 @@ void send_buffer()
 	//
 	uint16_t data_size = UART_Async_Get_Reception_Buffer_Counter() - 1;
 	
+	data_buf[data_size] = '\0';
+	
 	
 	
 	UART_StringFmt_Transmit("Open data:    %s\r\n", data_buf);
@@ -162,7 +164,6 @@ int main(void)
 	{
 	}
 }
-
 
 
 
