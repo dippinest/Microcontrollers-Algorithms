@@ -57,8 +57,6 @@ ___
 
    - [Лёгкий и быстрый алгоритм ГПСЧ](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/PRNG%20Algorithms/fast%20random)
 
-   - [Библиотека генератора псевдослучайных чисел на основе изменяемого массива (MAPRNG - Mutable Array Pseudo-Random Number Generator)](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/PRNG%20Algorithms/MAPRNG)
-
    - [Библиотека ГПСЧ из класса Xorshift генераторов с длиной регистра  16 бит](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/PRNG%20Algorithms/XORShift16)
 
    - [Библиотека ГПСЧ из класса Xorshift генераторов с длиной регистра  32 бит](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/PRNG%20Algorithms/XORShift32)
@@ -145,8 +143,6 @@ ___
    - [Functions to make it easier to work with the standard rand() function](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/PRNG%20Algorithms/random )
 
    - [Easy and fast RNG algorithm](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/PRNG%20Algorithms/fast%20random)
-
-   - [A library for a pseudo-random number generator based on a mutable array (MAPRNG - Mutable Array Pseudo-Random Number Generator)](https://github.com/dippinest/MCU-Algorithms/tree/main/Libraries/PRNG%20Algorithms/MAPRNG)
 
    - [A library of RNGs from the Xorshift class of generators with a register size of  16 bits](https://github.com/dippinest/Microcontrollers-Algorithms/tree/main/Libraries/PRNG%20Algorithms/XORShift16)
 
