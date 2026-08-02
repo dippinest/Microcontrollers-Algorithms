@@ -5,7 +5,7 @@
 // ===============================================================================
 
 
-int8_t ATOI_String_To_Int8(char* string, uint8_t max_string_len)
+int8_t ATOI_String_To_Int8(char *string, const uint8_t max_string_len)
 {
 	if (string == NULL || max_string_len == 0)
 	{
@@ -57,7 +57,7 @@ int8_t ATOI_String_To_Int8(char* string, uint8_t max_string_len)
 }
 
 
-uint8_t ATOI_String_To_UInt8(char* string, uint8_t max_string_len)
+uint8_t ATOI_String_To_UInt8(char *string, const uint8_t max_string_len)
 {
 	if (string == NULL || max_string_len == 0)
 	{
@@ -95,7 +95,7 @@ uint8_t ATOI_String_To_UInt8(char* string, uint8_t max_string_len)
 }
 
 
-int16_t ATOI_String_To_Int16(char* string, uint8_t max_string_len)
+int16_t ATOI_String_To_Int16(char *string, const uint8_t max_string_len)
 {
 	if (string == NULL || max_string_len == 0)
 	{
@@ -147,7 +147,7 @@ int16_t ATOI_String_To_Int16(char* string, uint8_t max_string_len)
 }
 
 
-uint16_t ATOI_String_To_UInt16(char* string, uint8_t max_string_len)
+uint16_t ATOI_String_To_UInt16(char *string, const uint8_t max_string_len)
 {
 	if (string == NULL || max_string_len == 0)
 	{
@@ -185,7 +185,7 @@ uint16_t ATOI_String_To_UInt16(char* string, uint8_t max_string_len)
 }
 
 
-int32_t ATOI_String_To_Int32(char* string, uint8_t max_string_len)
+int32_t ATOI_String_To_Int32(char *string, const uint8_t max_string_len)
 {
 	if (string == NULL || max_string_len == 0)
 	{
@@ -237,7 +237,7 @@ int32_t ATOI_String_To_Int32(char* string, uint8_t max_string_len)
 }
 
 
-uint32_t ATOI_String_To_UInt32(char* string, uint8_t max_string_len)
+uint32_t ATOI_String_To_UInt32(char *string, const uint8_t max_string_len)
 {
 	if (string == NULL || max_string_len == 0)
 	{
@@ -279,7 +279,7 @@ uint32_t ATOI_String_To_UInt32(char* string, uint8_t max_string_len)
 #ifdef NUM_64BIT_SUPPORT
 
 
-int64_t ATOI_String_To_Int64(char* string, uint8_t max_string_len)
+int64_t ATOI_String_To_Int64(char *string, const uint8_t max_string_len)
 {
 	if (string == NULL || max_string_len == 0)
 	{
@@ -331,7 +331,7 @@ int64_t ATOI_String_To_Int64(char* string, uint8_t max_string_len)
 }
 
 
-uint64_t ATOI_String_To_UInt64(char* string, uint8_t max_string_len)
+uint64_t ATOI_String_To_UInt64(char *string, const uint8_t max_string_len)
 {
 	if (string == NULL || max_string_len == 0)
 	{
