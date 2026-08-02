@@ -11,6 +11,7 @@ int main(void)
 	uint8_t i = 0;
 	uint8_t bcd;
 	
+	
 	while (1)
 	{
 		bcd = BCDCODE_UInt8_To_UInt8BCD(i);
