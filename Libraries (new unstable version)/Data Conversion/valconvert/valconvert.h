@@ -38,6 +38,7 @@
 // ===============================================================================
 
 
+
 float VALCONVERT_Angle_Radians_To_Degrees(float radians);
 
 float VALCONVERT_Angle_Degrees_To_Radians(float degrees);
@@ -80,4 +81,6 @@ float VALCONVERT_Temperature_Reaumur_To_Celsius(float reaumur_degrees);
 
 
 #endif
+
+
 
