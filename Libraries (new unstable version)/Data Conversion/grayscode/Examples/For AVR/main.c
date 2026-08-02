@@ -4,6 +4,8 @@
 #include "uart.h"
 #include "grayscode.h"
 
+
+
 void print_bits(uint8_t val)
 {
 	for (int8_t i = 8; i >= 0; --i)
@@ -18,6 +20,7 @@ void print_bits(uint8_t val)
 		}
 	}
 }
+
 
 int main(void)
 {
@@ -42,6 +45,8 @@ int main(void)
 		_delay_ms(1000);
 	}
 }
+
+
 
 
 
