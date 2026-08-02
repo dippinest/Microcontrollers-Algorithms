@@ -2,7 +2,7 @@
 #include "vigenere.h"
 
 
-void Vigenere_Stream_Data_Create_Object(Vigenere_Stream_Data_t *v_stream, void *key, uint16_t key_size)
+void Vigenere_Stream_Data_Initialize_Object(Vigenere_Stream_Data_t *v_stream, void *key, uint16_t key_size)
 {
 	v_stream->key_char_counter = 0;
 	
