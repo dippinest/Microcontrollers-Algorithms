@@ -64,7 +64,7 @@ typedef struct
 } Vigenere_Stream_Data_t;
 
 
-void Vigenere_Stream_Data_Create_Object(Vigenere_Stream_Data_t *v_stream, void *key, const uint16_t key_size);
+void Vigenere_Stream_Data_Initialize_Object(Vigenere_Stream_Data_t *v_stream, void *key, const uint16_t key_size);
 
 
 
