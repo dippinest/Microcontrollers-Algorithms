@@ -55,6 +55,8 @@ uint32_t GRAYSCODE_UInt32Grayscode_To_UInt32(uint32_t gray_code)
 }
 
 
+
+
 #ifdef NUM_64BIT_SUPPORT
 
 uint64_t GRAYSCODE_UInt64_To_UInt64Grayscode(uint64_t num)
@@ -76,6 +78,7 @@ uint64_t GRAYSCODE_UInt64Grayscode_To_UInt64(uint64_t gray_code)
 
 
 #endif
+
 
 
 
