@@ -14,7 +14,10 @@ int main(void)
 	while (1)
 	{
 		bcd = BCDCODE_UInt8_To_UInt8BCD(i);
+		
 		UART_StringFmt_Transmit("Counter: 0x%X (%d); BCD code: 0x%X; normal code: 0x%X\r\n", i, i, bcd, BCDCODE_UInt8BCD_To_UInt8(bcd));
+
+		
 		++i;
 		
 		_delay_ms(200);
