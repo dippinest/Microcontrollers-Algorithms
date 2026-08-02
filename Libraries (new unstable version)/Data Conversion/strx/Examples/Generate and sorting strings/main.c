@@ -32,7 +32,7 @@ char strings[NUM_OF_STRINGS][MAX_STRING_SIZE];
 // -------------------------------------------------------------------------------
 // array of pointers to strings
 //
-char* strings_pointers[NUM_OF_STRINGS];
+char *strings_pointers[NUM_OF_STRINGS];
 
 
 
