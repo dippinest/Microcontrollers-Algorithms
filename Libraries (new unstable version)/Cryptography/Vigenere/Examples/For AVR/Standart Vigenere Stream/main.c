@@ -153,8 +153,8 @@ int main(void)
 	// -------------------------------------------------------------------------------
 	// initialize of instances of structures containing data
 	// for the operation of the Vigener cipher in streaming mode
-	Vigenere_Stream_Data_Create_Object(&v_stream_encrypt, key, strlen(key));
-	Vigenere_Stream_Data_Create_Object(&v_stream_decrypt, key, strlen(key));
+	Vigenere_Stream_Data_Initialize_Object(&v_stream_encrypt, key, strlen(key));
+	Vigenere_Stream_Data_Initialize_Object(&v_stream_decrypt, key, strlen(key));
 	
 	
 	sei();
