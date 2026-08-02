@@ -5,7 +5,7 @@
 // ===============================================================================
 
 
-float ATOF_String_To_Float32(char* string, uint8_t max_string_len)
+float ATOF_String_To_Float32(char *string, const uint8_t max_string_len)
 {
 	if (string == NULL || max_string_len == 0)
 	{
