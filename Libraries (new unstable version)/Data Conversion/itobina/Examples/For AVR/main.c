@@ -5,7 +5,7 @@
 #include "itobina.h"
 
 
-static char buffer[16];
+static char string_buffer[16];
 
 
 int main(void)
@@ -17,7 +17,7 @@ int main(void)
 	
 	while (1)
 	{
-		UART_StringFmt_Transmit("val = %d -> 0b%s\r\n", val, ITOBINA_8bitNum_To_BinString(buffer, val));
+		UART_StringFmt_Transmit("val = %d -> 0b%s\r\n", val, ITOBINA_8bitNum_To_BinString(string_buffer, val));
 		
 		++val;
 		
