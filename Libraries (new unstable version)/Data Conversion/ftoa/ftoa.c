@@ -130,6 +130,7 @@ char *FTOA_Float32_To_String(char *string_buffer, float val, int8_t num_int_digi
 				else
 				{
 					string_buffer[i] = '-';
+					
 					fv_is_negative = 0;
 				}
 			}
@@ -145,10 +146,12 @@ char *FTOA_Float32_To_String(char *string_buffer, float val, int8_t num_int_digi
 				}
 			}
 		}
+		
 
 		--i;
 	}
 
+	
 	return string_buffer;
 }
 
