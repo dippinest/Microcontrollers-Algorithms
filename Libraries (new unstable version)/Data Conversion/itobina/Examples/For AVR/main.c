@@ -5,7 +5,7 @@
 #include "itobina.h"
 
 
-static char string_buffer[16];
+char string_buffer[16];
 
 
 int main(void)
