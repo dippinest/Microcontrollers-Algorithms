@@ -5,7 +5,7 @@
 #include "ftoa.h"
 #include "uart.h"
 
-static char buffer[16];
+char string_buffer[16];
 
 
 int main(void)
@@ -17,7 +17,7 @@ int main(void)
 	
 	while (1)
 	{
-		UART_StringLn_Transmit(FTOA_Float32_To_String(buffer, f, 5, 4, '.')); // 5 int sign = 4 digits + sign '-'
+		UART_StringLn_Transmit(FTOA_Float32_To_String(string_buffer, f, 5, 4, '.')); // 5 int sign = 4 digits + sign '-'
 		
 		f += 0.125;
 		
