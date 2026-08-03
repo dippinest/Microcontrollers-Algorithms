@@ -4,7 +4,7 @@
 #include "uart.h"
 #include "itohexa.h"
 
-static char str_buf[8];
+static char string_buffer[8];
 
 
 int main(void)
@@ -17,7 +17,7 @@ int main(void)
 	
 	while (1)
 	{
-		UART_String_Transmit(ITOHEXA_8bitNum_To_HexString(str_buf, i, false)); UART_String_Transmit("; ");
+		UART_String_Transmit(ITOHEXA_8bitNum_To_HexString(string_buffer, i, false)); UART_String_Transmit("; ");
 		
 		++i;
 		
