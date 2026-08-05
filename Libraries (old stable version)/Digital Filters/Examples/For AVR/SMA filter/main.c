@@ -7,8 +7,8 @@
 
 #define  BUFFER_SIZE 32
 
-static float filter_buffer[BUFFER_SIZE] = { 0 };
-static uint16_t filter_index = 0;
+float filter_buffer[BUFFER_SIZE] = { 0 };
+uint16_t filter_index = 0;
 
 #define NOISE_AMPLITUDE   0.25
 #define SPLASH_AMPLITUDE  0.8
