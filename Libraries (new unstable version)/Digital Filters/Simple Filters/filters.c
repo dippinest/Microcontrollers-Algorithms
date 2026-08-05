@@ -1,6 +1,7 @@
 
 #include "filters.h"
 
+
 int16_t Filters_Get_Rand_Noise_Int16(int16_t amp)
 {
 	int16_t noise = rand() % amp;
@@ -174,7 +175,9 @@ float Filters_SMA_Float(float *buffer, uint16_t buffer_size, uint16_t *index, fl
 }
 
 
+
 // ===============================================================================
+
 
 
 int8_t Filters_SMM_Int8(int8_t *buffer, uint16_t buffer_size, uint16_t *index, int8_t value)
@@ -294,7 +297,9 @@ float Filters_SMM_Float(float *buffer, uint16_t buffer_size, uint16_t *index, fl
 }
 
 
+
 // ===============================================================================
+
 
 
 int8_t Filters_LWMA_Int8(int8_t *buffer, uint16_t buffer_size, uint16_t *index, int16_t value)
@@ -378,7 +383,9 @@ float Filters_LWMA_Float(float *buffer, uint16_t buffer_size, uint16_t *index, f
 }
 
 
+
 // ===============================================================================
+
 
 
 int8_t Filters_EMA_Int8(int8_t *accumulator, float coef, int8_t value)
@@ -450,7 +457,9 @@ float Filters_CMA_Float(float *accumulator, float *old_value, uint16_t filter_or
 }
 
 
+
 // ===============================================================================
+
 
 
 int8_t Filters_RMA_Int8(int8_t *accumulator, const uint16_t filter_order, int8_t value)
@@ -486,7 +495,9 @@ float Filters_RMA_Float(float *accumulator, const uint16_t filter_order, float v
 }
 
 
+
 // ===============================================================================
+
 
 
 int8_t Filters_Adaptive_EMA_Int8(int8_t *accumulator, int8_t min_value, int8_t max_value, uint8_t noise_max_amp, float coef, int8_t value)
@@ -564,5 +575,8 @@ float Filters_Adaptive_EMA_Float(float *accumulator, float min_value, float max_
 	
 	return *accumulator;
 }
+
+
+
 
 
