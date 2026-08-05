@@ -5,7 +5,7 @@
 #include "adc.h"
 #include "filters.h"
 
-static float filter_acc = 0, old_value = 0;
+float filter_acc = 0, old_value = 0;
 
 #define NOISE_AMPLITUDE   0.25
 #define SPLASH_AMPLITUDE  0.8
