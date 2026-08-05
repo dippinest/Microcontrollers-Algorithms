@@ -3,9 +3,6 @@
 #include "itohexa.h"
 #include "crc.h"
 
-
-
-
 char string_buffer[16];
 
 
@@ -25,16 +22,18 @@ int main(void)
 	
 	
 	Data_t d = { 'a', 232, 7633, 684567387573458769 };
+		
+	uint32_t crc32 = CRC32_Get_Value(&d, sizeof(Data_t), 0xA0435757, 0xFF457436, true, false, 0x00446774);	
+	
 	
 	
 	UART_StringLn_Transmit(
-		ITOHEXA_32bitNum_To_HexString(string_buffer, CRC32_Get_Value(&d, sizeof(Data_t), 0xA0435757, 0xFF457436, true, false, 0x00446774), false)
+		ITOHEXA_32bitNum_To_HexString(string_buffer, crc32, false)
 	);
 	
 	while (1)
 	{
 	}
 }
-
 
 
