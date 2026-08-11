@@ -1,30 +1,28 @@
 
 
-#include "hd44780.h"
+#include <util/delay.h>
+
 #include "ftoa.h"
+#include "uart.h"
 
-
-AVR_FLASH_DATA(FLASH_STRING, char, "String FLASH");
-
-
-
-char string_buffer[8];
+char string_buffer[16];
 
 
 int main(void)
 {
-	HD44780_Initialize(true);
+	UART_Initialize(9600, true, false);
 	
-	HD44780_Set_Cursor_Pos(0, 0);  HD44780_Print_Flash_String(FLASH_STRING); // write flash string
-
-
 	
-	float Pi = 3.141592f;
-	
-	HD44780_Set_Cursor_Pos(1, 0);  HD44780_Print_String("PI ="); HD44780_Print_String(FTOA_Float32_To_String(string_buffer, Pi, 2, 5, '.'));
+	float f = -5.0;
 	
 	while (1)
 	{
+		UART_StringLn_Transmit(FTOA_Float32_To_String(string_buffer, f, 5, 4, '.')); // 5 int sign = 4 digits + sign '-'
+		
+		f += 0.125;
+		
+		
+		_delay_ms(200);
 	}
 }
 
