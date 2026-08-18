@@ -73,13 +73,13 @@ int main(void)
 	//
 	NTC_Data_Struct_t ntc_data;
 	
-	ntc_data.U_ref = U_REF;
-	ntc_data.U_gen = U_GEN;
+	ntc_data.U_ref    = U_REF;
+	ntc_data.U_gen    = U_GEN;
 	ntc_data.R_serial = R_SERIAL;
 	
-	ntc_data.A_coef = A_COEF;
-	ntc_data.B_coef = B_COEF;
-	ntc_data.C_coef = C_COEF;
+	ntc_data.A_coef   = A_COEF;
+	ntc_data.B_coef   = B_COEF;
+	ntc_data.C_coef   = C_COEF;
 	
 	ntc_data.adc_max_val = ADC_MAX_VAL;
 	
