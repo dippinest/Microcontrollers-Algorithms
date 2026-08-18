@@ -99,8 +99,8 @@ int main(void)
 		// -------------------------------------------------------------------------------
 		// conversion of temperature from Kelvin to Celsius and Fahrenheit
 		//
-		float temp_to_celsius    = NTC_Convert_Temperature_Kelvin_To_Celsius(temp_to_kelvin);
-		float temp_to_fahrenheit = NTC_Convert_Temperature_Kelvin_To_Fahrenheit(temp_to_kelvin);
+		const float temp_to_celsius    = NTC_Convert_Temperature_Kelvin_To_Celsius(temp_to_kelvin);
+		const float temp_to_fahrenheit = NTC_Convert_Temperature_Kelvin_To_Fahrenheit(temp_to_kelvin);
 		
 		
 		
@@ -116,7 +116,6 @@ int main(void)
 		_delay_ms(1000);
 	}
 }
-
 
 
 
