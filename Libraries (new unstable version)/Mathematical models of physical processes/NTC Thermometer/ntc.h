@@ -87,7 +87,7 @@ typedef struct
 
 
 
-float NTC_Get_Temperature_To_Kelvin(const NTC_Data_Struct_t *ntc, float adc_value);
+float NTC_Get_Temperature_To_Kelvin(const NTC_Data_Struct_t *ntc, const uint16_t adc_value);
 
 
 inline float NTC_Convert_Temperature_Kelvin_To_Celsius(float temp_to_kelvin)
