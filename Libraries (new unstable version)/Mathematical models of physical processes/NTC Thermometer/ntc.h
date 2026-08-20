@@ -11,7 +11,7 @@
 //  T = 1 / (A + B*ln(R) + C*[ln(R)]^3), где:
 //
 //  T       - температура в Кельвинах;
-//  R       - сопротивление постоянного резистора в Омах
+//  R       - сопротивление NTC терморезистора в Омах
 //  A, B, C - Коэффициенты уравнения Стейнхарта-Харта для конкретного термирезистора
 //
 //  Вы можете рассчитать коэффициенты A, B и C, используя решение системы
@@ -39,7 +39,7 @@
 //  T = 1 / (A + B*ln(R) + C*[ln(R)]^3), where:
 //
 //  T       - temperature in Kelvin;
-//  R       - resistance of a constant resistor in Ohms
+//  R       - resistance of the NTC thermistor in ohms
 //  A, B, C - coefficients of the Steinhart-Hart equation for a specific thermistor
 //
 //  You can can calculate the coefficients A, B and C using the system of
