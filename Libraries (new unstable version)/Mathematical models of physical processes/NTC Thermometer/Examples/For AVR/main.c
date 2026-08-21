@@ -50,7 +50,7 @@
 // -------------------------------------------------------------------------------
 // maximum digital value of the ADC
 //
-#define ADC_MAX_VAL  1023 // max value 10-bit ADC for AVR
+#define ADC_MAX_VAL  ( ((uint16_t)1 << 10) - 1 ) // max value 10-bit ADC for AVR
 
 
 
