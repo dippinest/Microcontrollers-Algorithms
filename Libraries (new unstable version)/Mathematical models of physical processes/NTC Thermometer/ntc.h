@@ -87,24 +87,44 @@ typedef struct
 
 
 
-float NTC_Get_Temperature_To_Kelvin(const NTC_Data_Struct_t *ntc, const uint16_t adc_value);
+float NTC_Get_Resistance
+(
+	const NTC_Data_Struct_t *ntc,
+	const uint16_t adc_value
+);
+
+float NTC_Get_Temperature_To_Kelvin
+(
+	const NTC_Data_Struct_t *ntc,
+	const uint16_t adc_value
+);
+
+float NTC_Get_Temperature_To_Kelvin_From_Resistance
+(
+	const NTC_Data_Struct_t *ntc,
+	const float resistance
+);
+
+
+
+// ===============================================================================
+
 
 
 inline float NTC_Convert_Temperature_Kelvin_To_Celsius(float temp_to_kelvin)
 {
-  return temp_to_kelvin - 273.15f;
+	return temp_to_kelvin - 273.15f;
 }
 
 
 inline float NTC_Convert_Temperature_Kelvin_To_Fahrenheit(float temp_to_kelvin)
 {
-  return (1.8f * (temp_to_kelvin - 273.15f)) + 32.0f;
+	return (1.8f * (temp_to_kelvin - 273.15f)) + 32.0f;
 }
 
 
 
 #endif
-
 
 
 
