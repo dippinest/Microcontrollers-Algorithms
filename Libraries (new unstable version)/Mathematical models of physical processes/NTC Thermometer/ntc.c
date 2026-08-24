@@ -4,7 +4,11 @@
 
 
 
-float NTC_Get_Temperature_To_Kelvin(const NTC_Data_Struct_t *ntc, const uint16_t adc_value)
+float NTC_Get_Resistance
+(
+	const NTC_Data_Struct_t *ntc,
+	const uint16_t adc_value
+)
 {
 	float U  = ((float)adc_value / ntc->adc_max_val) * ntc->U_ref;
 	float R  = ntc->R_serial * (U / (ntc->U_gen - U));
@@ -14,6 +18,32 @@ float NTC_Get_Temperature_To_Kelvin(const NTC_Data_Struct_t *ntc, const uint16_t
 	return 1.0 / (ntc->A_coef + (ntc->B_coef * lnR) + (ntc->C_coef * (lnR * lnR * lnR)));
 }
 
+
+
+float NTC_Get_Temperature_To_Kelvin
+(
+	const NTC_Data_Struct_t *ntc,
+	const uint16_t adc_value
+)
+{
+	float U  = ((float)adc_value / ntc->adc_max_val) * ntc->U_ref;
+	float R  = ntc->R_serial * (U / (ntc->U_gen - U));
+	
+	return R;
+}
+
+
+
+float NTC_Get_Temperature_To_Kelvin_From_Resistance
+(
+	const NTC_Data_Struct_t *ntc,
+	const float resistance
+)
+{
+	float lnR = logf(resistance);
+	
+	return 1.0 / (ntc->A_coef + (ntc->B_coef * lnR) + (ntc->C_coef * (lnR * lnR * lnR)));
+}
 
 
 
