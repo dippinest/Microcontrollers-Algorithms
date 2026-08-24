@@ -7,10 +7,19 @@
 
 
 
-char *FTOA_Float32_To_String(char *string_buffer, float val, int8_t num_int_digits, int8_t num_fract_digits, const char separator)
+char *FTOA_Float32_To_String(char *string_buffer, float val, const uint8_t num_int_digits, int8_t num_fract_digits, const char separator)
 {
-	// array of multipliers (up to 7 digits in the fractional part)
-	static const uint32_t _pow10_u32_array[] = { 10, 100, 1000, 10000, 100000, 1000000, 10000000 };
+	// array of multipliers (up to 5 digits in the fractional part)
+	static const uint32_t _pow10_u32_array[] = { 10, 100, 1000, 10000, 100000 };
+		
+	if (num_fract_digits <= 0)
+	{
+		num_fract_digits = 1;
+	}
+	if (num_fract_digits > (sizeof(_pow10_u32_array) / sizeof(uint32_t)))
+	{
+		num_fract_digits = (sizeof(_pow10_u32_array) / sizeof(uint32_t));
+	}
 	
 	
 	
@@ -57,7 +66,7 @@ char *FTOA_Float32_To_String(char *string_buffer, float val, int8_t num_int_digi
 	}
 
 
-	if (isnan(val))
+	if ((_v.dv & 0x7FFFFFFF) > 0x7F800000)
 	{
 		string_buffer[0] = 'n';
 		string_buffer[1] = 'a';
@@ -130,7 +139,6 @@ char *FTOA_Float32_To_String(char *string_buffer, float val, int8_t num_int_digi
 				else
 				{
 					string_buffer[i] = '-';
-					
 					fv_is_negative = 0;
 				}
 			}
@@ -146,12 +154,10 @@ char *FTOA_Float32_To_String(char *string_buffer, float val, int8_t num_int_digi
 				}
 			}
 		}
-		
 
 		--i;
 	}
 
-	
 	return string_buffer;
 }
 
