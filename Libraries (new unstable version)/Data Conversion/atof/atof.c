@@ -1,16 +1,21 @@
 
+
 #include "atof.h"
+
 
 
 // ===============================================================================
 
 
+
 float ATOF_String_To_Float32(char *string, const uint8_t max_string_len)
 {
-	if (string == NULL || max_string_len == 0)
+	if ((string == NULL) || (max_string_len == 0))
 	{
 		return 0.0;
 	}
+	
+	
 	
 	float n = 0.0, pow = 1.0;
 
@@ -19,7 +24,7 @@ float ATOF_String_To_Float32(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] != ' ' || i >= max_string_len)
+		if ((string[i] != ' ') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -27,7 +32,10 @@ float ATOF_String_To_Float32(char *string, const uint8_t max_string_len)
 		++i;
 	}
 
+
+
 	int8_t sign = 1;
+
 
 	if (string[i] == '+')
 	{
@@ -44,7 +52,7 @@ float ATOF_String_To_Float32(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -62,7 +70,7 @@ float ATOF_String_To_Float32(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -78,7 +86,6 @@ float ATOF_String_To_Float32(char *string, const uint8_t max_string_len)
 
 	return (sign * n) / pow;
 }
-
 
 
 
