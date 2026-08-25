@@ -18,7 +18,9 @@
 #include <stddef.h>
 
 
+
 // ===============================================================================
+
 
 
 int8_t ATOI_String_To_Int8(char *string, const uint8_t max_string_len);
@@ -34,6 +36,7 @@ int32_t ATOI_String_To_Int32(char *string, const uint8_t max_string_len);
 uint32_t ATOI_String_To_UInt32(char *string, const uint8_t max_string_len);
 
 
+
 #ifdef NUM_64BIT_SUPPORT
 
 int64_t ATOI_String_To_Int64(char *string, const uint8_t max_string_len);
@@ -45,6 +48,7 @@ uint64_t ATOI_String_To_UInt64(char *string, const uint8_t max_string_len);
 
 
 #endif
+
 
 
 
