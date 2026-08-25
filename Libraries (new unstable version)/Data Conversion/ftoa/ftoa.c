@@ -1,4 +1,5 @@
 
+
 #include "ftoa.h"
 
 
@@ -7,10 +8,11 @@
 
 
 
-char *FTOA_Float32_To_String(char *string_buffer, float val, const uint8_t num_int_digits, int8_t num_fract_digits, const char separator)
+char *FTOA_Float32_To_String(char *string_buffer, float number, const uint8_t num_int_digits, int8_t num_fract_digits, const char separator)
 {
 	// array of multipliers (up to 5 digits in the fractional part)
 	static const uint32_t _pow10_u32_array[] = { 10, 100, 1000, 10000, 100000 };
+		
 		
 	if (num_fract_digits <= 0)
 	{
@@ -31,22 +33,22 @@ char *FTOA_Float32_To_String(char *string_buffer, float val, const uint8_t num_i
 		float fv;
 		uint32_t dv;
 
-	} _Val;
+	} _Num;
 	
 
-	_Val _v = { val };
+	_Num _num = { number };
 
 
 
-	if (_v.dv == 0x80000000)
+	if (_num.dv == 0x80000000)
 	{
-		_v.dv = 0x00000000;
+		_num.dv = 0x00000000;
 	}
 
 
-	if (_v.dv == 0x7f800000 || _v.dv == 0xff800000)
+	if (_num.dv == 0x7f800000 || _num.dv == 0xff800000)
 	{
-		if (_v.dv == 0xff800000)
+		if (_num.dv == 0xff800000)
 		{
 			string_buffer[0] = '-';
 		}
@@ -66,7 +68,7 @@ char *FTOA_Float32_To_String(char *string_buffer, float val, const uint8_t num_i
 	}
 
 
-	if ((_v.dv & 0x7FFFFFFF) > 0x7F800000)
+	if ((_num.dv & 0x7FFFFFFF) > 0x7F800000)
 	{
 		string_buffer[0] = 'n';
 		string_buffer[1] = 'a';
@@ -84,17 +86,17 @@ char *FTOA_Float32_To_String(char *string_buffer, float val, const uint8_t num_i
 	
 	
 
-	if (_v.dv & 0x80000000)
+	if (_num.dv & 0x80000000)
 	{
-		_v.dv &= ~(1UL << 31);
+		_num.dv &= ~(1UL << 31);
 		
 		fv_is_negative = 1;
 	}
 
 
-	int32_t int_part   = (int32_t)_v.fv;
+	int32_t int_part   = (int32_t)_num.fv;
 	
-	int32_t fract_part = (_v.fv - int_part) * _pow10_u32_array[num_fract_digits % (sizeof(_pow10_u32_array) / sizeof(int32_t))];
+	int32_t fract_part = (_num.fv - int_part) * _pow10_u32_array[num_fract_digits % (sizeof(_pow10_u32_array) / sizeof(int32_t))];
 	
 	int8_t i = (num_int_digits + num_fract_digits + 1);
 	
