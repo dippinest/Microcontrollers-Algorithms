@@ -1,8 +1,11 @@
 
+
 #include "atoi.h"
 
 
+
 // ===============================================================================
+
 
 
 int8_t ATOI_String_To_Int8(char *string, const uint8_t max_string_len)
@@ -24,8 +27,11 @@ int8_t ATOI_String_To_Int8(char *string, const uint8_t max_string_len)
 
 		++i;
 	}
+	
+	
 
 	int8_t sign = 1;
+	
 
 	if (string[i] == '+')
 	{
