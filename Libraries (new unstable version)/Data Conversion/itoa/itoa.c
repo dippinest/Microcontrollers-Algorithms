@@ -7,7 +7,7 @@
 
 
 
-char *ITOA_UInt8_To_String_Without_Alignment(char *string_buffer, uint8_t val, int8_t num_of_chars)
+char *ITOA_UInt8_To_String_Without_Alignment(char *string_buffer, uint8_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 	
@@ -16,9 +16,9 @@ char *ITOA_UInt8_To_String_Without_Alignment(char *string_buffer, uint8_t val, i
 	{
 		--num_of_chars;
 		
-		string_buffer[num_of_chars] = (val % 10) + '0';
+		string_buffer[num_of_chars] = (number % 10) + '0';
 		
-		val /= 10;
+		number /= 10;
 	}
 	
 
@@ -26,7 +26,7 @@ char *ITOA_UInt8_To_String_Without_Alignment(char *string_buffer, uint8_t val, i
 }
 
 
-char *ITOA_UInt16_To_String_Without_Alignment(char *string_buffer, uint16_t val, int8_t num_of_chars)
+char *ITOA_UInt16_To_String_Without_Alignment(char *string_buffer, uint16_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 
@@ -35,9 +35,9 @@ char *ITOA_UInt16_To_String_Without_Alignment(char *string_buffer, uint16_t val,
 	{
 		--num_of_chars;
 		
-		string_buffer[num_of_chars] = (val % 10) + '0';
+		string_buffer[num_of_chars] = (number % 10) + '0';
 		
-		val /= 10;
+		number /= 10;
 	}
 	
 
@@ -45,7 +45,7 @@ char *ITOA_UInt16_To_String_Without_Alignment(char *string_buffer, uint16_t val,
 }
 
 
-char *ITOA_UInt32_To_String_Without_Alignment(char *string_buffer, uint32_t val, int8_t num_of_chars)
+char *ITOA_UInt32_To_String_Without_Alignment(char *string_buffer, uint32_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 
@@ -54,9 +54,9 @@ char *ITOA_UInt32_To_String_Without_Alignment(char *string_buffer, uint32_t val,
 	{
 		--num_of_chars;
 		
-		string_buffer[num_of_chars] = (val % 10) + '0';
+		string_buffer[num_of_chars] = (number % 10) + '0';
 		
-		val /= 10;
+		number /= 10;
 	}
 
 
@@ -67,7 +67,7 @@ char *ITOA_UInt32_To_String_Without_Alignment(char *string_buffer, uint32_t val,
 
 #ifdef NUM_64BIT_SUPPORT
 
-char *ITOA_UInt64_To_String_Without_Alignment(char *string_buffer, uint64_t val, int8_t num_of_chars)
+char *ITOA_UInt64_To_String_Without_Alignment(char *string_buffer, uint64_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 	
@@ -76,9 +76,9 @@ char *ITOA_UInt64_To_String_Without_Alignment(char *string_buffer, uint64_t val,
 	{
 		--num_of_chars;
 		
-		string_buffer[num_of_chars] = (val % 10) + '0';
+		string_buffer[num_of_chars] = (number % 10) + '0';
 		
-		val /= 10;
+		number /= 10;
 	}
 	
 
@@ -93,12 +93,12 @@ char *ITOA_UInt64_To_String_Without_Alignment(char *string_buffer, uint64_t val,
 
 
 
-char *ITOA_Int8_To_String(char *string_buffer, int8_t val, int8_t num_of_chars)
+char *ITOA_Int8_To_String(char *string_buffer, int8_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 	
 
-	if (val == -128)
+	if (number == -128)
 	{
 		string_buffer[num_of_chars - 1] = '8';
 		string_buffer[num_of_chars - 2] = '2';
@@ -116,15 +116,19 @@ char *ITOA_Int8_To_String(char *string_buffer, int8_t val, int8_t num_of_chars)
 	}
 
 
-	uint8_t sign = (val < 0) ? 1 : 0;
+
+	bool number_is_signed = false;
 
 
-	if (sign)
+	if (number < 0)
 	{
-		--val;
+		number_is_signed = true;
 		
-		val = ~val;
+		--number;
+		
+		number = ~number;
 	}
+	
 
 
 	int8_t i = num_of_chars - 1;
@@ -132,21 +136,21 @@ char *ITOA_Int8_To_String(char *string_buffer, int8_t val, int8_t num_of_chars)
 
 	while(i >= 0)
 	{
-		string_buffer[i] = (val % 10) + '0';
+		string_buffer[i] = (number % 10) + '0';
 		
 		--i;
 		
-		val /= 10;
+		number /= 10;
 		
 
-		if (val == 0)
+		if (number == 0)
 		{
 			break;
 		}
 	}
 
 
-	if (sign)
+	if (number_is_signed)
 	{
 		string_buffer[i] = '-';
 		
@@ -166,7 +170,7 @@ char *ITOA_Int8_To_String(char *string_buffer, int8_t val, int8_t num_of_chars)
 }
 
 
-char *ITOA_UInt8_To_String(char *string_buffer, uint8_t val, int8_t num_of_chars)
+char *ITOA_UInt8_To_String(char *string_buffer, uint8_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 
@@ -175,14 +179,14 @@ char *ITOA_UInt8_To_String(char *string_buffer, uint8_t val, int8_t num_of_chars
 
 	while(i >= 0)
 	{
-		string_buffer[i] = (val % 10) + '0';
+		string_buffer[i] = (number % 10) + '0';
 		
 		--i;
 		
-		val /= 10;
+		number /= 10;
 		
 
-		if (val == 0)
+		if (number == 0)
 		{
 			break;
 		}
@@ -201,12 +205,12 @@ char *ITOA_UInt8_To_String(char *string_buffer, uint8_t val, int8_t num_of_chars
 }
 
 
-char *ITOA_Int16_To_String(char *string_buffer, int16_t val, int8_t num_of_chars)
+char *ITOA_Int16_To_String(char *string_buffer, int16_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 	
 
-	if (val == -32768)
+	if (number == -32768)
 	{
 		string_buffer[num_of_chars - 1] = '8';
 		string_buffer[num_of_chars - 2] = '6';
@@ -226,15 +230,19 @@ char *ITOA_Int16_To_String(char *string_buffer, int16_t val, int8_t num_of_chars
 	}
 
 
-	uint8_t sign = (val < 0) ? 1 : 0;
+
+	bool number_is_signed = false;
 
 
-	if (sign)
+	if (number < 0)
 	{
-		--val;
+		number_is_signed = true;
 		
-		val = ~val;
+		--number;
+		
+		number = ~number;
 	}
+	
 	
 
 	int8_t i = num_of_chars - 1;
@@ -242,21 +250,21 @@ char *ITOA_Int16_To_String(char *string_buffer, int16_t val, int8_t num_of_chars
 
 	while(i >= 0)
 	{
-		string_buffer[i] = (val % 10) + '0';
+		string_buffer[i] = (number % 10) + '0';
 		
 		--i;
 		
-		val /= 10;
+		number /= 10;
 		
 
-		if (val == 0)
+		if (number == 0)
 		{
 			break;
 		}
 	}
 	
 
-	if (sign)
+	if (number_is_signed)
 	{
 		string_buffer[i] = '-';
 		
@@ -276,7 +284,7 @@ char *ITOA_Int16_To_String(char *string_buffer, int16_t val, int8_t num_of_chars
 }
 
 
-char *ITOA_UInt16_To_String(char *string_buffer, uint16_t val, int8_t num_of_chars)
+char *ITOA_UInt16_To_String(char *string_buffer, uint16_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 
@@ -285,14 +293,14 @@ char *ITOA_UInt16_To_String(char *string_buffer, uint16_t val, int8_t num_of_cha
 
 	while(i >= 0)
 	{
-		string_buffer[i] = (val % 10) + '0';
+		string_buffer[i] = (number % 10) + '0';
 		
 		--i;
 		
-		val /= 10;
+		number /= 10;
 		
 
-		if (val == 0)
+		if (number == 0)
 		{
 			break;
 		}
@@ -311,12 +319,12 @@ char *ITOA_UInt16_To_String(char *string_buffer, uint16_t val, int8_t num_of_cha
 }
 
 
-char *ITOA_Int32_To_String(char *string_buffer, int32_t val, int8_t num_of_chars)
+char *ITOA_Int32_To_String(char *string_buffer, int32_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 	
 
-	if (val == -2147483648L)
+	if (number == -2147483648L)
 	{
 		string_buffer[num_of_chars - 1]  = '8';
 		string_buffer[num_of_chars - 2]  = '4';
@@ -341,15 +349,19 @@ char *ITOA_Int32_To_String(char *string_buffer, int32_t val, int8_t num_of_chars
 	}
 	
 
-	uint8_t sign = (val < 0) ? 1 : 0;
+
+	bool number_is_signed = false;
 
 
-	if (sign)
+	if (number < 0)
 	{
-		--val;
+		number_is_signed = true;
 		
-		val = ~val;
+		--number;
+		
+		number = ~number;
 	}
+
 
 
 	int8_t i = num_of_chars - 1;
@@ -357,21 +369,21 @@ char *ITOA_Int32_To_String(char *string_buffer, int32_t val, int8_t num_of_chars
 
 	while(i >= 0)
 	{
-		string_buffer[i] = (val % 10) + '0';
+		string_buffer[i] = (number % 10) + '0';
 		
 		--i;
 		
-		val /= 10;
+		number /= 10;
 		
 
-		if (val == 0)
+		if (number == 0)
 		{
 			break;
 		}
 	}
 
 
-	if (sign)
+	if (number_is_signed)
 	{
 		string_buffer[i] = '-';
 		
@@ -391,7 +403,7 @@ char *ITOA_Int32_To_String(char *string_buffer, int32_t val, int8_t num_of_chars
 }
 
 
-char *ITOA_UInt32_To_String(char *string_buffer, uint32_t val, int8_t num_of_chars)
+char *ITOA_UInt32_To_String(char *string_buffer, uint32_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 
@@ -400,14 +412,14 @@ char *ITOA_UInt32_To_String(char *string_buffer, uint32_t val, int8_t num_of_cha
 
 	while(i >= 0)
 	{
-		string_buffer[i] = (val % 10) + '0';
+		string_buffer[i] = (number % 10) + '0';
 		
 		--i;
 		
-		val /= 10;
+		number /= 10;
 		
 
-		if (val == 0)
+		if (number == 0)
 		{
 			break;
 		}
@@ -433,12 +445,12 @@ char *ITOA_UInt32_To_String(char *string_buffer, uint32_t val, int8_t num_of_cha
 #include <limits.h>
 
 
-char *ITOA_Int64_To_String(char *string_buffer, int64_t val, int8_t num_of_chars)
+char *ITOA_Int64_To_String(char *string_buffer, int64_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 	
 
-	if (val == LLONG_MIN)
+	if (number == LLONG_MIN)
 	{
 		string_buffer[num_of_chars - 1]  = '8';
 		string_buffer[num_of_chars - 2]  = '0';
@@ -472,15 +484,19 @@ char *ITOA_Int64_To_String(char *string_buffer, int64_t val, int8_t num_of_chars
 	}
 	
 
-	uint8_t sign = (val < 0) ? 1 : 0;
+
+	bool number_is_signed = false;
 
 
-	if (sign)
+	if (number < 0)
 	{
-		--val;
+		number_is_signed = true;
 		
-		val = ~val;
+		--number;
+		
+		number = ~number;
 	}
+	
 
 
 	int8_t i = num_of_chars - 1;
@@ -488,21 +504,21 @@ char *ITOA_Int64_To_String(char *string_buffer, int64_t val, int8_t num_of_chars
 
 	while(i >= 0)
 	{
-		string_buffer[i] = (val % 10) + '0';
+		string_buffer[i] = (number % 10) + '0';
 		
 		--i;
 		
-		val /= 10;
+		number /= 10;
 
 
-		if (val == 0)
+		if (number == 0)
 		{
 			break;
 		}
 	}
 
 
-	if (sign)
+	if (number_is_signed)
 	{
 		string_buffer[i] = '-';
 		
@@ -522,7 +538,7 @@ char *ITOA_Int64_To_String(char *string_buffer, int64_t val, int8_t num_of_chars
 }
 
 
-char *ITOA_UInt64_To_String(char *string_buffer, uint64_t val, int8_t num_of_chars)
+char *ITOA_UInt64_To_String(char *string_buffer, uint64_t number, int8_t num_of_chars)
 {
 	string_buffer[num_of_chars] = '\0';
 
@@ -531,14 +547,14 @@ char *ITOA_UInt64_To_String(char *string_buffer, uint64_t val, int8_t num_of_cha
 
 	while(i >= 0)
 	{
-		string_buffer[i] = (val % 10) + '0';
+		string_buffer[i] = (number % 10) + '0';
 		
 		--i;
 		
-		val /= 10;
+		number /= 10;
 
 
-		if (val == 0)
+		if (number == 0)
 		{
 			break;
 		}
@@ -558,7 +574,6 @@ char *ITOA_UInt64_To_String(char *string_buffer, uint64_t val, int8_t num_of_cha
 
 
 #endif
-
 
 
 
