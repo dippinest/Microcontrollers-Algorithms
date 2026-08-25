@@ -18,13 +18,16 @@
 #include <stddef.h>
 
 
+
 // ===============================================================================
+
 
 
 float ATOF_String_To_Float32(char *string, const uint8_t max_string_len);
 
 
 #endif
+
 
 
 
