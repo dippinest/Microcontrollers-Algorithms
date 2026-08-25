@@ -22,7 +22,7 @@
 
 
 
-char *FTOA_Float32_To_String(char *string_buffer, float val, const uint8_t num_int_digits, int8_t num_fract_digits, const char separator);
+char *FTOA_Float32_To_String(char *string_buffer, float number, const uint8_t num_int_digits, int8_t num_fract_digits, const char separator);
 
 
 
