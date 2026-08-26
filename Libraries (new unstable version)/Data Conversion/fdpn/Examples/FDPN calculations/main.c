@@ -62,7 +62,7 @@ void main()
     //
     int16_t fdpn_sum = fdpn_1 + fdpn_2;
 
-    print_FDPN_Int16Base_Number("FDPN_Int16Base Sum", fdpn_sum, 6, 2);
+    print_FDPN_Int16Base_Number("\n\nFDPN_Int16Base Sum", fdpn_sum, 6, 2);
 
 
 
@@ -108,7 +108,7 @@ void main()
     //
     int32_t fdpn_mul = (int32_t)fdpn_1 * (int32_t)fdpn_2;
 
-    print_FDPN_Int32Base_Number("FDP_Int32Base Mul", fdpn_mul, 6, 2);
+    print_FDPN_Int32Base_Number("FDPN_Int32Base Mul", fdpn_mul, 6, 2);
 
 
 
@@ -133,7 +133,7 @@ void main()
     fdpn_div *= 100;
 
 
-    print_FDPN_Int32Base_Number("FDP_Int32Base Div", fdpn_div, 6, 2);
+    print_FDPN_Int32Base_Number("FDPN_Int32Base Div", fdpn_div, 6, 2);
 }
 
 
