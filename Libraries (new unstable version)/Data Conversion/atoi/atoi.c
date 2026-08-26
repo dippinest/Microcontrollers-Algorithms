@@ -10,7 +10,7 @@
 
 int8_t ATOI_String_To_Int8(char *string, const uint8_t max_string_len)
 {
-	if (string == NULL || max_string_len == 0)
+	if ((string == NULL) || (max_string_len == 0))
 	{
 		return 0;
 	}
@@ -20,7 +20,7 @@ int8_t ATOI_String_To_Int8(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] != ' ' || i >= max_string_len)
+		if ((string[i] != ' ') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -47,7 +47,7 @@ int8_t ATOI_String_To_Int8(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -65,7 +65,7 @@ int8_t ATOI_String_To_Int8(char *string, const uint8_t max_string_len)
 
 uint8_t ATOI_String_To_UInt8(char *string, const uint8_t max_string_len)
 {
-	if (string == NULL || max_string_len == 0)
+	if ((string == NULL) || (max_string_len == 0))
 	{
 		return 0;
 	}
@@ -75,7 +75,7 @@ uint8_t ATOI_String_To_UInt8(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] != ' ' || i >= max_string_len)
+		if ((string[i] != ' ') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -85,7 +85,7 @@ uint8_t ATOI_String_To_UInt8(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -103,7 +103,7 @@ uint8_t ATOI_String_To_UInt8(char *string, const uint8_t max_string_len)
 
 int16_t ATOI_String_To_Int16(char *string, const uint8_t max_string_len)
 {
-	if (string == NULL || max_string_len == 0)
+	if ((string == NULL) || (max_string_len == 0))
 	{
 		return 0;
 	}
@@ -113,7 +113,7 @@ int16_t ATOI_String_To_Int16(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] != ' ' || i >= max_string_len)
+		if ((string[i] != ' ') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -137,7 +137,7 @@ int16_t ATOI_String_To_Int16(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -155,7 +155,7 @@ int16_t ATOI_String_To_Int16(char *string, const uint8_t max_string_len)
 
 uint16_t ATOI_String_To_UInt16(char *string, const uint8_t max_string_len)
 {
-	if (string == NULL || max_string_len == 0)
+	if ((string == NULL) || (max_string_len == 0))
 	{
 		return 0;
 	}
@@ -165,7 +165,7 @@ uint16_t ATOI_String_To_UInt16(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] != ' ' || i >= max_string_len)
+		if ((string[i] != ' ') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -175,7 +175,7 @@ uint16_t ATOI_String_To_UInt16(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -193,7 +193,7 @@ uint16_t ATOI_String_To_UInt16(char *string, const uint8_t max_string_len)
 
 int32_t ATOI_String_To_Int32(char *string, const uint8_t max_string_len)
 {
-	if (string == NULL || max_string_len == 0)
+	if ((string == NULL) || (max_string_len == 0))
 	{
 		return 0;
 	}
@@ -203,7 +203,7 @@ int32_t ATOI_String_To_Int32(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] != ' ' || i >= max_string_len)
+		if ((string[i] != ' ') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -227,7 +227,7 @@ int32_t ATOI_String_To_Int32(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -255,7 +255,7 @@ uint32_t ATOI_String_To_UInt32(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] != ' ' || i >= max_string_len)
+		if ((string[i] != ' ') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -265,7 +265,7 @@ uint32_t ATOI_String_To_UInt32(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -287,7 +287,7 @@ uint32_t ATOI_String_To_UInt32(char *string, const uint8_t max_string_len)
 
 int64_t ATOI_String_To_Int64(char *string, const uint8_t max_string_len)
 {
-	if (string == NULL || max_string_len == 0)
+	if ((string == NULL) || (max_string_len == 0))
 	{
 		return 0;
 	}
@@ -297,7 +297,7 @@ int64_t ATOI_String_To_Int64(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] != ' ' || i >= max_string_len)
+		if ((string[i] != ' ') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -321,7 +321,7 @@ int64_t ATOI_String_To_Int64(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -339,7 +339,7 @@ int64_t ATOI_String_To_Int64(char *string, const uint8_t max_string_len)
 
 uint64_t ATOI_String_To_UInt64(char *string, const uint8_t max_string_len)
 {
-	if (string == NULL || max_string_len == 0)
+	if ((string == NULL) || (max_string_len == 0))
 	{
 		return 0;
 	}
@@ -349,7 +349,7 @@ uint64_t ATOI_String_To_UInt64(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] != ' ' || i >= max_string_len)
+		if ((string[i] != ' ') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -359,7 +359,7 @@ uint64_t ATOI_String_To_UInt64(char *string, const uint8_t max_string_len)
 
 	while (1)
 	{
-		if (string[i] < '0' || string[i] > '9' || i >= max_string_len)
+		if ((string[i] < '0') || (string[i] > '9') || (i >= max_string_len))
 		{
 			break;
 		}
@@ -376,7 +376,6 @@ uint64_t ATOI_String_To_UInt64(char *string, const uint8_t max_string_len)
 
 
 #endif
-
 
 
 
