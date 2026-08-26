@@ -18,12 +18,12 @@ char string_buffer[MAX_STRBUF_LEN];
 // -------------------------------------------------------------------------------
 // auxiliary functions for FDPN output
 //
-void print_FDPN_Int16Base_Number(const char* msg, int16_t fdpn, const int8_t num_int_digits, const int8_t num_fract_digits)
+void print_FDPN_Int16Base_Number(const char *msg, int16_t fdpn, const int8_t num_int_digits, const int8_t num_fract_digits)
 {
     printf("%s = \"%s\"\n\n", msg, FDPN_Int16Base_Convert_Number_To_String(string_buffer, fdpn, num_int_digits, num_fract_digits, '.'));
 }
 
-void print_FDPN_Int32Base_Number(const char* msg, int32_t fdpn, const int8_t num_int_digits, const int8_t num_fract_digits)
+void print_FDPN_Int32Base_Number(const char *msg, int32_t fdpn, const int8_t num_int_digits, const int8_t num_fract_digits)
 {
     printf("%s = \"%s\"\n\n", msg, FDPN_Int32Base_Convert_Number_To_String(string_buffer, fdpn, num_int_digits, num_fract_digits, '.'));
 }
@@ -135,6 +135,12 @@ void main()
 
     print_FDPN_Int32Base_Number("FDPN_Int32Base Div", fdpn_div, 6, 2);
 }
+
+
+
+
+
+
 
 
 
