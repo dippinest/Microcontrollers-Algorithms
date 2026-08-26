@@ -62,7 +62,7 @@ void main()
     //
     int16_t fdpn_sum = fdpn_1 + fdpn_2;
 
-    print_FDPN_Int16Base_Number("\n\nFDPN_Int16Base Sum", fdpn_sum, 6, 2);
+    print_FDPN_Int16Base_Number("\nFDPN_Int16Base Sum", fdpn_sum, 6, 2);
 
 
 
