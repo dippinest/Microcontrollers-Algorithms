@@ -214,7 +214,7 @@ char *FDPN_Int32Base_Convert_Number_To_String
 
 	bool is_negative = false;
 
-	bool is_int16_min = false;
+	bool is_int32_min = false;
 
 
 
@@ -224,7 +224,7 @@ char *FDPN_Int32Base_Convert_Number_To_String
 
 	if (number == -2147483648L)
 	{
-		is_int16_min = true;
+		is_int32_min = true;
 
 		number = 2147483647L;
 	}
@@ -249,7 +249,7 @@ char *FDPN_Int32Base_Convert_Number_To_String
 		number /= 10;
 
 
-		if (is_int16_min && (i == (num_int_digits + num_fract_digits - 1)))
+		if (is_int32_min && (i == (num_int_digits + num_fract_digits - 1)))
 		{
 			string_buffer[i + 1] = '8';
 		}
@@ -290,7 +290,7 @@ char *FDPN_Int32Base_Convert_Number_To_String
 		++i;
 	}
 
-	if ((i > 0) && (is_negative || is_int16_min))
+	if ((i > 0) && (is_negative || is_int32_min))
 	{
 		string_buffer[i - 1] = '-';
 	}
