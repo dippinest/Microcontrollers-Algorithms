@@ -758,6 +758,35 @@ uint64_t MATHX_Get_Factorial_UInt64(uint8_t num);
 
 
 
+// ===============================================================================
+
+
+
+void MATHX_Convert_Decimal_Fraction_To_Common_Fraction
+(
+	float val,
+
+	int32_t *numerator,
+	int32_t *denominator,
+
+	const float epsilon
+);
+
+
+
+// ===============================================================================
+
+
+
+
+
+
+
+
 #endif
+
+
+
+
 
 
