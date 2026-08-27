@@ -233,6 +233,135 @@ uint64_t MATHX_Get_Factorial_UInt64(uint8_t num)
 
 
 
+// ===============================================================================
+
+
+
+void MATHX_Convert_Decimal_Fraction_To_Common_Fraction
+(
+	float val,
+
+	int32_t *numerator,
+	int32_t *denominator,
+
+	const float epsilon
+)
+{
+	int8_t sign = 1;
+
+
+	if (val < 0)
+	{
+		sign = -1;
+		val  = -val;
+	}
+
+
+	if (val < epsilon)
+	{
+		*numerator = 0;
+		*denominator = 1;
+
+		return;
+	}
+
+
+
+	int32_t integer_part = (int32_t)val;
+
+	float fractional = val - integer_part;
+
+
+
+
+	if (fractional < epsilon)
+	{
+		*numerator = sign * integer_part;
+		*denominator = 1;
+
+		return;
+	}
+
+
+
+
+	int32_t a0 = integer_part;
+	int32_t a;
+
+	float f = fractional;
+
+
+	int32_t prev_numerator   = 1;
+	int32_t curr_numerator   = a0;
+	int32_t prev_denominator = 0;
+	int32_t curr_denominator = 1;
+
+	int max_iter = 50;
+
+
+
+	for (int i = 0; i < max_iter; i++)
+	{
+		if (f < epsilon)
+		{
+			break;
+		}
+
+
+		a = (int32_t)(1.0f / f);
+		f = (1.0f / f) - a;
+
+
+		int32_t next_num = (a * curr_numerator)   + prev_numerator;
+		int32_t next_den = (a * curr_denominator) + prev_denominator;
+
+
+		if ((next_num > 1000000) || (next_den > 1000000))
+		{
+			break;
+		}
+
+
+
+		float approx = (float)next_num / (float)next_den;
+
+		float error;
+
+
+		if (approx > val)
+		{
+			error = approx - val;
+		}
+		else
+		{
+			error = val - approx;
+		}
+
+
+
+		if (error < epsilon)
+		{
+			*numerator = sign * next_num;
+			*denominator = next_den;
+
+			return;
+		}
+
+
+		prev_numerator   = curr_numerator;
+		curr_numerator   = next_num;
+		prev_denominator = curr_denominator;
+		curr_denominator = next_den;
+	}
+
+
+	*numerator   = sign * curr_numerator;
+	*denominator = curr_denominator;
+}
+
+
+
+// ===============================================================================
 
 
 
