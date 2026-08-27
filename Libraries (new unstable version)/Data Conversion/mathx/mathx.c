@@ -253,7 +253,7 @@ void MATHX_Convert_Decimal_Fraction_To_Common_Fraction
 	if (val < 0)
 	{
 		sign = -1;
-		val  = -val;
+		val = -val;
 	}
 
 
@@ -291,10 +291,10 @@ void MATHX_Convert_Decimal_Fraction_To_Common_Fraction
 	float f = fractional;
 
 
-	int32_t prev_numerator   = 1;
-	int32_t curr_numerator   = a0;
-	int32_t prev_denominator = 0;
-	int32_t curr_denominator = 1;
+	int32_t prev_num = 1;
+	int32_t curr_num = a0;
+	int32_t prev_den = 0;
+	int32_t curr_den = 1;
 
 	int max_iter = 50;
 
@@ -312,8 +312,8 @@ void MATHX_Convert_Decimal_Fraction_To_Common_Fraction
 		f = (1.0f / f) - a;
 
 
-		int32_t next_num = (a * curr_numerator)   + prev_numerator;
-		int32_t next_den = (a * curr_denominator) + prev_denominator;
+		int32_t next_num = (a * curr_num) + prev_num;
+		int32_t next_den = (a * curr_den) + prev_den;
 
 
 		if ((next_num > 1000000) || (next_den > 1000000))
@@ -348,15 +348,15 @@ void MATHX_Convert_Decimal_Fraction_To_Common_Fraction
 		}
 
 
-		prev_numerator   = curr_numerator;
-		curr_numerator   = next_num;
-		prev_denominator = curr_denominator;
-		curr_denominator = next_den;
+		prev_num = curr_num;
+		curr_num = next_num;
+		prev_den = curr_den;
+		curr_den = next_den;
 	}
 
 
-	*numerator   = sign * curr_numerator;
-	*denominator = curr_denominator;
+	*numerator   = sign * curr_num;
+	*denominator = curr_den;
 }
 
 
