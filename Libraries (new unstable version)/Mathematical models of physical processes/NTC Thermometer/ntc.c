@@ -4,7 +4,7 @@
 
 
 
-float NTC_Get_Resistance
+float NTC_Get_Temperature_To_Kelvin
 (
 	const NTC_Data_Struct_t *ntc,
 	const uint16_t adc_value
@@ -20,7 +20,7 @@ float NTC_Get_Resistance
 
 
 
-float NTC_Get_Temperature_To_Kelvin
+float NTC_Get_Resistance
 (
 	const NTC_Data_Struct_t *ntc,
 	const uint16_t adc_value
