@@ -15,9 +15,11 @@
 //  A, B, C - Коэффициенты уравнения Стейнхарта-Харта для конкретного термирезистора
 //
 //  Вы можете рассчитать коэффициенты A, B и C, используя решение системы
-//  линейных уравнений (https://ru.wikipedia.org/wiki/Уравнение_Стейнхарта_—_Харта)
+//  линейных уравнений с помощью скрипта
+//  "Python scripts/Generate NTC LUT table/ntc_lut_tables_generator.py",
+//  вручную (https://ru.wikipedia.org/wiki/Уравнение_Стейнхарта_—_Харта)
 //  или же используя специальный калькулятор
-//  (например, https://www.thinksrs.com/downloads/programs/therm%20calc/ntccalibrator/ntccalculator.html)
+//  (например, https://www.thinksrs.com/downloads/programs/therm%20calc/ntccalibrator/ntccalculator.html).
 //
 //
 //	Пожалуйста, используйте резистор и терморезистор с минимальной погрешностью параметров.
@@ -42,10 +44,12 @@
 //  R       - resistance of the NTC thermistor in ohms
 //  A, B, C - coefficients of the Steinhart-Hart equation for a specific thermistor
 //
-//  You can can calculate the coefficients A, B and C using the system of
-//  linear equations solution (https://en.wikipedia.org/wiki/Steinhart-Hart_equation)
-//  or using a special calculator
-//  (for example, https://www.thinksrs.com/downloads/programs/therm%20calc/ntccalibrator/ntccalculator.html)
+//  You can calculate coefficients A, B, and C by solving
+// a system of linear equations using the script
+// "Python scripts/Generate NTC LUT table/ntc_lut_tables_generator.py",
+// manually (https://en.wikipedia.org/wiki/Steinhart-Hart_equation),
+// or using a special calculator
+// (for example, https://www.thinksrs.com/downloads/programs/therm%20calc/ntccalibrator/ntccalculator.html).
 //
 //
 //	Please use a resistor and a thermistor with minimal parameter error.
