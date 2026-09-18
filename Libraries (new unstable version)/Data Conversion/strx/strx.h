@@ -212,7 +212,7 @@ inline char STRX_Get_Numerical_Digit_Char_By_Pos(const uint8_t pos)
 
 
 
-bool STRX_Is_String_Contains_Only_Letter(const char *str)
+bool STRX_Is_String_Contains_Only_Letter(const char *str);
 
 bool STRX_Is_String_Contains_Only_Letter_Safe(const char *str, const uint16_t str_max_size);
 
