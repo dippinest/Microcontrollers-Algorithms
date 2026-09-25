@@ -216,27 +216,60 @@ bool STRX_Is_String_Contains_Only_Letter(const char *str);
 
 bool STRX_Is_String_Contains_Only_Letter_Safe(const char *str, const uint16_t str_max_size);
 
+
 bool STRX_Is_String_Contains_Only_Digit(const char *str);
+
+bool STRX_Is_String_Contains_Only_Digit_Safe(const char *str, const uint16_t str_max_size);
+
 
 bool STRX_Is_String_Contains_Only_HEXDigit(const char *str);
 
+bool STRX_Is_String_Contains_Only_HEXDigit_Safe(const char *str, const uint16_t str_max_size);
+
+
 bool STRX_Is_String_Contains_Only_Letter_Or_Digit(const char *str);
+
+bool STRX_Is_String_Contains_Only_Letter_Or_Digit_Safe(const char *str, const uint16_t str_max_size);
+
 
 bool STRX_Is_String_Contains_Only_Whitespace_Or_HTab(const char *str);
 
+bool STRX_Is_String_Contains_Only_Whitespace_Or_HTab_Safe(const char *str, const uint16_t str_max_size);
+
+
 bool STRX_Is_String_Contains_Only_Control_Char_CNTRL(const char *str);
+
+bool STRX_Is_String_Contains_Only_Control_Char_CNTRL_Safe(const char *str, const uint16_t str_max_size);
+
 
 bool STRX_Is_String_Contains_Only_Printable(const char *str);
 
+bool STRX_Is_String_Contains_Only_Printable_Safe(const char *str, const uint16_t str_max_size);
+
+
 bool STRX_Is_String_Contains_Only_Printable_And_Not_Whitespace(const char *str);
+
+bool STRX_Is_String_Contains_Only_Printable_And_Not_Whitespace_Safe(const char *str, const uint16_t str_max_size);
+
 
 bool STRX_Is_String_Contains_Only_Space(const char *str);
 
+bool STRX_Is_String_Contains_Only_Space_Safe(const char *str, const uint16_t str_max_size);
+
+
 bool STRX_Is_String_Contains_Only_Punctuation_Mark(const char *str);
+
+bool STRX_Is_String_Contains_Only_Punctuation_Mark_Safe(const char *str, const uint16_t str_max_size);
+
 
 bool STRX_Is_String_Contains_Only_Upper_Case(const char *str);
 
+bool STRX_Is_String_Contains_Only_Upper_Case_Safe(const char *str, const uint16_t str_max_size);
+
+
 bool STRX_Is_String_Contains_Only_Lower_Case(const char *str);
+
+bool STRX_Is_String_Contains_Only_Lower_Case_Safe(const char *str, const uint16_t str_max_size);
 
 
 
@@ -563,7 +596,6 @@ void STRX_Strings_Lexicographic_Selection_Sort(char** strings, const uint16_t nu
 
 
 #endif
-
 
 
 
