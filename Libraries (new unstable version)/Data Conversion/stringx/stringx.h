@@ -39,7 +39,7 @@
 
 
 
-inline bool STRINGX_String_Is_Empty(const char *str)
+static inline bool STRINGX_String_Is_Empty(const char *str)
 {
 	if ((str == NULL) || (str[0] == '\0'))
 	{
@@ -55,62 +55,62 @@ inline bool STRINGX_String_Is_Empty(const char *str)
 
 
 
-inline bool STRINGX_Char_Is_Letter(const char ch)
+static inline bool STRINGX_Char_Is_Letter(const char ch)
 {
 	return (bool)isalpha(ch);
 }
 
-inline bool STRINGX_Char_Is_Digit(const char ch)
+static inline bool STRINGX_Char_Is_Digit(const char ch)
 {
 	return (bool)isdigit(ch);
 }
 
-inline bool STRINGX_Char_Is_HEXDigit(const char ch)
+static inline bool STRINGX_Char_Is_HEXDigit(const char ch)
 {
 	return (bool)isxdigit(ch);
 }
 
-inline bool STRINGX_Char_Is_Letter_Or_Digit(const char ch)
+static inline bool STRINGX_Char_Is_Letter_Or_Digit(const char ch)
 {
 	return (bool)isalnum(ch);
 }
 
-inline bool STRINGX_Char_Is_Whitespace_Or_HTab(const char ch)
+static inline bool STRINGX_Char_Is_Whitespace_Or_HTab(const char ch)
 {
 	return (bool)isblank(ch);
 }
 
-inline bool STRINGX_Char_Is_Control_Char_CNTRL(const char ch)
+static inline bool STRINGX_Char_Is_Control_Char_CNTRL(const char ch)
 {
 	return (bool)iscntrl(ch);
 }
 
-inline bool STRINGX_Char_Is_Printable(const char ch)
+static inline bool STRINGX_Char_Is_Printable(const char ch)
 {
 	return (bool)isprint(ch);
 }
 
-inline bool STRINGX_Char_Is_Printable_And_Not_Whitespace(const char ch)
+static inline bool STRINGX_Char_Is_Printable_And_Not_Whitespace(const char ch)
 {
 	return (bool)isgraph(ch);
 }
 
-inline bool STRINGX_Char_Is_Space(const char ch)
+static inline bool STRINGX_Char_Is_Space(const char ch)
 {
 	return (bool)isspace(ch);
 }
 
-inline bool STRINGX_Char_Is_Punctuation_Mark(const char ch)
+static inline bool STRINGX_Char_Is_Punctuation_Mark(const char ch)
 {
 	return (bool)ispunct(ch);
 }
 
-inline bool STRINGX_Char_Is_Upper_Case(const char ch)
+static inline bool STRINGX_Char_Is_Upper_Case(const char ch)
 {
 	return (bool)isupper(ch);
 }
 
-inline bool STRINGX_Char_Is_Lower_Case(const char ch)
+static inline bool STRINGX_Char_Is_Lower_Case(const char ch)
 {
 	return (bool)islower(ch);
 }
@@ -121,12 +121,12 @@ inline bool STRINGX_Char_Is_Lower_Case(const char ch)
 
 
 
-inline char STRINGX_Convert_Char_To_Upper_Case(const char ch)
+static inline char STRINGX_Convert_Char_To_Upper_Case(const char ch)
 {
 	return (char)toupper(ch);
 }
 
-inline char STRINGX_Convert_Char_To_Lower_Case(const char ch)
+static inline char STRINGX_Convert_Char_To_Lower_Case(const char ch)
 {
 	return (char)tolower(ch);
 }
@@ -142,7 +142,7 @@ inline char STRINGX_Convert_Char_To_Lower_Case(const char ch)
 // -------------------------------------------------------------------------------
 // if the character is missing from the set, the function returns the value -1
 //
-inline int8_t STRINGX_Get_Char_Pos_In_Latin_Alphabet(const char ch)
+static inline int8_t STRINGX_Get_Char_Pos_In_Latin_Alphabet(const char ch)
 {
 	char c = toupper(ch);
 
@@ -161,7 +161,7 @@ inline int8_t STRINGX_Get_Char_Pos_In_Latin_Alphabet(const char ch)
 // if the index is invalid, the function returns the value EOL
 // (the end-of-line character '\0')
 //
-inline char STRINGX_Get_Latin_Alphabet_Char_By_Pos(const uint8_t pos)
+static inline char STRINGX_Get_Latin_Alphabet_Char_By_Pos(const uint8_t pos)
 {
 	if (pos < 26)
 	{
@@ -177,7 +177,7 @@ inline char STRINGX_Get_Latin_Alphabet_Char_By_Pos(const uint8_t pos)
 // -------------------------------------------------------------------------------
 // if the character is missing from the set, the function returns the value -1
 //
-inline int8_t STRINGX_Get_Char_Pos_In_Numerical_Digit(const char ch)
+static inline int8_t STRINGX_Get_Char_Pos_In_Numerical_Digit(const char ch)
 {
 	char c = toupper(ch);
 
@@ -196,7 +196,7 @@ inline int8_t STRINGX_Get_Char_Pos_In_Numerical_Digit(const char ch)
 // if the index is invalid, the function returns the value EOL
 // (the end-of-line character '\0')
 //
-inline char STRINGX_Get_Numerical_Digit_Char_By_Pos(const uint8_t pos)
+static inline char STRINGX_Get_Numerical_Digit_Char_By_Pos(const uint8_t pos)
 {
 	if (pos < 10)
 	{
