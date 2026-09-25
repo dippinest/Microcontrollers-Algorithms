@@ -32,6 +32,8 @@ bool STRX_Is_String_Contains_Only_Letter_Safe(const char *str, const uint16_t st
 }
 
 
+
+
 bool STRX_Is_String_Contains_Only_Digit(const char *str)
 {
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
@@ -44,6 +46,22 @@ bool STRX_Is_String_Contains_Only_Digit(const char *str)
 
 	return true;
 }
+
+
+bool STRX_Is_String_Contains_Only_Digit_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Digit(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
 
 
 bool STRX_Is_String_Contains_Only_HEXDigit(const char *str)
@@ -60,6 +78,22 @@ bool STRX_Is_String_Contains_Only_HEXDigit(const char *str)
 }
 
 
+bool STRX_Is_String_Contains_Only_HEXDigit_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_HEXDigit(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+
+
 bool STRX_Is_String_Contains_Only_Letter_Or_Digit(const char *str)
 {
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
@@ -72,6 +106,22 @@ bool STRX_Is_String_Contains_Only_Letter_Or_Digit(const char *str)
 
 	return true;
 }
+
+
+bool STRX_Is_String_Contains_Only_Letter_Or_Digit_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Letter_Or_Digit(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
 
 
 bool STRX_Is_String_Contains_Only_Whitespace_Or_HTab(const char *str)
@@ -88,6 +138,22 @@ bool STRX_Is_String_Contains_Only_Whitespace_Or_HTab(const char *str)
 }
 
 
+bool STRX_Is_String_Contains_Only_Whitespace_Or_HTab_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Whitespace_Or_HTab(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+
+
 bool STRX_Is_String_Contains_Only_Control_Char_CNTRL(const char *str)
 {
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
@@ -100,6 +166,22 @@ bool STRX_Is_String_Contains_Only_Control_Char_CNTRL(const char *str)
 
 	return true;
 }
+
+
+bool STRX_Is_String_Contains_Only_Control_Char_CNTRL_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Control_Char_CNTRL(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
 
 
 bool STRX_Is_String_Contains_Only_Printable(const char *str)
@@ -116,6 +198,22 @@ bool STRX_Is_String_Contains_Only_Printable(const char *str)
 }
 
 
+bool STRX_Is_String_Contains_Only_Printable_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Printable(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+
+
 bool STRX_Is_String_Contains_Only_Printable_And_Not_Whitespace(const char *str)
 {
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
@@ -128,6 +226,22 @@ bool STRX_Is_String_Contains_Only_Printable_And_Not_Whitespace(const char *str)
 
 	return true;
 }
+
+
+bool STRX_Is_String_Contains_Only_Printable_And_Not_Whitespace_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Printable_And_Not_Whitespace(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
 
 
 bool STRX_Is_String_Contains_Only_Space(const char *str)
@@ -144,6 +258,22 @@ bool STRX_Is_String_Contains_Only_Space(const char *str)
 }
 
 
+bool STRX_Is_String_Contains_Only_Space_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Space(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+
+
 bool STRX_Is_String_Contains_Only_Punctuation_Mark(const char *str)
 {
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
@@ -156,6 +286,22 @@ bool STRX_Is_String_Contains_Only_Punctuation_Mark(const char *str)
 
 	return true;
 }
+
+
+bool STRX_Is_String_Contains_Only_Punctuation_Mark_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Punctuation_Mark(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
 
 
 bool STRX_Is_String_Contains_Only_Upper_Case(const char *str)
@@ -172,9 +318,39 @@ bool STRX_Is_String_Contains_Only_Upper_Case(const char *str)
 }
 
 
+bool STRX_Is_String_Contains_Only_Upper_Case_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
+	{
+		if (!STRX_Char_Is_Upper_Case(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+
+
 bool STRX_Is_String_Contains_Only_Lower_Case(const char *str)
 {
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
+	{
+		if (!STRX_Char_Is_Lower_Case(str[i]))
+		{
+			return false;
+		}
+	}
+
+	return true;
+}
+
+
+bool STRX_Is_String_Contains_Only_Lower_Case_Safe(const char *str, const uint16_t str_max_size)
+{
+	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRX_Char_Is_Lower_Case(str[i]))
 		{
@@ -1632,7 +1808,6 @@ void STRX_Strings_Lexicographic_Selection_Sort(char** strings, const uint16_t nu
 		}
 	}
 }
-
 
 
 
