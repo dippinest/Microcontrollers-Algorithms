@@ -6,11 +6,6 @@
 
 bool STRINGX_Is_String_Contains_Only_Letter_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Letter(str[i]))
@@ -25,11 +20,6 @@ bool STRINGX_Is_String_Contains_Only_Letter_Chars(const char *str)
 
 bool STRINGX_Is_String_Contains_Only_Letter_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Letter(str[i]))
@@ -46,11 +36,6 @@ bool STRINGX_Is_String_Contains_Only_Letter_Chars_Safe(const char *str, const ui
 
 bool STRINGX_Is_String_Contains_Only_Digit_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Digit(str[i]))
@@ -65,11 +50,6 @@ bool STRINGX_Is_String_Contains_Only_Digit_Chars(const char *str)
 
 bool STRINGX_Is_String_Contains_Only_Digit_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Digit(str[i]))
@@ -86,11 +66,6 @@ bool STRINGX_Is_String_Contains_Only_Digit_Chars_Safe(const char *str, const uin
 
 bool STRINGX_Is_String_Contains_Only_HEXDigit_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_HEXDigit(str[i]))
@@ -105,11 +80,6 @@ bool STRINGX_Is_String_Contains_Only_HEXDigit_Chars(const char *str)
 
 bool STRINGX_Is_String_Contains_Only_HEXDigit_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_HEXDigit(str[i]))
@@ -126,11 +96,6 @@ bool STRINGX_Is_String_Contains_Only_HEXDigit_Chars_Safe(const char *str, const 
 
 bool STRINGX_Is_String_Contains_Only_Letter_Chars_Or_Digit_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Letter_Or_Digit(str[i]))
@@ -145,11 +110,6 @@ bool STRINGX_Is_String_Contains_Only_Letter_Chars_Or_Digit_Chars(const char *str
 
 bool STRINGX_Is_String_Contains_Only_Letter_Chars_Or_Digit_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Letter_Or_Digit(str[i]))
@@ -166,11 +126,6 @@ bool STRINGX_Is_String_Contains_Only_Letter_Chars_Or_Digit_Chars_Safe(const char
 
 bool STRINGX_Is_String_Contains_Only_Whitespace_Chars_Or_HTab_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Whitespace_Or_HTab(str[i]))
@@ -185,11 +140,6 @@ bool STRINGX_Is_String_Contains_Only_Whitespace_Chars_Or_HTab_Chars(const char *
 
 bool STRINGX_Is_String_Contains_Only_Whitespace_Chars_Or_HTab_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Whitespace_Or_HTab(str[i]))
@@ -206,11 +156,6 @@ bool STRINGX_Is_String_Contains_Only_Whitespace_Chars_Or_HTab_Chars_Safe(const c
 
 bool STRINGX_Is_String_Contains_Only_Control_Chars_CNTRL(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Control_Char_CNTRL(str[i]))
@@ -225,11 +170,6 @@ bool STRINGX_Is_String_Contains_Only_Control_Chars_CNTRL(const char *str)
 
 bool STRINGX_Is_String_Contains_Only_Control_Chars_CNTRL_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Control_Char_CNTRL(str[i]))
@@ -246,11 +186,6 @@ bool STRINGX_Is_String_Contains_Only_Control_Chars_CNTRL_Safe(const char *str, c
 
 bool STRINGX_Is_String_Contains_Only_Printable_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Printable(str[i]))
@@ -265,11 +200,6 @@ bool STRINGX_Is_String_Contains_Only_Printable_Chars(const char *str)
 
 bool STRINGX_Is_String_Contains_Only_Printable_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Printable(str[i]))
@@ -286,11 +216,6 @@ bool STRINGX_Is_String_Contains_Only_Printable_Chars_Safe(const char *str, const
 
 bool STRINGX_Is_String_Contains_Only_Printable_Chars_And_Not_Whitespaces(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Printable_And_Not_Whitespace(str[i]))
@@ -305,11 +230,6 @@ bool STRINGX_Is_String_Contains_Only_Printable_Chars_And_Not_Whitespaces(const c
 
 bool STRINGX_Is_String_Contains_Only_Printable_Chars_And_Not_Whitespaces_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Printable_And_Not_Whitespace(str[i]))
@@ -326,11 +246,6 @@ bool STRINGX_Is_String_Contains_Only_Printable_Chars_And_Not_Whitespaces_Safe(co
 
 bool STRINGX_Is_String_Contains_Only_Space_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Space(str[i]))
@@ -345,11 +260,6 @@ bool STRINGX_Is_String_Contains_Only_Space_Chars(const char *str)
 
 bool STRINGX_Is_String_Contains_Only_Space_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Space(str[i]))
@@ -366,11 +276,6 @@ bool STRINGX_Is_String_Contains_Only_Space_Chars_Safe(const char *str, const uin
 
 bool STRINGX_Is_String_Contains_Only_Punctuation_Mark_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Punctuation_Mark(str[i]))
@@ -385,11 +290,6 @@ bool STRINGX_Is_String_Contains_Only_Punctuation_Mark_Chars(const char *str)
 
 bool STRINGX_Is_String_Contains_Only_Punctuation_Mark_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Punctuation_Mark(str[i]))
@@ -406,11 +306,6 @@ bool STRINGX_Is_String_Contains_Only_Punctuation_Mark_Chars_Safe(const char *str
 
 bool STRINGX_Is_String_Contains_Only_Upper_Case_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Upper_Case(str[i]))
@@ -425,11 +320,6 @@ bool STRINGX_Is_String_Contains_Only_Upper_Case_Chars(const char *str)
 
 bool STRINGX_Is_String_Contains_Only_Upper_Case_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Upper_Case(str[i]))
@@ -446,11 +336,6 @@ bool STRINGX_Is_String_Contains_Only_Upper_Case_Chars_Safe(const char *str, cons
 
 bool STRINGX_Is_String_Contains_Only_Lower_Case_Chars(const char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (!STRINGX_Char_Is_Lower_Case(str[i]))
@@ -465,11 +350,6 @@ bool STRINGX_Is_String_Contains_Only_Lower_Case_Chars(const char *str)
 
 bool STRINGX_Is_String_Contains_Only_Lower_Case_Chars_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return false;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_max_size); ++i)
 	{
 		if (!STRINGX_Char_Is_Lower_Case(str[i]))
@@ -489,11 +369,6 @@ bool STRINGX_Is_String_Contains_Only_Lower_Case_Chars_Safe(const char *str, cons
 
 uint16_t STRINGX_Get_String_Size(const char *str)
 {
-	if (str == NULL)
-	{
-    	return 0;
-	}
-	
 	uint16_t str_size = 0;
 
 	while (str[str_size] != '\0')
@@ -507,11 +382,6 @@ uint16_t STRINGX_Get_String_Size(const char *str)
 
 uint16_t STRINGX_Get_String_Size_Safe(const char *str, const uint16_t str_max_size)
 {
-	if ((str == NULL) || (str_max_size == 0))
-	{
-    	return 0;
-	}
-	
 	uint16_t str_size = 0;
 
 	while ((str[str_size] != '\0') && (str_size < str_max_size))
@@ -525,11 +395,6 @@ uint16_t STRINGX_Get_String_Size_Safe(const char *str, const uint16_t str_max_si
 
 char *STRINGX_String_Copy(char *dest_str, const char *source_str)
 {
-	if ((dest_str == NULL) || (source_str == NULL))
-	{
-    	return false;
-	}
-	
 	uint16_t i = 0;
 
 	while (source_str[i] != '\0')
@@ -545,11 +410,6 @@ char *STRINGX_String_Copy(char *dest_str, const char *source_str)
 
 char *STRINGX_String_Copy_Safe(char *dest_str, const char *source_str, const uint16_t dest_str_max_size)
 {
-	if ((dest_str == NULL) || (source_str == NULL))
-	{
-    	return false;
-	}
-	
 	uint16_t i = 0;
 
 	while ((source_str[i] != '\0') && (i < dest_str_max_size))
@@ -566,11 +426,6 @@ char *STRINGX_String_Copy_Safe(char *dest_str, const char *source_str, const uin
 
 char *STRINGX_Get_String_Reverse(char *str)
 {
-	if (str == NULL)
-	{
-    	return false;
-	}
-	
 	char tmp;
 
 	uint16_t str_size = strlen(str);
@@ -594,12 +449,12 @@ char *STRINGX_Get_String_Reverse(char *str)
 
 char *STRINGX_Get_String_Reverse_Safe(char *str, const uint16_t str_size)
 {
-	if ((str == NULL) || (str_size == 0))
-	{
-    	return str;
-	}
-	
 	char tmp;
+
+	if (str_size == 0)
+	{
+		return str;
+	}
 
 	for (uint16_t i = 0, j = (str_size - 1); (i < (str_size >> 1)) || (j > (str_size >> 1)); ++i, --j)
 	{
@@ -614,11 +469,6 @@ char *STRINGX_Get_String_Reverse_Safe(char *str, const uint16_t str_size)
 
 char *STRINGX_Convert_String_To_Upper_Case(char *str)
 {
-	if (str == NULL)
-	{
-    	return str;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		str[i] = toupper(str[i]);
@@ -630,11 +480,6 @@ char *STRINGX_Convert_String_To_Upper_Case(char *str)
 
 char *STRINGX_Convert_String_To_Upper_Case_Safe(char *str, const uint16_t str_size)
 {
-	if (str == NULL)
-	{
-    	return str;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_size); ++i)
 	{
 		str[i] = toupper(str[i]);
@@ -646,11 +491,6 @@ char *STRINGX_Convert_String_To_Upper_Case_Safe(char *str, const uint16_t str_si
 
 char *STRINGX_Convert_String_To_Lower_Case(char *str)
 {
-	if (str == NULL)
-	{
-    	return str;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		str[i] = tolower(str[i]);
@@ -662,11 +502,6 @@ char *STRINGX_Convert_String_To_Lower_Case(char *str)
 
 char *STRINGX_Convert_String_To_Lower_Case_Safe(char *str, const uint16_t str_size)
 {
-	if (str == NULL)
-	{
-    	return str;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_size); ++i)
 	{
 		str[i] = tolower(str[i]);
@@ -678,11 +513,6 @@ char *STRINGX_Convert_String_To_Lower_Case_Safe(char *str, const uint16_t str_si
 
 char *STRINGX_Invert_String_Case(char *str)
 {
-	if (str == NULL)
-	{
-    	return str;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (isupper(str[i]))
@@ -701,11 +531,6 @@ char *STRINGX_Invert_String_Case(char *str)
 
 char *STRINGX_Invert_String_Case_Safe(char *str, const uint16_t str_size)
 {
-	if (str == NULL)
-	{
-    	return str;
-	}
-	
 	for (uint16_t i = 0; (str[i] != '\0') && (i < str_size); ++i)
 	{
 		if (isupper(str[i]))
@@ -734,7 +559,7 @@ bool STRINGX_Strings_Is_Equivalent(char *str1, char *str2)
 
 	if ((str1 == NULL) || (str2 == NULL))
 	{
-		return false;
+		goto IS_NOT_EQUIVALENT;
 	}
 
 
@@ -742,7 +567,7 @@ bool STRINGX_Strings_Is_Equivalent(char *str1, char *str2)
 	{
 		if (str1[i] != str2[i])
 		{
-			return false;
+			goto IS_NOT_EQUIVALENT;
 		}
 
 		++i;
@@ -753,7 +578,7 @@ bool STRINGX_Strings_Is_Equivalent(char *str1, char *str2)
 		return true;
 	}
 
-	return false;
+	IS_NOT_EQUIVALENT: return false;
 }
 
 
@@ -764,7 +589,7 @@ bool STRINGX_Strings_Is_Equivalent_Safe(char *str1, const uint16_t str1_max_size
 
 	if ((str1 == NULL) || (str2 == NULL))
 	{
-		return false;
+		goto IS_NOT_EQUIVALENT;
 	}
 
 
@@ -772,7 +597,7 @@ bool STRINGX_Strings_Is_Equivalent_Safe(char *str1, const uint16_t str1_max_size
 	{
 		if (str1[i] != str2[i])
 		{
-			return false;
+			goto IS_NOT_EQUIVALENT;
 		}
 
 		++i;
@@ -783,7 +608,7 @@ bool STRINGX_Strings_Is_Equivalent_Safe(char *str1, const uint16_t str1_max_size
 		return true;
 	}
 
-	return false;
+	IS_NOT_EQUIVALENT: return false;
 }
 
 
@@ -794,7 +619,7 @@ bool STRINGX_Strings_Is_Equivalent_Ignore_Case(char *str1, char *str2)
 
 	if ((str1 == NULL) || (str2 == NULL))
 	{
-		return false;
+		goto IS_NOT_EQUIVALENT;
 	}
 
 
@@ -802,7 +627,7 @@ bool STRINGX_Strings_Is_Equivalent_Ignore_Case(char *str1, char *str2)
 	{
 		if (toupper(str1[i]) != toupper(str2[i]))
 		{
-			return false;
+			goto IS_NOT_EQUIVALENT;
 		}
 
 		++i;
@@ -813,7 +638,7 @@ bool STRINGX_Strings_Is_Equivalent_Ignore_Case(char *str1, char *str2)
 		return true;
 	}
 
-	return false;
+	IS_NOT_EQUIVALENT: return false;
 }
 
 
@@ -824,7 +649,7 @@ bool STRINGX_Strings_Is_Equivalent_Ignore_Case_Safe(char *str1, const uint16_t s
 
 	if ((str1 == NULL) || (str2 == NULL))
 	{
-		return false;
+		goto IS_NOT_EQUIVALENT;
 	}
 
 
@@ -832,7 +657,7 @@ bool STRINGX_Strings_Is_Equivalent_Ignore_Case_Safe(char *str1, const uint16_t s
 	{
 		if (toupper(str1[i]) != toupper(str2[i]))
 		{
-			return false;
+			goto IS_NOT_EQUIVALENT;
 		}
 
 		++i;
@@ -843,7 +668,7 @@ bool STRINGX_Strings_Is_Equivalent_Ignore_Case_Safe(char *str1, const uint16_t s
 		return true;
 	}
 
-	return false;
+	IS_NOT_EQUIVALENT: return false;
 }
 
 
@@ -854,11 +679,6 @@ bool STRINGX_Strings_Is_Equivalent_Ignore_Case_Safe(char *str1, const uint16_t s
 
 char *STRINGX_Obfuscate_String_ROT13(char *str)
 {
-	if (str == NULL)
-	{
-    	return str;
-	}
-	
 	char ch;
 	
 	
@@ -884,11 +704,6 @@ char *STRINGX_Obfuscate_String_ROT13(char *str)
 
 char *STRINGX_Obfuscate_String_ROT13_Safe(char *str, const uint16_t str_size)
 {
-	if (str == NULL)
-	{
-    	return NULL;
-	}
-	
 	char ch;
 	
 	
@@ -914,11 +729,6 @@ char *STRINGX_Obfuscate_String_ROT13_Safe(char *str, const uint16_t str_size)
 
 char *STRINGX_Obfuscate_String_ROT47(char *str)
 {
-	if (str == NULL)
-	{
-    	return NULL;
-	}
-	
 	char ch;
 	
 	
@@ -938,11 +748,6 @@ char *STRINGX_Obfuscate_String_ROT47(char *str)
 
 char *STRINGX_Obfuscate_String_ROT47_Safe(char *str, const uint16_t str_size)
 {
-	if (str == NULL)
-	{
-    	return NULL;
-	}
-	
 	char ch;
 	
 	
@@ -974,11 +779,10 @@ char *STRINGX_Generate_Random_Strings
 	uint16_t (*_16bit_random_generator)(void)
 )
 {
-	if ((str_buf == NULL) || (str_buf_size < 1) || (_16bit_random_generator == NULL))
+	if ((str_buf_size < 1) || (_16bit_random_generator == NULL))
 	{
 		return NULL;
 	}
-	
 
 	if (max_char_index < min_char_index)
 	{
@@ -1013,7 +817,7 @@ char *STRINGX_Generate_Random_Strings_With_Alphabet
 	uint16_t(*_16bit_random_generator)(void)
 )
 {
-	if ((str_buf == NULL) || (str_buf_size < 1) || (alphabet == NULL) || (alphabet_size == 0) || (_16bit_random_generator == NULL))
+	if ((str_buf_size < 1) || (alphabet == NULL) || (alphabet_size == 0) || (_16bit_random_generator == NULL))
 	{
 		return NULL;
 	}
@@ -1069,9 +873,9 @@ char *STRINGX_Delete_All_Extra_Symbols(char *str, const char extra_symbol)
 
 char *STRINGX_Delete_All_Extra_Symbols_From_Set(char *str, const char *extra_symbols_set)
 {
-	if ((str == NULL) || (strlen(str) == 0) || (extra_symbols_set == NULL) || (strlen(extra_symbols_set) == 0))
+	if ((strlen(str) == 0) || (strlen(extra_symbols_set) == 0))
 	{
-		return NULL;
+		return str;
 	}
 
 	uint16_t i, j;
@@ -1109,9 +913,9 @@ char *STRINGX_Delete_All_Extra_Symbols_Within_Specified_Boundaries
 {
 	uint16_t str_size = strlen(str);
 
-	if ((str == NULL) || (str_size == 0) || (begin_pos >= end_pos) || (begin_pos > str_size))
+	if ((str_size == 0) || (begin_pos >= end_pos) || (begin_pos > str_size))
 	{
-		return NULL;
+		return str;
 	}
 
 	uint16_t i = begin_pos;
@@ -1151,9 +955,9 @@ char *STRINGX_Delete_All_Extra_Symbols_From_Set_Within_Specified_Boundaries
 {
 	const uint16_t str_size = strlen(str);
 
-	if ((str == NULL) || (str_size == 0) || (begin_pos >= end_pos) || (begin_pos > str_size))
+	if ((str_size == 0) || (begin_pos >= end_pos) || (begin_pos > str_size))
 	{
-		return NULL;
+		return str;
 	}
 
 	uint16_t i, j;
@@ -1195,11 +999,6 @@ char *STRINGX_Delete_All_Extra_Symbols_From_Set_Within_Specified_Boundaries
 
 uint16_t STRINGX_Get_Num_Of_Symbol_Occurrences(const char *str, const char symbol)
 {
-	if (str == NULL)
-	{
-		return 0;
-	}
-	
 	uint16_t num_of_occurrences = 0;
 
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
@@ -1216,11 +1015,6 @@ uint16_t STRINGX_Get_Num_Of_Symbol_Occurrences(const char *str, const char symbo
 
 uint16_t STRINGX_Get_Num_Of_Symbols_Occurrences_From_Set(const char *str, const char *symbols_set)
 {
-	if (str == NULL)
-	{
-		return 0;
-	}
-	
 	uint16_t num_of_occurrences = 0;
 
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
@@ -1240,11 +1034,6 @@ uint16_t STRINGX_Get_Num_Of_Symbols_Occurrences_From_Set(const char *str, const 
 
 int16_t STRINGX_Find_Index_Of_First_Symbol_Occurrences(const char *str, const char symbol)
 {
-	if (str == NULL)
-	{
-		return 0;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (str[i] == symbol)
@@ -1259,11 +1048,6 @@ int16_t STRINGX_Find_Index_Of_First_Symbol_Occurrences(const char *str, const ch
 
 int16_t STRINGX_Find_Index_Of_First_Any_Symbol_Occurrences_From_Set(const char *str, const char *symbols_set)
 {
-	if (str == NULL)
-	{
-		return 0;
-	}
-	
 	for (int16_t i = 0; str[i] != '\0'; ++i)
 	{
 		for (int16_t j = 0; symbols_set[j] != '\0'; ++j)
@@ -1286,11 +1070,6 @@ int16_t STRINGX_Find_Index_Of_First_Any_Symbol_Occurrences_From_Set(const char *
 
 char *STRINGX_Trim_All_Extra_Symbols(char *str, const char symbol)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	int16_t i = 0;
 	int16_t j = 0;
 
@@ -1331,11 +1110,6 @@ char *STRINGX_Trim_All_Extra_Symbols(char *str, const char symbol)
 
 char *STRINGX_Trim_All_Left_Extra_Symbols(char *str, const char symbol)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	int16_t i = 0;
 	int16_t j = 0;
 
@@ -1363,11 +1137,6 @@ char *STRINGX_Trim_All_Left_Extra_Symbols(char *str, const char symbol)
 
 char *STRINGX_Trim_All_Right_Extra_Symbols(char *str, const char symbol)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	const uint16_t str_size = strlen(str);
 
 
@@ -1394,11 +1163,6 @@ char *STRINGX_Trim_All_Right_Extra_Symbols(char *str, const char symbol)
 
 char *STRINGX_Trim_All_Extra_Symbols_To_Target_Symbol(char *str, const char target_symbol)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	int16_t i = 0;
 	int16_t j = 0;
 
@@ -1426,11 +1190,6 @@ char *STRINGX_Trim_All_Extra_Symbols_To_Target_Symbol(char *str, const char targ
 
 char *STRINGX_Trim_All_Extra_Symbols_After_Target_Symbol(char *str, const char target_symbol)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	const uint16_t str_size = strlen(str);
 
 
@@ -1457,11 +1216,6 @@ char *STRINGX_Trim_All_Extra_Symbols_After_Target_Symbol(char *str, const char t
 
 char *STRINGX_Replace_All_Symbols(char *str, const char old_symbol, const char new_symbol)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	for (uint16_t i = 0; str[i] != '\0'; ++i)
 	{
 		if (str[i] == old_symbol)
@@ -1476,11 +1230,6 @@ char *STRINGX_Replace_All_Symbols(char *str, const char old_symbol, const char n
 
 char *STRINGX_Replace_All_Symbols_To_Target_Symbol(char *str, const char old_symbol, const char new_symbol, const char target_symbol)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	for (uint16_t i = 0; (str[i] != target_symbol) && (str[i] != '\0'); ++i)
 	{
 		if (str[i] == old_symbol)
@@ -1495,11 +1244,6 @@ char *STRINGX_Replace_All_Symbols_To_Target_Symbol(char *str, const char old_sym
 
 char *STRINGX_Replace_All_Symbols_After_Target_Symbol(char *str, const char old_symbol, const char new_symbol, const char target_symbol)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	for (uint16_t i = (strlen(str) - 1); (str[i] != target_symbol) && (i > 0); --i)
 	{
 		if (str[i] == old_symbol)
@@ -1519,11 +1263,6 @@ char *STRINGX_Replace_All_Symbols_After_Target_Symbol(char *str, const char old_
 
 char *STRINGX_Delete_All_Duplicate_Symbols_In_Row(char *str, const char symbol)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	char *str_ptr = str;
 
 	if (str)
@@ -1547,12 +1286,7 @@ char *STRINGX_Delete_All_Duplicate_Symbols_In_Row(char *str, const char symbol)
 
 char *STRINGX_Delete_All_Substrings(char *str, const char* substr)
 {
-	if ((str == NULL) || (substr == NULL))
-	{
-		return NULL;
-	}
-
-	if ((strlen(str) == 0) || (strlen(substr) == 0))
+	if (strlen(substr) == 0)
 	{
 		return str;
 	}
@@ -1574,11 +1308,6 @@ char *STRINGX_Delete_All_Substrings(char *str, const char* substr)
 
 char *STRINGX_Delete_Substring_Within_Specified_Boundaries(char *str, const uint16_t begin_pos, uint16_t end_pos)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	uint16_t str_size = strlen(str);
 
 	if ((str_size == 0) || (begin_pos >= end_pos) || (begin_pos > str_size))
@@ -1599,11 +1328,6 @@ char *STRINGX_Delete_Substring_Within_Specified_Boundaries(char *str, const uint
 
 char *STRINGX_Insert_Substring_By_Pos(char *str, const char *substr, uint16_t insert_pos)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	uint16_t str_size = strlen(str);
 
 	if (str_size == 0)
@@ -1629,11 +1353,6 @@ char *STRINGX_Insert_Substring_By_Pos(char *str, const char *substr, uint16_t in
 
 char *STRINGX_Fill_Char_Within_Specified_Boundaries(char *str, const char placeholder_ch, const uint16_t begin_pos, uint16_t end_pos)
 {
-	if (str == NULL)
-	{
-		return NULL;
-	}
-	
 	uint16_t str_size = strlen(str);
 
 	if ((str_size == 0) || (begin_pos >= end_pos) || (begin_pos > str_size))
@@ -1655,11 +1374,6 @@ char *STRINGX_Fill_Char_Within_Specified_Boundaries(char *str, const char placeh
 
 int16_t STRINGX_Get_First_Substring_Occurrence_Index(char *str, const char *substr)
 {
-	if ((str == NULL) || (substr == NULL))
-	{
-		return -1;
-	}
-	
 	char *str_ptr = strstr(str, substr);
 
 	if (str_ptr != NULL)
@@ -1673,11 +1387,6 @@ int16_t STRINGX_Get_First_Substring_Occurrence_Index(char *str, const char *subs
 
 uint16_t STRINGX_Get_Num_Of_Substring_Occurrences(char *str, const char *substr)
 {
-	if ((str == NULL) || (substr == NULL))
-	{
-		return 0;
-	}
-	
 	uint16_t num_of_occurrences = 0;
 
 	uint16_t substr_size = strlen(substr);
@@ -1705,11 +1414,6 @@ uint16_t STRINGX_Get_Num_Of_Substring_Occurrences(char *str, const char *substr)
 
 char *STRINGX_Replace_Substring(char *str, char *result_str, const char *old_substr, const char *new_substr)
 {
-	if ((str == NULL) || (result_str == NULL) || (old_substr == NULL) || (new_substr == NULL))
-	{
-		return NULL;
-	}
-	
 	result_str[0] = '\0';
 
 	uint16_t str_size = strlen(str);
@@ -1763,11 +1467,6 @@ uint16_t STRINGX_Split_Into_Tokens
 	const bool split_with_null_terminated_symbol
 )
 {
-	if (str == NULL)
-	{
-		return 0;
-	}
-	
 	uint16_t i = 0;
 
 	if (strlen(str) == 0)
@@ -1813,11 +1512,6 @@ uint16_t STRINGX_Split_Into_Tokens_Using_Delimiters_Set
 	const bool split_with_null_terminated_symbol
 )
 {
-	if (str == NULL)
-	{
-		return 0;
-	}
-	
 	uint16_t i = 0;
 
 	if (strlen(str) == 0)
@@ -1864,11 +1558,6 @@ uint16_t STRINGX_Split_Into_Tokens_Using_Delimiters_Set
 
 bool STRINGX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings)
 {
-	if (strings == NULL)
-	{
-		return false;
-	}
-	
 	if (num_of_strings < 2)
 	{
 		return true;
@@ -1877,11 +1566,6 @@ bool STRINGX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings)
 
 	for (uint16_t i = 1; i < num_of_strings; ++i)
 	{
-		if (strings[i] == NULL)
-		{
-			return false;
-		}
-	
 		if (STRINGX_BuildIn_Custom_STRCMP(strings[i - 1], strings[i]) > 0)
 		{
 			return false;
@@ -1894,11 +1578,6 @@ bool STRINGX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings)
 
 bool STRINGX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strings)
 {
-	if (strings == NULL)
-	{
-		return false;
-	}
-	
 	if (num_of_strings < 2)
 	{
 		return true;
@@ -1924,7 +1603,7 @@ bool STRINGX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strin
 
 void STRINGX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_strings, uint16_t(*_16bit_random_generator)(void))
 {
-	if ((strings == NULL) || (num_of_strings < 2))
+	if (num_of_strings < 2)
 	{
 		return;
 	}
@@ -1937,11 +1616,6 @@ void STRINGX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_string
 
 	for (uint16_t i = (num_of_strings - 1); i > 0; --i)
 	{
-		if (strings[i] == NULL)
-		{
-			return false;
-		}
-	
 		tmp_index = _16bit_random_generator() % (i + 1);
 
 		tmp_string_ptr     = strings[i];
@@ -1958,11 +1632,6 @@ void STRINGX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_string
 
 int8_t STRINGX_BuildIn_Custom_STRCMP(const char* str1, const char* str2)
 {
-	if ((str1 == NULL) || (str2 == NULL))
-	{
-		return 0;
-	}
-	
 	while (*str1 && *str2 && (*str1 == *str2))
 	{
 		++(str1);
@@ -1975,11 +1644,6 @@ int8_t STRINGX_BuildIn_Custom_STRCMP(const char* str1, const char* str2)
 
 int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case(const char* str1, const char* str2)
 {
-	if ((str1 == NULL) || (str2 == NULL))
-	{
-		return 0;
-	}
-	
 	char ch1, ch2;
 
 
@@ -2003,11 +1667,6 @@ int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case(const char* str1, const char* s
 
 int8_t STRINGX_BuildIn_Custom_STRCMP_Reverse(const char* str1, const char* str2)
 {
-	if ((str1 == NULL) || (str2 == NULL))
-	{
-		return 0;
-	}
-	
 	while (*str1 && *str2 && (*str1 == *str2))
 	{
 		++(str1);
@@ -2020,11 +1679,6 @@ int8_t STRINGX_BuildIn_Custom_STRCMP_Reverse(const char* str1, const char* str2)
 
 int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char* str1, const char* str2)
 {
-	if ((str1 == NULL) || (str2 == NULL))
-	{
-		return 0;
-	}
-	
 	char ch1, ch2;
 
 
@@ -2053,7 +1707,7 @@ int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char* str1, const
 
 void STRINGX_Strings_Lexicographic_Bubble_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2))
 {
-	if ((strings == NULL) || (num_of_strings < 2) || (comparator == NULL))
+	if (num_of_strings < 2)
 	{
 		return;
 	}
@@ -2091,7 +1745,7 @@ void STRINGX_Strings_Lexicographic_Bubble_Sort(char** strings, const uint16_t nu
 
 void STRINGX_Strings_Lexicographic_Insertion_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2))
 {
-	if ((strings == NULL) || (num_of_strings < 2) || (comparator == NULL))
+	if (num_of_strings < 2)
 	{
 		return;
 	}
@@ -2123,7 +1777,7 @@ void STRINGX_Strings_Lexicographic_Insertion_Sort(char** strings, const uint16_t
 
 void STRINGX_Strings_Lexicographic_Selection_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2))
 {
-	if ((strings == NULL) || (num_of_strings < 2) || (comparator == NULL))
+	if (num_of_strings < 2)
 	{
 		return;
 	}
