@@ -363,7 +363,62 @@ bool STRINGX_Is_String_Contains_Only_Lower_Case_Chars_Safe(const char *str, cons
 
 
 
-/////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
+// ===============================================================================
+
+
+
+bool STRINGX_Strings_Is_Float(char *string, const char decimal_separator)
+{
+	if (string == NULL)
+	{
+		return false;
+	}
+
+
+	STRINGX_Trim_All_Extra_Symbols(string, ' ');
+
+
+	uint16_t string_size = strlen(string);
+
+	bool decimal_separator_is_exit = false;
+	
+
+	uint16_t i = 0;
+
+	if ((string[0] == '-') || (string[0] == '+'))
+	{
+		i = 1;
+	}
+
+
+
+	for (; i < string_size; ++i)
+	{
+		if (string[i] == decimal_separator)
+		{
+			if (decimal_separator_is_exit)
+			{
+				return false;
+			}
+
+			decimal_separator_is_exit = true;
+
+			continue;
+		}
+
+		if (!STRINGX_Char_Is_Digit(string[i]))
+		{
+			return false;
+		}
+	}
+
+
+	return true;
+}
+
+
+
+// ===============================================================================
 
 
 
