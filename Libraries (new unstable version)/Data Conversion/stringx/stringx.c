@@ -367,7 +367,7 @@ bool STRINGX_Is_String_Contains_Only_Lower_Case_Chars_Safe(const char *str, cons
 
 
 
-bool STRINGX_Strings_Is_Float(char *string, const char decimal_separator)
+bool STRINGX_Strings_Is_Float_Value(char *string, const char decimal_separator)
 {
 	if (string == NULL)
 	{
