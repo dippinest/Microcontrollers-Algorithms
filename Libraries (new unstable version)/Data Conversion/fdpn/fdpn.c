@@ -120,69 +120,78 @@ char *FDPN_Int16Base_Convert_Number_To_String
 
 int16_t FDPN_Int16Base_Convert_String_To_Number
 (
-	const char *string,
-	
-	const uint8_t max_string_len
+    const char *string,
+
+    const uint8_t max_string_len,
+
+    const char decimal_separator
 )
 {
-	if (string == NULL || max_string_len == 0)
-	{
-		return 0;
-	}
-	
-
-	int16_t number = 0;
-	
-	uint8_t i = 0;
-	
-	
-
-	while (1)
-	{
-		if (string[i] != ' ' || i >= max_string_len)
-		{
-			break;
-		}
-
-		++i;
-	}
-
-	int8_t sign = 1;
-
-	if (string[i] == '+')
-	{
-		++i;
-	}
-
-	if (string[i] == '-')
-	{
-		sign = -1;
-
-		++i;
-	}
-
-	while (1)
-	{
-		if (((string[i] == '\0')) || (i >= max_string_len))
-		{
-			break;
-		}
-
-		if ((string[i] < '0') || (string[i] > '9'))
-		{
-			++i;
-
-			continue;
-		}
-
-		number *= 10;
-		number += string[i] - '0';
-
-		++i;
-	}
+    if (string == NULL || max_string_len == 0)
+    {
+        return 0;
+    }
 
 
-	return sign * number;
+    int16_t number = 0;
+
+    uint8_t i = 0;
+
+    bool decimal_separator_is_exit = false;
+
+
+
+    while (1)
+    {
+        if (string[i] != ' ' || i >= max_string_len)
+        {
+            break;
+        }
+
+        ++i;
+    }
+
+    int8_t sign = 1;
+
+    if (string[i] == '+')
+    {
+        ++i;
+    }
+
+    if (string[i] == '-')
+    {
+        sign = -1;
+
+        ++i;
+    }
+
+    while (1)
+    {
+        if (string[i] == decimal_separator)
+        {
+            decimal_separator_is_exit = true;
+        }
+
+        if (((string[i] == '\0')) || (i >= max_string_len))
+        {
+            break;
+        }
+
+        if (((string[i] < '0') || (string[i] > '9')) && (decimal_separator_is_exit != false))
+        {
+            ++i;
+
+            continue;
+        }
+
+        number *= 10;
+        number += string[i] - '0';
+
+        ++i;
+    }
+
+
+    return sign * number;
 }
 
 
@@ -302,69 +311,78 @@ char *FDPN_Int32Base_Convert_Number_To_String
 
 int32_t FDPN_Int32Base_Convert_String_To_Number
 (
-	const char *string,
-	
-	const uint8_t max_string_len
+    const char* string,
+
+    const uint8_t max_string_len,
+
+    const char decimal_separator
 )
 {
-	if ((string == NULL) || (max_string_len == 0))
-	{
-		return 0;
-	}
+    if (string == NULL || max_string_len == 0)
+    {
+        return 0;
+    }
 
 
-	int32_t number = 0;
-	
-	uint8_t i = 0;
+    int32_t number = 0;
+
+    uint8_t i = 0;
+
+    bool decimal_separator_is_exit = false;
 
 
 
-	while (1)
-	{
-		if ((string[i] != ' ') || (i >= max_string_len))
-		{
-			break;
-		}
+    while (1)
+    {
+        if (string[i] != ' ' || i >= max_string_len)
+        {
+            break;
+        }
 
-		++i;
-	}
+        ++i;
+    }
 
-	int8_t sign = 1;
+    int8_t sign = 1;
 
-	if (string[i] == '+')
-	{
-		++i;
-	}
+    if (string[i] == '+')
+    {
+        ++i;
+    }
 
-	if (string[i] == '-')
-	{
-		sign = -1;
+    if (string[i] == '-')
+    {
+        sign = -1;
 
-		++i;
-	}
+        ++i;
+    }
 
-	while (1)
-	{
-		if (((string[i] == '\0')) || (i >= max_string_len))
-		{
-			break;
-		}
+    while (1)
+    {
+        if (string[i] == decimal_separator)
+        {
+            decimal_separator_is_exit = true;
+        }
 
-		if ((string[i] < '0') || (string[i] > '9'))
-		{
-			++i;
+        if (((string[i] == '\0')) || (i >= max_string_len))
+        {
+            break;
+        }
 
-			continue;
-		}
+        if (((string[i] < '0') || (string[i] > '9')) && (decimal_separator_is_exit != false))
+        {
+            ++i;
 
-		number *= 10;
-		number += string[i] - '0';
+            continue;
+        }
 
-		++i;
-	}
+        number *= 10;
+        number += string[i] - '0';
+
+        ++i;
+    }
 
 
-	return sign * number;
+    return sign * number;
 }
 
 
@@ -490,69 +508,78 @@ char *FDPN_Int64Base_Convert_Number_To_String
 
 int64_t FDPN_Int64Base_Convert_String_To_Number
 (
-	const char *string,
-	
-	const uint8_t max_string_len
+    const char* string,
+
+    const uint8_t max_string_len,
+
+    const char decimal_separator
 )
 {
-	if ((string == NULL) || (max_string_len == 0))
-	{
-		return 0;
-	}
+    if (string == NULL || max_string_len == 0)
+    {
+        return 0;
+    }
 
 
-	int64_t number = 0;
-	
-	uint8_t i = 0;
+    int64_t number = 0;
+
+    uint8_t i = 0;
+
+    bool decimal_separator_is_exit = false;
 
 
 
-	while (1)
-	{
-		if ((string[i] != ' ') || (i >= max_string_len))
-		{
-			break;
-		}
+    while (1)
+    {
+        if (string[i] != ' ' || i >= max_string_len)
+        {
+            break;
+        }
 
-		++i;
-	}
+        ++i;
+    }
 
-	int8_t sign = 1;
+    int8_t sign = 1;
 
-	if (string[i] == '+')
-	{
-		++i;
-	}
+    if (string[i] == '+')
+    {
+        ++i;
+    }
 
-	if (string[i] == '-')
-	{
-		sign = -1;
+    if (string[i] == '-')
+    {
+        sign = -1;
 
-		++i;
-	}
+        ++i;
+    }
 
-	while (1)
-	{
-		if (((string[i] == '\0')) || (i >= max_string_len))
-		{
-			break;
-		}
+    while (1)
+    {
+        if (string[i] == decimal_separator)
+        {
+            decimal_separator_is_exit = true;
+        }
 
-		if ((string[i] < '0') || (string[i] > '9'))
-		{
-			++i;
+        if (((string[i] == '\0')) || (i >= max_string_len))
+        {
+            break;
+        }
 
-			continue;
-		}
+        if (((string[i] < '0') || (string[i] > '9')) && (decimal_separator_is_exit != false))
+        {
+            ++i;
 
-		number *= 10;
-		number += string[i] - '0';
+            continue;
+        }
 
-		++i;
-	}
+        number *= 10;
+        number += string[i] - '0';
+
+        ++i;
+    }
 
 
-	return sign * number;
+    return sign * number;
 }
 
 
