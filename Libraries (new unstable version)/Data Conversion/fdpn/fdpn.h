@@ -72,10 +72,12 @@ char *FDPN_Int16Base_Convert_Number_To_String
 
 int16_t FDPN_Int16Base_Convert_String_To_Number
 (
-	const char *string,
-	
-	const uint8_t max_string_len
-);
+    const char* string,
+
+    const uint8_t max_string_len,
+
+    const char decimal_separator
+)
 
 
 
@@ -96,10 +98,12 @@ char *FDPN_Int32Base_Convert_Number_To_String
 
 int32_t FDPN_Int32Base_Convert_String_To_Number
 (
-	const char *string,
-	
-	const uint8_t max_string_len
-);
+    const char *string,
+
+    const uint8_t max_string_len,
+
+    const char decimal_separator
+)
 
 
 
@@ -130,10 +134,12 @@ char *FDPN_Int64Base_Convert_Number_To_String
 
 int64_t FDPN_Int64Base_Convert_String_To_Number
 (
-	const char *string,
-	
-	const uint8_t max_string_len
-);
+    const char *string,
+
+    const uint8_t max_string_len,
+
+    const char decimal_separator
+)
 
 
 #endif
