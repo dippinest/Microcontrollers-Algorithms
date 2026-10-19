@@ -77,7 +77,7 @@ int16_t FDPN_Int16Base_Convert_String_To_Number
     const uint8_t max_string_len,
 
     const char decimal_separator
-)
+);
 
 
 
@@ -103,7 +103,7 @@ int32_t FDPN_Int32Base_Convert_String_To_Number
     const uint8_t max_string_len,
 
     const char decimal_separator
-)
+);
 
 
 
@@ -139,7 +139,7 @@ int64_t FDPN_Int64Base_Convert_String_To_Number
     const uint8_t max_string_len,
 
     const char decimal_separator
-)
+);
 
 
 #endif
