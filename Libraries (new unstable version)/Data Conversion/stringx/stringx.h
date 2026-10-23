@@ -380,6 +380,26 @@ char *STRINGX_Generate_Random_Strings_With_Alphabet
 
 
 
+char* STRINGX_Insert_Symbol_By_Pos
+(
+	char* str,
+	const char symbol,
+	uint16_t symbol_pos
+);
+
+char* STRINGX_Insert_String_By_Pos
+(
+	char* str,
+	const char* insertionable_str,
+	uint16_t insertionable_str_pos
+);
+
+
+
+// ===============================================================================
+
+
+
 char *STRINGX_Delete_All_Extra_Symbols(char *str, const char extra_symbol);
 
 char *STRINGX_Delete_All_Extra_Symbols_From_Set(char *str, const char *extra_symbols_set);
@@ -604,6 +624,7 @@ void STRINGX_Strings_Lexicographic_Selection_Sort(char** strings, const uint16_t
 
 
 #endif
+
 
 
 
