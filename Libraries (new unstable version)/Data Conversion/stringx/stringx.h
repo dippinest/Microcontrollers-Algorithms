@@ -494,8 +494,6 @@ char *STRINGX_Delete_All_Substrings(char *str, const char *substr);
 
 char *STRINGX_Delete_Substring_Within_Specified_Boundaries(char *str, const uint16_t begin_pos, const uint16_t end_pos);
 
-char *STRINGX_Insert_Substring_By_Pos(char *str, const char *substr, uint16_t insert_pos);
-
 char *STRINGX_Fill_Char_Within_Specified_Boundaries(char *str, const char placeholder_ch, const uint16_t begin_pos, uint16_t end_pos);
 
 
