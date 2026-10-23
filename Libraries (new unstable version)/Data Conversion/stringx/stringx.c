@@ -899,6 +899,91 @@ char *STRINGX_Generate_Random_Strings_With_Alphabet
 
 
 
+char* STRINGX_Insert_Symbol_By_Pos
+(
+	char* str,
+	const char symbol,
+	uint16_t symbol_pos
+)
+{
+	if (str == NULL)
+	{
+		return str;
+	}
+
+	uint16_t i = strlen(str);
+
+	if (symbol_pos > i)
+	{
+		return str;
+	}
+
+
+	str[i + 1] = '\0';
+
+
+	while (i > symbol_pos)
+	{
+		str[i] = str[i - 1];
+
+		--i;
+	}
+
+	str[i] = symbol;
+
+
+	return str;
+}
+
+
+char* STRINGX_Insert_String_By_Pos
+(
+	char* str,
+	const char* insertionable_str,
+	uint16_t insertionable_str_pos
+)
+{
+	if ((str == NULL) || (insertionable_str == NULL))
+	{
+		return str;
+	}
+
+
+	const uint16_t str_size = strlen(str);
+	const uint16_t insertionable_str_size = strlen(insertionable_str);
+
+
+	if ((insertionable_str_size == 0) || (insertionable_str_pos > str_size))
+	{
+		return str;
+	}
+
+
+	memmove
+	(
+	(str + insertionable_str_pos + insertionable_str_size),
+	(str + insertionable_str_pos),
+	(str_size - insertionable_str_pos + 1)
+	);
+
+
+	memcpy
+	(
+		(str + insertionable_str_pos),
+		insertionable_str,
+		insertionable_str_size
+	);
+
+
+	return str;
+}
+
+
+
+// ===============================================================================
+
+
+
 char *STRINGX_Delete_All_Extra_Symbols(char *str, const char extra_symbol)
 {
 	if ((str == NULL) || (strlen(str) == 0))
@@ -1863,7 +1948,6 @@ void STRINGX_Strings_Lexicographic_Selection_Sort(char** strings, const uint16_t
 		}
 	}
 }
-
 
 
 
