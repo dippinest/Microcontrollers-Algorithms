@@ -899,12 +899,7 @@ char *STRINGX_Generate_Random_Strings_With_Alphabet
 
 
 
-char* STRINGX_Insert_Symbol_By_Pos
-(
-	char* str,
-	const char symbol,
-	uint16_t symbol_pos
-)
+char* STRINGX_Insert_Symbol_By_Pos(char* str, const char symbol, uint16_t symbol_pos)
 {
 	if (str == NULL)
 	{
@@ -936,46 +931,40 @@ char* STRINGX_Insert_Symbol_By_Pos
 }
 
 
-char* STRINGX_Insert_String_By_Pos
-(
-	char* str,
-	const char* insertionable_str,
-	uint16_t insertionable_str_pos
-)
+char* STRINGX_Insert_Substring_By_Pos(char* str, const char* substr, uint16_t insert_pos)
 {
-	if ((str == NULL) || (insertionable_str == NULL))
-	{
-		return str;
-	}
+    if ((str == NULL) || (substr == NULL))
+    {
+        return str;
+    }
 
 
-	const uint16_t str_size = strlen(str);
-	const uint16_t insertionable_str_size = strlen(insertionable_str);
+    uint16_t str_size = strlen(str);
+
+    if (str_size == 0)
+    {
+        return str;
+    }
+
+    if (insert_pos > str_size)
+    {
+        insert_pos = str_size;
+    }
+
+    uint16_t substr_size = strlen(substr);
 
 
-	if ((insertionable_str_size == 0) || (insertionable_str_pos > str_size))
-	{
-		return str;
-	}
+    if ((substr_size == 0) || (substr_size > str_size))
+    {
+        return str;
+    }
+
+    memmove((str + insert_pos + substr_size), (str + insert_pos), (str_size - insert_pos + 1));
+
+    memcpy((str + insert_pos), substr, substr_size);
 
 
-	memmove
-	(
-	(str + insertionable_str_pos + insertionable_str_size),
-	(str + insertionable_str_pos),
-	(str_size - insertionable_str_pos + 1)
-	);
-
-
-	memcpy
-	(
-		(str + insertionable_str_pos),
-		insertionable_str,
-		insertionable_str_size
-	);
-
-
-	return str;
+    return str;
 }
 
 
@@ -1461,31 +1450,6 @@ char *STRINGX_Delete_Substring_Within_Specified_Boundaries(char *str, const uint
 	}
 
 	memmove((str + begin_pos), (str + end_pos), ((str_size - end_pos) + 1));
-
-	return str;
-}
-
-
-char *STRINGX_Insert_Substring_By_Pos(char *str, const char *substr, uint16_t insert_pos)
-{
-	uint16_t str_size = strlen(str);
-
-	if (str_size == 0)
-	{
-		return str;
-	}
-
-	if (insert_pos > str_size)
-	{
-		insert_pos = str_size;
-	}
-
-	uint16_t substr_size = strlen(substr);
-
-	memmove((str + insert_pos + substr_size), (str + insert_pos), (str_size - insert_pos + 1));
-
-	memcpy((str + insert_pos), substr, substr_size);
-
 
 	return str;
 }
