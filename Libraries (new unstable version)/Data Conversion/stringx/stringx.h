@@ -380,19 +380,9 @@ char *STRINGX_Generate_Random_Strings_With_Alphabet
 
 
 
-char* STRINGX_Insert_Symbol_By_Pos
-(
-	char* str,
-	const char symbol,
-	uint16_t symbol_pos
-);
+char* STRINGX_Insert_Symbol_By_Pos(char* str, const char symbol, uint16_t symbol_pos);
 
-char* STRINGX_Insert_String_By_Pos
-(
-	char* str,
-	const char* insertionable_str,
-	uint16_t insertionable_str_pos
-);
+char* STRINGX_Insert_Substring_By_Pos(char* str, const char* substr, uint16_t insert_pos);
 
 
 
