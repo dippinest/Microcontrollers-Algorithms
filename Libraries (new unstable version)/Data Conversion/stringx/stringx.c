@@ -1415,23 +1415,30 @@ char *STRINGX_Delete_All_Duplicate_Symbols_In_Row(char *str, const char symbol)
 
 char *STRINGX_Delete_All_Substrings(char *str, const char* substr)
 {
-	if (strlen(substr) == 0)
+    if ((str == NULL) || (substr == NULL))
 	{
 		return str;
 	}
 
-
-	str = strstr(str, substr);
-
-	while (str)
+	
+    const uint16_t substr_size = strlen(substr);
+	
+    if (substr_size == 0)
 	{
-		memmove(str, (str + strlen(substr)), (strlen(str + strlen(substr)) + 1));
-
-		str = strstr(str, substr);
+		return str;
 	}
-
-
-	return str;
+	
+    
+    char* occurrence = strstr(str, substr);
+    
+    while (occurrence)
+	{
+        memmove(occurrence, occurrence + substr_size, strlen(occurrence + substr_size) + 1);
+		
+        occurrence = strstr(occurrence, substr);
+    }
+    
+    return str;
 }
 
 
