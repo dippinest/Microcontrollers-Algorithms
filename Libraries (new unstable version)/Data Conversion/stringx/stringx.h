@@ -539,6 +539,16 @@ bool STRINGX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strin
 
 
 
+uint16_t STRINGX_Get_Words_Number_In_String_By_Delimiter(const char *str, const char delimiter);
+
+uint16_t STRINGX_Get_Words_Number_In_String_By_Delimiters_Set(const char *str, const char *delimiters_set);
+
+
+
+// ===============================================================================
+
+
+
 // случайная перестановка массива строк (алгоритм Фишера-Йетса)
 //
 // -------------------------------------------------------------------------------
