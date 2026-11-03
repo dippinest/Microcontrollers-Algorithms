@@ -1712,6 +1712,105 @@ bool STRINGX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strin
 
 
 
+uint16_t STRINGX_Get_Words_Number_In_String_By_Delimiter(const char *str, const char delimiter)
+{
+    if (str == NULL)
+    {
+        return 0;
+    }
+
+
+    uint16_t str_size = strlen(str);
+
+    uint16_t num_of_words = 0;
+
+    bool word_flag = true;
+
+
+    for (uint16_t i = 0; i < str_size; ++i)
+    {
+        if (str[i] == delimiter)
+        {
+            word_flag = true;
+
+            continue;
+        }
+
+        if ((word_flag == true) && (str[i] != delimiter))
+        {
+            ++num_of_words;
+
+            word_flag = false;
+        }
+    }
+
+
+    return num_of_words;
+}
+
+
+uint16_t STRINGX_Get_Words_Number_In_String_By_Delimiters_Set(const char* str, const char* delimiters_set)
+{
+    if (str == NULL || delimiters_set == NULL)
+    {
+        return 0;
+    }
+
+
+    uint16_t str_size = strlen(str);
+
+    uint16_t delimiters_set_size = strlen(delimiters_set);
+
+
+    if (delimiters_set_size == 0)
+    {
+        return 0;
+    }
+
+
+    uint16_t num_of_words = 0;
+
+    bool word_flag = true;
+
+
+    for (uint16_t i = 0; i < str_size; ++i)
+    {
+        bool is_delimiter = false;
+
+        for (uint16_t j = 0; j < delimiters_set_size; ++j)
+        {
+            if (str[i] == delimiters_set[j])
+            {
+                is_delimiter = true;
+
+                break;
+            }
+        }
+
+
+        if (is_delimiter)
+        {
+            word_flag = true;
+        }
+
+        else if (word_flag)
+        {
+            ++num_of_words;
+
+            word_flag = false;
+        }
+    }
+
+
+    return num_of_words;
+}
+
+
+
+// ===============================================================================
+
+
+
 void STRINGX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_strings, uint16_t(*_16bit_random_generator)(void))
 {
 	if (num_of_strings < 2)
