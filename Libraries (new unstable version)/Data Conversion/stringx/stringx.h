@@ -543,9 +543,9 @@ uint16_t STRINGX_Split_Into_Tokens_Using_Delimiters_Set
 
 
 
-bool STRINGX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings);
+bool STRINGX_Strings_Is_Sort(char **strings, const uint16_t num_of_strings);
 
-bool STRINGX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strings);
+bool STRINGX_Strings_Is_Reverse_Sort(char **strings, const uint16_t num_of_strings);
 
 
 
@@ -568,7 +568,7 @@ uint16_t STRINGX_Get_Words_Number_In_String_By_Delimiters_Set(const char *str, c
 // -------------------------------------------------------------------------------
 // random permutation of an array of strings (Fisher-Yates algorithm)
 //
-void STRINGX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_strings, uint16_t(*_16bit_random_generator)(void));
+void STRINGX_Strings_Random_Shuffle(char **strings, const uint16_t num_of_strings, uint16_t(*_16bit_random_generator)(void));
 
 
 
@@ -585,13 +585,13 @@ void STRINGX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_string
 // from the C standard library and are intended both for use on their own
 // and in conjunction with string sorting functions
 //
-int8_t STRINGX_BuildIn_Custom_STRCMP(const char* str1, const char* str2);
+int8_t STRINGX_BuildIn_Custom_STRCMP(const char *str1, const char *str2);
 
-int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case(const char* str1, const char* str2);
+int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case(const char *str1, const char *str2);
 
-int8_t STRINGX_BuildIn_Custom_STRCMP_Reverse(const char* str1, const char* str2);
+int8_t STRINGX_BuildIn_Custom_STRCMP_Reverse(const char *str1, const char *str2);
 
-int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char* str1, const char* str2);
+int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char *str1, const char *str2);
 
 
 
@@ -608,7 +608,7 @@ int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char* str1, const
 //
 // This algorithm is optimal only for sorting small arrays
 //
-void STRINGX_Strings_Lexicographic_Bubble_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2));
+void STRINGX_Strings_Lexicographic_Bubble_Sort(char **strings, const uint16_t num_of_strings, int8_t(*comparator)(const char *str1, const char *str2));
 
 
 // сортировка вставками
@@ -620,7 +620,7 @@ void STRINGX_Strings_Lexicographic_Bubble_Sort(char** strings, const uint16_t nu
 //
 // This algorithm is optimal for sorting almost sorted arrays
 //
-void STRINGX_Strings_Lexicographic_Insertion_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2));
+void STRINGX_Strings_Lexicographic_Insertion_Sort(char **strings, const uint16_t num_of_strings, int8_t(*comparator)(const char *str1, const char *str2));
 
 
 // сортировка выбором
@@ -632,7 +632,7 @@ void STRINGX_Strings_Lexicographic_Insertion_Sort(char** strings, const uint16_t
 //
 // Stable sorting
 //
-void STRINGX_Strings_Lexicographic_Selection_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2));
+void STRINGX_Strings_Lexicographic_Selection_Sort(char **strings, const uint16_t num_of_strings, int8_t(*comparator)(const char *str1, const char *str2));
 
 
 #endif
