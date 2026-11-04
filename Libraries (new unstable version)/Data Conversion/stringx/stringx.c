@@ -1809,7 +1809,7 @@ uint16_t STRINGX_Split_Into_Tokens_Using_Delimiters_Set
 
 
 
-bool STRINGX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings)
+bool STRINGX_Strings_Is_Sort(char **strings, const uint16_t num_of_strings)
 {
 	if (num_of_strings < 2)
 	{
@@ -1829,7 +1829,7 @@ bool STRINGX_Strings_Is_Sort(char** strings, const uint16_t num_of_strings)
 }
 
 
-bool STRINGX_Strings_Is_Reverse_Sort(char** strings, const uint16_t num_of_strings)
+bool STRINGX_Strings_Is_Reverse_Sort(char **strings, const uint16_t num_of_strings)
 {
 	if (num_of_strings < 2)
 	{
@@ -1891,7 +1891,7 @@ uint16_t STRINGX_Get_Words_Number_In_String_By_Delimiter(const char *str, const 
 }
 
 
-uint16_t STRINGX_Get_Words_Number_In_String_By_Delimiters_Set(const char* str, const char* delimiters_set)
+uint16_t STRINGX_Get_Words_Number_In_String_By_Delimiters_Set(const char *str, const char *delimiters_set)
 {
     if (str == NULL || delimiters_set == NULL)
     {
@@ -1953,7 +1953,7 @@ uint16_t STRINGX_Get_Words_Number_In_String_By_Delimiters_Set(const char* str, c
 
 
 
-void STRINGX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_strings, uint16_t(*_16bit_random_generator)(void))
+void STRINGX_Strings_Random_Shuffle(char **strings, const uint16_t num_of_strings, uint16_t(*_16bit_random_generator)(void))
 {
 	if (num_of_strings < 2)
 	{
@@ -1982,7 +1982,7 @@ void STRINGX_Strings_Random_Shuffle(char** strings, const uint16_t num_of_string
 
 
 
-int8_t STRINGX_BuildIn_Custom_STRCMP(const char* str1, const char* str2)
+int8_t STRINGX_BuildIn_Custom_STRCMP(const char *str1, const char *str2)
 {
 	while (*str1 && *str2 && (*str1 == *str2))
 	{
@@ -1994,7 +1994,7 @@ int8_t STRINGX_BuildIn_Custom_STRCMP(const char* str1, const char* str2)
 }
 
 
-int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case(const char* str1, const char* str2)
+int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case(const char *str1, const char *str2)
 {
 	char ch1, ch2;
 
@@ -2017,7 +2017,7 @@ int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case(const char* str1, const char* s
 }
 
 
-int8_t STRINGX_BuildIn_Custom_STRCMP_Reverse(const char* str1, const char* str2)
+int8_t STRINGX_BuildIn_Custom_STRCMP_Reverse(const char *str1, const char *str2)
 {
 	while (*str1 && *str2 && (*str1 == *str2))
 	{
@@ -2029,7 +2029,7 @@ int8_t STRINGX_BuildIn_Custom_STRCMP_Reverse(const char* str1, const char* str2)
 }
 
 
-int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char* str1, const char* str2)
+int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char *str1, const char *str2)
 {
 	char ch1, ch2;
 
@@ -2057,7 +2057,7 @@ int8_t STRINGX_BuildIn_Custom_STRCMP_Ignore_Case_Reverse(const char* str1, const
 
 
 
-void STRINGX_Strings_Lexicographic_Bubble_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2))
+void STRINGX_Strings_Lexicographic_Bubble_Sort(char **strings, const uint16_t num_of_strings, int8_t(*comparator)(const char *str1, const char *str2))
 {
 	if (num_of_strings < 2)
 	{
@@ -2095,7 +2095,7 @@ void STRINGX_Strings_Lexicographic_Bubble_Sort(char** strings, const uint16_t nu
 }
 
 
-void STRINGX_Strings_Lexicographic_Insertion_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2))
+void STRINGX_Strings_Lexicographic_Insertion_Sort(char **strings, const uint16_t num_of_strings, int8_t(*comparator)(const char *str1, const char *str2))
 {
 	if (num_of_strings < 2)
 	{
@@ -2127,7 +2127,7 @@ void STRINGX_Strings_Lexicographic_Insertion_Sort(char** strings, const uint16_t
 }
 
 
-void STRINGX_Strings_Lexicographic_Selection_Sort(char** strings, const uint16_t num_of_strings, int8_t(*comparator)(const char* str1, const char* str2))
+void STRINGX_Strings_Lexicographic_Selection_Sort(char **strings, const uint16_t num_of_strings, int8_t(*comparator)(const char *str1, const char *str2))
 {
 	if (num_of_strings < 2)
 	{
