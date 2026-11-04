@@ -447,6 +447,148 @@ uint16_t STRINGX_Get_String_Size_Safe(const char *str, const uint16_t str_max_si
 	return str_size;
 }
 
+uint16_t STRINGX_Get_Certain_Symbols_Number_In_String(const char* str, const char certain_symbol)
+{
+    if (str == NULL)
+    {
+        return 0;
+    }
+
+
+    uint16_t str_size = strlen(str);
+
+    uint16_t num_of_certain_symbols = 0;
+
+
+    for (uint16_t i = 0; i < str_size; ++i)
+    {
+        if (str[i] == certain_symbol)
+        {
+            ++num_of_certain_symbols;
+        }
+    }
+
+
+    return num_of_certain_symbols;
+}
+
+
+uint16_t STRINGX_Get_Certain_Symbols_Number_In_String_Ignore_Case(const char* str, const char certain_symbol)
+{
+    if (str == NULL)
+    {
+        return 0;
+    }
+
+
+    uint16_t str_size = strlen(str);
+
+    uint16_t num_of_certain_symbols = 0;
+
+
+    for (uint16_t i = 0; i < str_size; ++i)
+    {
+        char certain_symbol_lower_case = (char)tolower(certain_symbol);
+        char certain_symbol_upper_case = (char)toupper(certain_symbol);
+
+        if ((str[i] == certain_symbol_lower_case) || (str[i] == certain_symbol_upper_case))
+        {
+            ++num_of_certain_symbols;
+        }
+    }
+
+
+    return num_of_certain_symbols;
+}
+
+
+uint16_t STRINGX_Get_Certain_Symbols_Number_In_String_From_Set(const char* str, const char* certain_symbols_set)
+{
+    if (str == NULL || certain_symbols_set == NULL)
+    {
+        return 0;
+    }
+
+
+    uint16_t str_size = strlen(str);
+
+    uint16_t certain_symbols_size = strlen(certain_symbols_set);
+
+
+    if (certain_symbols_size == 0)
+    {
+        return 0;
+    }
+
+
+    uint16_t num_of_certain_symbols = 0;
+
+
+    for (uint16_t i = 0; i < str_size; ++i)
+    {
+        for (uint16_t j = 0; j < certain_symbols_size; ++j)
+        {
+            if (str[i] == certain_symbols_set[j])
+            {
+                ++num_of_certain_symbols;
+
+                break;
+            }
+        }
+    }
+
+
+    return num_of_certain_symbols;
+}
+
+
+uint16_t STRINGX_Get_Certain_Symbols_Number_In_String_From_Set_Ignore_Case(const char* str, const char* certain_symbols_set)
+{
+    if (str == NULL || certain_symbols_set == NULL)
+    {
+        return 0;
+    }
+
+
+    uint16_t str_size = strlen(str);
+
+    uint16_t certain_symbols_size = strlen(certain_symbols_set);
+
+
+    if (certain_symbols_size == 0)
+    {
+        return 0;
+    }
+
+
+    uint16_t num_of_certain_symbols = 0;
+
+
+    for (uint16_t i = 0; i < str_size; ++i)
+    {
+        for (uint16_t j = 0; j < certain_symbols_size; ++j)
+        {
+            char certain_symbol_lower_case = (char)tolower(certain_symbols_set[j]);
+            char certain_symbol_upper_case = (char)toupper(certain_symbols_set[j]);
+
+            if ((str[i] == certain_symbol_lower_case) || (str[i] == certain_symbol_upper_case))
+            {
+                ++num_of_certain_symbols;
+
+                break;
+            }
+        }
+    }
+
+
+    return num_of_certain_symbols;
+}
+
+
+
+// ===============================================================================
+
+
 
 char *STRINGX_String_Copy(char *dest_str, const char *source_str)
 {
