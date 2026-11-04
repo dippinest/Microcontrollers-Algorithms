@@ -289,6 +289,20 @@ uint16_t STRINGX_Get_String_Size(const char *str);
 
 uint16_t STRINGX_Get_String_Size_Safe(const char *str, const uint16_t str_max_size);
 
+uint16_t STRINGX_Get_Certain_Symbols_Number_In_String(const char* str, const char certain_symbol);
+
+uint16_t STRINGX_Get_Certain_Symbols_Number_In_String_Ignore_Case(const char* str, const char certain_symbol);
+
+uint16_t STRINGX_Get_Certain_Symbols_Number_In_String_From_Set(const char* str, const char* certain_symbols_set);
+
+uint16_t STRINGX_Get_Certain_Symbols_Number_In_String_From_Set_Ignore_Case(const char* str, const char* certain_symbols_set);
+
+
+
+// ===============================================================================
+
+
+
 char *STRINGX_String_Copy(char *dest_str, const char *source_str);
 
 char *STRINGX_String_Copy_Safe(char *dest_str, const char *source_str, const uint16_t dest_str_max_size);
